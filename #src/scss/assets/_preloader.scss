@@ -1,0 +1,73 @@
+@use '../core/all' as *;
+.preloader {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100vh;
+	z-index: 99;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.5s;
+	opacity: 1;
+	background:
+		url('../img/icons/logo.jpg') center no-repeat,
+		$color-fern;
+
+	svg {
+		overflow: visible;
+		width: 100px;
+		height: 150px;
+
+		g {
+			animation: preloader-slide 2s linear infinite;
+			&:nth-child(2) {
+				animation-delay: 0.5s;
+				path {
+					animation-delay: 0.5s;
+					stroke-dasharray: 0px 158px;
+					stroke-dashoffset: 1px;
+				}
+			}
+		}
+
+		path {
+			stroke: url(#gradient);
+			stroke-width: 20px;
+			stroke-linecap: round;
+			fill: none;
+			stroke-dasharray: 0 157px;
+			stroke-dashoffset: 0;
+			animation: preloader-escalade 2s cubic-bezier(0.8, 0, 0.2, 1) infinite;
+		}
+	}
+}
+
+.preloader-remove {
+	opacity: 0;
+	z-index: -10;
+}
+
+@keyframes preloader-slide {
+	0% {
+		transform: translateY(-50px);
+	}
+	100% {
+		transform: translateY(50px);
+	}
+}
+@keyframes preloader-escalade {
+	0% {
+		stroke-dasharray: 0 157px;
+		stroke-dashoffset: 0;
+	}
+	50% {
+		stroke-dasharray: 156px 157px;
+		stroke-dashoffset: 0;
+	}
+	100% {
+		stroke-dasharray: 156px 157px;
+		stroke-dashoffset: -156px;
+	}
+}

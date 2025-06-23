@@ -1,0 +1,49 @@
+.slide {
+	// .slide__body
+
+	&__body {
+		padding: 2rem;
+	}
+
+	// .slide__column
+
+	&__slide-column {
+		&.swiper-slide {
+			transition:
+				transform 1s ease,
+				opacity 1s ease;
+			transform: scale(0.87);
+		}
+
+		&.swiper-slide-active + * {
+			transform: scale(1);
+			opacity: 1;
+		}
+	}
+
+	// .slide__image
+
+	&__image {
+		img {
+			width: 100%;
+			height: auto;
+			display: block;
+			height: 100%;
+			object-fit: cover;
+
+			box-shadow: 0 0 20px #383838;
+
+			overflow: hidden;
+			border-radius: 1rem;
+		}
+	}
+}
+.perform {
+	// .perform__slide-perform
+	&__slide-perform {
+		// max-height: 30rem;
+	}
+}
+
+.content-slide {
+}

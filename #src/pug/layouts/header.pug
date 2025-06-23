@@ -1,0 +1,25 @@
+.header
+	._container
+		._content
+			a(href="@@webRoot/index.html")._column.el-logo 
+				._logo-wrpper 
+					._logo
+						img(src="@@webRoot/img/icons/logo.jpg" alt="logo") 
+			._column 
+				ul._menu.text-shadow(data-da="bp-1" data-da-position="0" data-da-resolution="320" )
+					li._item
+						a(href="#project" data-letters="Работа")._link-key.anchor-link.link_underline-center
+							| Работа 
+					li._item
+						a(href="#about" data-letters="Вакансии")._link-key.anchor-link.link_underline-center 
+							| Вакансии
+					li._item
+						a(href="#contacts" data-letters="Контакты")._link-key.anchor-link.link_underline-center 
+							| Контакты
+				._phone 
+					| +375 33 317-67-40
+
+			._column.el-community 
+				._burger-button
+					include ../modules/burger-button
+

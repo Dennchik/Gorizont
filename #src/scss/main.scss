@@ -1,0 +1,55 @@
+//todo ---------------------------- Core ---------------------------------------
+@use 'core/all.scss' as *;
+// todo --------------------------- Assets -------------------------------------
+@use 'assets/swiper-11.2.5';
+@use 'assets/preloader';
+// todo --------------------------- Modules ------------------------------------
+// @use 'modules/parallax';
+@use 'modules/burger-button';
+@use 'modules/project-list';
+@use 'modules/burger-menu';
+// todo --------------------------- Chunks -------------------------------------
+
+// todo --------------------------- Fonts --------------------------------------
+@use 'core/_fonts.scss';
+@use 'core/_iconfonts.scss';
+// todo --------------------------- Plugins ------------------------------------
+
+// todo --------------------------- layout -------------------------------------
+@use 'layouts/bem-block';
+@use 'layouts/header';
+// @use 'layouts/footer';
+@use 'layouts/page-grid.scss';
+// todo ---------------------------- Pages -------------------------------------
+@use 'pages/page';
+// todo -------------------------- Section -------------------------------------
+
+// todo ------------------------ Default fonts ---------------------------------
+// &display=swap&subset=cyrillic-ext
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&&display=swap&subset=cyrillic-ext');
+// #region
+// todo ---------------------------- Style -------------------------------------
+.wrapper {
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	height: 100%;
+}
+
+[class*='_container'] {
+	max-width: $maxWidthContainer;
+	box-sizing: content-box;
+	margin: 0 auto;
+	padding: 0 4rem;
+	@include screen-1140 {
+		padding: 0 2rem;
+	}
+}
+
+[class*='icon-'] {
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
