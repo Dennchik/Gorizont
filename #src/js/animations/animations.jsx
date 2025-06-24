@@ -50,15 +50,16 @@ export function applyParallax(element) {
 
 //*
 // ----------------------------------------------------------------------------
-// export function initSectionTriggerMove(trigger, targets) {
-// 	ScrollTrigger.create({
-// 		trigger: trigger,
-// 		/* Начинаем событие, когда верхняя граница элемента-1 находится на 100px
-// ниже верха окна браузера*/ start: 'top center', endTrigger: trigger, //*
-// Конец события - конец документа /*Конец событие когда верхняя граница
-// элемента 1 достигнет верха окна браузера*/ end: 'bottom center',
-// toggleClass: { targets: targets, className: '_active' }, // markers: true
-// }); }
+export function initSectionTriggerMove(trigger, targets) {
+	ScrollTrigger.create({
+		trigger: trigger, //* Начинаем событие, когда верхняя граница элемента-1 находится на 100px ниже верха окна браузера 
+		start: 'top center',
+		endTrigger: trigger, //* Конец события - конец документа /*Конец событие когда верхняя граница элемента 1 достигнет верха окна браузера 
+		end: 'bottom center',
+		toggleClass: { targets: targets, className: '_active' },
+		// markers: true
+	});
+}
 //  * ___________________________ Rotate Icon __________________________________
 export function tlRotateIcon() {
 	gsap.to('._rotate-el-01', {

@@ -27,7 +27,7 @@
 			width: 100%;
 			display: block;
 			height: 100%;
-			border-radius: 1rem;
+			border-radius: 0.4rem;
 			object-fit: cover;
 			box-shadow: 0 0 20px #383838;
 			overflow: hidden;
@@ -52,18 +52,17 @@
 
 		.swiper-pagination-bullet {
 			cursor: pointer;
+			filter: contrast(190%);
 			display: block;
 			background-color: $color-fern;
 			opacity: 1;
-			border-radius: 0;
+			border-radius: 0.1rem;
 			width: 1rem;
 			height: 1rem;
 			transition:
 				transform 0.5s ease,
 				background-color 0.5s ease,
 				scale 0.5s ease;
-
-			filter: contrast(170%);
 		}
 
 		.swiper-pagination-bullet-active {
@@ -169,15 +168,5 @@
 		margin-left: 1.6rem;
 		margin-right: 0.5rem;
 		filter: contrast(190%);
-	}
-}
-
-.perform {
-	// .perform__slide-perform
-	&__slide-perform {
-	}
-	// .perform__slide-perform
-	&__slide-perform {
-		// max-height: 30rem;
 	}
 }

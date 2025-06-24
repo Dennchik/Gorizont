@@ -76,27 +76,27 @@ export function timeLineTextItem() {
 		targets: '.el-1',
 		translateY: [200, 0],
 		opacity: [0, 1], duration: 1250,
-		delay: anime.stagger(50, { start: 50 }),
+		delay: anime.stagger(100, { start: 100 }),
 		easing: 'easeInOutSine',
 		begin: function (anim) {
 			anim.animatables.forEach(function (animatable) {
 				animatable.target.style.transition = 'opacity 0.3s ease-out';
 			});
 		}
-	}).add({
+	},).add({
 		targets: '.el-2',
-		opacity: [0, 0.7],
-		translateX: [1500, 0],
-		scaleX: [5, 0.7],
+		opacity: [0, 1],
+		translateY: [-50, 0],
+		// scaleX: [5, 0.7],
 		scaleY: [5, 1.5],
-		delay: anime.stagger(100, { start: 100 }),
+		delay: anime.stagger(0, { start: 0 }),
 		easing: 'easeInOutSine',
 		begin: function (anim) {
 			anim.animatables.forEach(function (animatable) {
 				animatable.target.style.transition = 'all 0.3s ease-out';
 			});
 		}
-	}).add({
+	}, `-=${1250}`).add({
 		targets: '.el-3',
 		opacity: [0, 1],
 		translateY: [-100, 0], duration: 750,

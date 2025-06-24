@@ -28,12 +28,12 @@ import {
 // todo -------------------------- Animations ----------------------------------
 const isMobile = /Mobi|Android/i.test(navigator.userAgent);
 document.addEventListener('DOMContentLoaded', function () {
-	// const el2 = document.querySelector('.el-2');
-	// if (!isMobile) {
-	// 	timeLineTextItem();
-	// } else {
-	// 	el2.style.transform = 'translateX(-7px) scaleX(0.7) scaleY(1.5)';
-	// }
+	const el2 = document.querySelector('.el-2');
+	if (!isMobile) {
+		timeLineTextItem();
+	} else {
+		el2.style.transform = 'scaleY(1.5)';
+	}
 
 
 
