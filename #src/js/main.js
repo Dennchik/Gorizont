@@ -10,8 +10,8 @@ anchorsSmoothScrolling();
 
 import { buildSwiper } from './layouts/build-swiper.js';
 buildSwiper();
-import { newslide } from './layouts/slide.js';
-newslide('.news-slide');
+import { mainSlide } from './layouts/slide.js';
+mainSlide('.main-slide');
 // todo --------------------------- Plugins ------------------------------------
 //* --------------------------- Адаптив блоков ---------------------------------
 import { dynamicAdaptive } from './plugins/dynamic-adaptive.js';

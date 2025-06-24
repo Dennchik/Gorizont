@@ -75,7 +75,8 @@ export function timeLineTextItem() {
 	timeline.add({
 		targets: '.el-1',
 		translateY: [200, 0],
-		opacity: [0, 1], duration: 1250,
+		// opacity: [0, 1],
+		duration: 1250,
 		delay: anime.stagger(100, { start: 100 }),
 		easing: 'easeInOutSine',
 		begin: function (anim) {
@@ -85,10 +86,11 @@ export function timeLineTextItem() {
 		}
 	},).add({
 		targets: '.el-2',
-		opacity: [0, 1],
-		translateY: [-50, 0],
+		// opacity: [0, 1],
+		translateY: [0, 0],
 		// scaleX: [5, 0.7],
 		scaleY: [5, 1.5],
+		duration: 1000,
 		delay: anime.stagger(0, { start: 0 }),
 		easing: 'easeInOutSine',
 		begin: function (anim) {

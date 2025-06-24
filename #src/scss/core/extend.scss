@@ -13,10 +13,8 @@
 }
 
 .top-box {
-	z-index: -1;
 	// padding: 6rem 0 8rem;
-	overflow: hidden;
-	display: grid;
+	// display: flex;
 	align-items: center;
 
 	@include min-960 {

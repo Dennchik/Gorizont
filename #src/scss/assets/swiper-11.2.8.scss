@@ -1,5 +1,5 @@
 /**
- * Swiper 11.2.5
+ * Swiper 11.2.8
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * https://swiperjs.com
  *
@@ -7,10 +7,10 @@
  *
  * Released under the MIT License
  *
- * Released on: March 3, 2025
+ * Released on: May 23, 2025
  */
-
 @use '../core/all' as *;
+// @use 'swiper-vars.scss' as vars;
 @at-root {
 	@font-face {
 		font-family: 'swiper-icons';
@@ -24,9 +24,9 @@
 	:root {
 		--swiper-theme-color: $themeColor;
 		/*
-    --swiper-preloader-color: var(--swiper-theme-color);
-    --swiper-wrapper-transition-timing-function: initial;
-    */
+		 --swiper-preloader-color: var(--swiper-theme-color);
+		 --swiper-wrapper-transition-timing-function: initial;
+		 */
 	}
 }
 :host {
@@ -77,10 +77,10 @@
 .swiper-slide {
 	flex-shrink: 0;
 	width: 100%;
-	height: auto;
+	height: 100%;
 	position: relative;
 	transition-property: transform;
-	display: flex;
+	display: block;
 }
 .swiper-slide-invisible-blank {
 	visibility: hidden;

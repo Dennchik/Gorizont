@@ -1,18 +1,18 @@
 //* import Swiper bundle with all modules installed
 import Swiper from 'swiper/bundle';
-export function newslide(Slide) {
+export function mainSlide(Slide) {
 	if (Slide) {
 		new Swiper(Slide, {
-			effect: 'slide',
+			// effect: 'slide',
 			// autoplay: {
 			// 	delay: 1500,
 			// 	disableOnInteraction: true,
 			// },
 			speed: 800,
-			// mousewheel: true,
+			spaceBetween: 20,
 			loop: true,
 			grabCursor: true,
-			slidesPerView: 3,
+			slidesPerView: 4,
 			centeredSlides: false,
 			pagination: {
 				el: '.slide__pagination',
@@ -24,14 +24,13 @@ export function newslide(Slide) {
 			},
 			breakpoints: {
 				0: {
-					slidesPerView: 1,
-					spaceBetween: 20
+					slidesPerView: 3,
 				},
-				960: {
-					slidesPerView: 2,
+				1140: {
+					slidesPerView: 3,
 				},
 				1440: {
-					slidesPerView: 3, spaceBetween: 30
+					slidesPerView: 3,
 				}
 			},
 

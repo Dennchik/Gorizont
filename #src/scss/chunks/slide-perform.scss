@@ -3,7 +3,7 @@
 .slide {
 	// .slide__body
 	&__body {
-		padding: 2rem 1rem;
+		padding: 0;
 	}
 
 	// .slide__column
@@ -31,6 +31,10 @@
 			object-fit: cover;
 			box-shadow: 0 0 20px #383838;
 			overflow: hidden;
+
+			@include screen-620 {
+				max-height: 390px;
+			}
 		}
 	}
 
@@ -48,7 +52,7 @@
 		display: flex;
 		align-items: center;
 		gap: 2rem;
-		padding: 3rem;
+		padding: 3rem 0.5rem 3rem 0;
 
 		.swiper-pagination-bullet {
 			cursor: pointer;
@@ -76,7 +80,7 @@
 		position: relative;
 		display: flex;
 		align-items: center;
-		padding: 3rem;
+		padding: 3rem 0 3rem 0.5rem;
 	}
 
 	// .slide__prev
@@ -148,6 +152,7 @@
 		font-weight: 600;
 		color: $color-fern;
 		width: 100%;
+		white-space: nowrap;
 	}
 
 	// .slide__line-prev

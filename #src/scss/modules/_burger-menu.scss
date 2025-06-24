@@ -16,15 +16,23 @@
 	width: 100%;
 	height: calc(100vh - 64px);
 	left: 0;
-	top: 64px;
+	top: 8rem;
 	z-index: 13;
 	perspective: 1000px;
+
+	@include screen-375 {
+		top: 7.2rem;
+	}
 
 	// .burger-menu__body
 	&__body {
 		height: 100%;
-		margin: 0 15px;
-		min-width: 288px;
+		margin-right: 1.6rem;
+		min-width: 310px;
+
+		@include screen-375 {
+			margin: 0 1rem;
+		}
 	}
 
 	// .burger-menu__content
@@ -33,7 +41,6 @@
 		max-width: 400px;
 		transform-origin: 200% 100%;
 		box-shadow: -2px 0 7px #2b2b2b;
-		border: 1px solid rgba(128, 128, 128, 0.322);
 		border-top: none;
 		border-bottom: none;
 
@@ -75,19 +82,19 @@
 		text-align: center;
 
 		transform-origin: 0 50%;
-		background: $background-color;
+		background: #a58e741e;
 		text-shadow: none;
+		color: $color-fern;
+		backdrop-filter: blur(40px);
 
-		color: $color-arricot;
 		p {
-			font-size: 2.2rem;
-			font-weight: 700;
-			font-family: $font-family-secondary;
+			font-size: 2rem;
+			font-weight: 500;
+			line-height: 100%;
 		}
-		em {
+		span {
 			width: 100%;
 			font-size: 2.4rem;
-			color: $color-arricot;
 		}
 
 		.header__menu-items {
@@ -101,6 +108,7 @@
 
 	// .burger-menu__menu-header
 	&__menu-header {
+		filter: contrast(190%);
 		padding: 10px;
 		line-height: 1;
 		border-bottom: 1px solid $color-natural;
@@ -117,7 +125,6 @@
 
 		padding: 16px 18px 16px 16px;
 		align-self: start;
-		color: #222;
 		font-size: 2.4rem;
 	}
 
@@ -135,7 +142,6 @@
 
 		.burger-menu__content {
 			transform: translate3d(0, -10%, 0) rotateY(-90deg);
-			opacity: 0;
 		}
 	}
 
@@ -143,17 +149,19 @@
 	&__menu-footer {
 		width: 100%;
 		padding: 10px;
-		border-top: 1px solid $border-color;
+		border-top: 1px solid $color-natural;
 	}
+}
 
-	// .burger-menu__download
-	&__network-links {
+.network-icons {
+	// .network-icons__links
+	&__links {
 		display: flex;
 		align-items: center;
 		justify-content: space-evenly;
 	}
 
-	// .burger-menu__link
+	// .network-links__link
 	&__icon-link {
 		&:not(:last-child) {
 			margin-right: 1rem;
@@ -164,7 +172,7 @@
 				// color: $black-color;
 				font-size: 3.8rem;
 				font-weight: 400;
-				color: $color-arricot;
+				color: $color-fern;
 			}
 		}
 	}

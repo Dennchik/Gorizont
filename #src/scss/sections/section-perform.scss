@@ -6,24 +6,27 @@
 	z-index: 9;
 }
 
-.clipped-box {
-	mask-repeat: no-repeat;
-	mask-size: 100%;
-	z-index: 0;
-}
-
-.mask-render {
-	top: 0;
-	width: 100%;
-	height: 300px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	position: absolute;
-}
+// .clipped-box {
+// 	mask-repeat: no-repeat;
+// 	mask-size: 100%;
+// 	z-index: 0;
+// }
 
 .perform {
 	z-index: 11;
+	height: calc(100vh - 36rem);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding-top: 18rem;
+	padding-bottom: 18rem;
+
+	@include screen-960 {
+		height: 100%;
+		padding-top: 14rem;
+		padding-bottom: 14rem;
+	}
+
 	// .perform__body
 	&__body {
 		position: relative;
@@ -31,40 +34,56 @@
 		align-items: center;
 	}
 
-	// .perform__container
-	&__container {
-		width: 100%;
-		margin: 20rem auto;
-	}
-
 	// .perform__content
 	&__content {
 		width: 100%;
+		box-sizing: border-box;
 		display: flex;
-		gap: 3rem;
+		gap: 1.6rem;
+		backdrop-filter: blur(10px);
+
+		@include screen-620 {
+			flex-direction: column;
+		}
 	}
 
 	// .perform__column
 	&__column {
 		flex: 0 1 50%;
-		padding: 4rem 0;
+		padding-top: 4rem;
+		overflow: hidden;
+		display: flex;
 
 		&:nth-child(1) {
-			display: flex;
-			justify-content: center;
+			flex: 0 1 auto;
 			flex-direction: column;
+			padding-top: 6.5rem;
+
+			@include screen-620 {
+				padding-top: 4rem;
+			}
 		}
+
 		&:nth-child(2) {
-			padding: 0;
-			overflow: hidden;
-			backdrop-filter: blur(5px);
+			flex-direction: column;
+			justify-content: center;
 			border-radius: 0.4rem;
+			min-width: 260px;
+
+			.perform__items {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+			}
+
+			@include screen-960 {
+				flex: 0 1 40%;
+			}
 		}
 	}
 
 	// .perform__items
 	&__items {
-		backdrop-filter: blur(10px);
 		padding: 2rem 0.5rem;
 	}
 
@@ -72,11 +91,13 @@
 	&__item {
 		filter: contrast(190%);
 	}
+
 	// .perform__text
 	&__text {
 		position: relative;
 		color: $color-warm;
 		border-radius: 2rem;
+
 		.t-01 {
 			filter: contrast(190%);
 		}
@@ -89,8 +110,8 @@
 
 		&.hide {
 			float: left;
-			shape-outside: polygon(0px 36px, 0px 100%, 30% 100%);
-			width: 94%;
+			shape-outside: polygon(0px 28px, 0px 100%, 30% 100%);
+			width: 90%;
 			opacity: 0;
 		}
 	}
@@ -98,16 +119,17 @@
 
 .hgroup-items {
 	h1 {
-		line-height: 140%;
+		line-height: 100%;
 		text-transform: uppercase;
-		text-align: left;
+		margin-bottom: 2rem;
 	}
+
 	h2 {
-		text-align: left;
-		line-height: 140%;
+		line-height: 100%;
 		margin-bottom: 2.5rem;
 		text-transform: uppercase;
 	}
+
 	p {
 		line-height: 135%; /* 25/16 */
 

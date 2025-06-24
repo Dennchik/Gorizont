@@ -178,32 +178,34 @@
 .t-h1 {
 	@include minmax-490-1920 {
 		font-size: calc(
-			24px + (34 - 24) * ((100vw - 490px) / (1920 - 490))
+			20px + (34 - 20) * ((100vw - 490px) / (1920 - 490))
 		) !important;
 	}
 	@include screen-490 {
-		font-size: 24px !important;
+		font-size: 20px !important;
+		text-align: center;
 	}
 }
 
 .t-h2 {
 	@include minmax-490-1920 {
 		font-size: calc(
-			20px + (22 - 20) * ((100vw - 490px) / (1920 - 490))
+			16px + (22 - 16) * ((100vw - 490px) / (1920 - 490))
 		) !important;
 	}
 	@include screen-490 {
-		font-size: 20px !important;
+		font-size: 16px !important;
+		text-align: center;
 	}
 }
 
 .t-01 {
 	font-size: 18px;
 	@include minmax-490-1920 {
-		font-size: calc(15px + (18 - 15) * ((100vw - 490px) / (1920 - 490)));
+		font-size: calc(14px + (18 - 15) * ((100vw - 490px) / (1920 - 490)));
 	}
 	@include screen-490 {
-		font-size: 16px;
+		font-size: 12px;
 	}
 }
 //* -------------------------- [Button] ----------------------------------------

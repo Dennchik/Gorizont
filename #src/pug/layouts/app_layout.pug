@@ -23,12 +23,12 @@ html(lang="ru")
 
 	body
 		include ../assets/preloader
-		include ../includes/mixins
-
-
+		include ../includes/mixins 
 		.wrapper#holder
 			.page(data-page="index")
 				block header 
+					header.page__header
+						include ../layouts/header
 				block page-content
 					main._main-content
 						.main-content#wrapper
@@ -43,6 +43,6 @@ html(lang="ru")
 				block content-hidden
 				block burger-menu
 					include ../modules/burger-menu
-				block project-list
+					//- block project-list
 				block page-grid-4 
 					//- include page-grid-4
