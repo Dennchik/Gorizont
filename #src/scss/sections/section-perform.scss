@@ -23,6 +23,7 @@
 }
 
 .perform {
+	z-index: 11;
 	// .perform__body
 	&__body {
 		position: relative;
@@ -82,10 +83,6 @@
 			width: 94%;
 			opacity: 0;
 		}
-	}
-
-	// .perform__slide-perform
-	&__slide-perform {
 	}
 }
 

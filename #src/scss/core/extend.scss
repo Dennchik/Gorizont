@@ -67,6 +67,7 @@
 	bottom: 0;
 	transform: translateY(40px);
 	background-image: linear-gradient(transparent, $color-warm 80%);
+	pointer-events: none;
 }
 
 .gradient-header {

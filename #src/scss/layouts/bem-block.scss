@@ -1,5 +1,5 @@
 @use '../core/all' as *;
-
+//* --------------------------- [Collapse] -------------------------------------
 .swiper-wrapper > .swiper-slide:not(.swiper-slide-active) {
 	.main-slide__title {
 		transition: opacity 0.9s ease-in-out;
@@ -58,7 +58,7 @@
 	}
 }
 
-//* ----------------------------------------------------------------------------
+//* --------------------------- [Checkbox] -------------------------------------
 .checkbox {
 	&._error {
 		.checkbox__label::before {
@@ -86,7 +86,7 @@
 		line-height: 140%;
 	}
 }
-
+//* ------------------------- [Clip-Circle] ------------------------------------
 ._clip-circle {
 	@include min-960 {
 		cursor: pointer;
@@ -171,7 +171,10 @@
 		object-fit: cover;
 	}
 }
-
+//* ------------------------- [Class _img] -------------------------------------
+._img {
+}
+//* ----------------------- [Text Calc ()] -------------------------------------
 .t-h1 {
 	@include minmax-490-1920 {
 		font-size: calc(
@@ -203,7 +206,7 @@
 		font-size: 16px;
 	}
 }
-
+//* -------------------------- [Button] ----------------------------------------
 .button {
 	cursor: pointer;
 	position: relative;
@@ -292,7 +295,7 @@
 		}
 	}
 }
-
+//* --------------------------- [HR] -------------------------------------------
 .hr-shelf {
 	position: relative;
 	z-index: 11;

@@ -14,10 +14,14 @@ export function newslide(Slide) {
 			grabCursor: true,
 			slidesPerView: 3,
 			centeredSlides: false,
-			// navigation: {
-			// 	nextEl: '.news-slide-next',
-			// 	prevEl: '.news-slide-prev',
-			// },
+			pagination: {
+				el: '.slide__pagination',
+				clickable: true
+			},
+			navigation: {
+				nextEl: '.slide__next',
+				// prevEl: '.slide__prev',
+			},
 			breakpoints: {
 				0: {
 					slidesPerView: 1,
@@ -31,26 +35,26 @@ export function newslide(Slide) {
 				}
 			},
 
-			// on: {
-			// 	init: function () {
-			// 		updateSlideCounter(this);
-			// 	},
-			// 	slideChange: function () {
-			// 		updateSlideCounter(this);
-			// 	}
-			// }
+			on: {
+				init: function () {
+					updateSlideCounter(this);
+				},
+				slideChange: function () {
+					updateSlideCounter(this);
+				}
+			}
 		});
 	}
 
 	function updateSlideCounter(swiperInstance) {
-		// const realIndex = swiperInstance.realIndex + 1;
-		// const totalSlides = swiperInstance.slides.length;
-		// const counterElement = document.querySelector('.slider-bottom__count .value');
+		const realIndex = swiperInstance.realIndex + 1;
+		const totalSlides = swiperInstance.slides.length;
+		const counterElement = document.querySelector('.slide__count .slide__value');
 
-		// if (counterElement) {
-		// 	counterElement.textContent = `${realIndex} / ${totalSlides}`;
-		// } else {
-		// 	console.warn('Элемент .slider-bottom__count .value не найден');
-		// }
+		if (counterElement) {
+			counterElement.textContent = `${realIndex} / ${totalSlides}`;
+		} else {
+			console.warn('Элемент .slider-bottom__count .value не найден');
+		}
 	}
 }
