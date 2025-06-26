@@ -27,7 +27,7 @@
 
 // todo ------------------------ Default fonts ---------------------------------
 // &display=swap&subset=cyrillic-ext
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&&display=swap&subset=cyrillic-ext');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
 // #region
 // todo ---------------------------- Style -------------------------------------
 .wrapper {
@@ -47,12 +47,13 @@
 		padding: 0 2rem;
 	}
 
-	@include screen-375 {
+	@include screen-490 {
 		padding: 0 1rem;
 	}
 }
+
 [class*=' _img'] {
-	// pointer-events: none;
+	pointer-events: none;
 	img {
 		vertical-align: middle;
 		object-fit: cover;

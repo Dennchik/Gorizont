@@ -14,7 +14,7 @@
 	justify-content: flex-end;
 	position: fixed;
 	width: 100%;
-	height: calc(100vh - 64px);
+	height: calc(100vh - 8rem);
 	left: 0;
 	top: 8rem;
 	z-index: 13;
@@ -22,6 +22,7 @@
 
 	@include screen-375 {
 		top: 7.2rem;
+		height: calc(100vh - 7.2rem);
 	}
 
 	// .burger-menu__body
@@ -169,7 +170,6 @@
 
 		._icon {
 			&::before {
-				// color: $black-color;
 				font-size: 3.8rem;
 				font-weight: 400;
 				color: $color-fern;

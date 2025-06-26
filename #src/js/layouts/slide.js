@@ -12,7 +12,6 @@ export function mainSlide(Slide) {
 			spaceBetween: 20,
 			loop: true,
 			grabCursor: true,
-			slidesPerView: 4,
 			centeredSlides: false,
 			pagination: {
 				el: '.slide__pagination',
@@ -55,5 +54,37 @@ export function mainSlide(Slide) {
 		} else {
 			console.warn('Элемент .slider-bottom__count .value не найден');
 		}
+	}
+}
+
+export function slidePartners(Slide) {
+	if (Slide) {
+		new Swiper(Slide, {
+			// effect: 'slide',
+			// autoplay: {
+			// 	delay: 1500,
+			// 	disableOnInteraction: true,
+			// },
+			speed: 800,
+			spaceBetween: 40,
+			loop: true,
+			grabCursor: true,
+			centeredSlides: false,
+			navigation: {
+				nextEl: '.slide__next',
+				prevEl: '.slide__prev',
+			},
+			breakpoints: {
+				0: {
+					slidesPerView: 2,
+				},
+				490: {
+					slidesPerView: 3,
+				},
+				768: {
+					slidesPerView: 4,
+				}
+			},
+		});
 	}
 }

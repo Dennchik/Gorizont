@@ -10,8 +10,11 @@ anchorsSmoothScrolling();
 
 import { buildSwiper } from './layouts/build-swiper.js';
 buildSwiper();
+
 import { mainSlide } from './layouts/slide.js';
 mainSlide('.main-slide');
+import { slidePartners } from './layouts/slide.js';
+slidePartners('.slide-partners');
 // todo --------------------------- Plugins ------------------------------------
 //* --------------------------- Адаптив блоков ---------------------------------
 import { dynamicAdaptive } from './plugins/dynamic-adaptive.js';
@@ -25,6 +28,53 @@ import {
 	timeLineHeaderItem,
 	timeLineTextItem,
 } from './animations/anime-js.jsx';
+
+//* ------------------- [ResizeObserver shape-outside ] ------------------------
+import { syncHeight } from './utils/syncHeight.jsx';
+
+syncHeight({
+	sourceSelector: '.perform__text',
+	targetSelector: '.perform__shape-block',
+	offset: 20, // немного больше, чтобы не врезалась последняя строка
+	autoResize: true,
+});
+// todo ---------------------- [Animations] ------------------------------------
+import { animationHeader } from './utils/animation-header.jsx';
+document.addEventListener('DOMContentLoaded', () => {
+	animationHeader();
+});
+
+// import { smoother, applyParallax } from './animations/animations.jsx';
+// document.addEventListener('DOMContentLoaded', () => {
+// 	const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+// 	if (!isMobile) {
+// 		smoother();
+// 		// applyParallax('.bg-image');
+// 	}
+// });
+
+// window.addEventListener('load', () => {
+// 	const shapeBlock = document.querySelector('.perform__shape-block');
+// 	const textBlock = document.querySelector('.perform__text-block');
+
+// 	if (shapeBlock && textBlock) {
+// 		const textHeight = textBlock.offsetHeight;
+// 		shapeBlock.style.height = (textHeight - 4) + 'px'; // небольшой запас на 4px
+// 	}
+// });
+
+// window.addEventListener('resize', () => {
+// 	const shapeBlock = document.querySelector('.perform__shape-block');
+// 	console.log(shapeBlock);
+// 	const textBlock = document.querySelector('.perform__text-block');
+// 	console.log(textBlock);
+
+// 	if (shapeBlock && textBlock) {
+// 		const textHeight = textBlock.offsetHeight;
+// 		shapeBlock.style.height = (textHeight - 4) + 'px';
+// 	}
+// });
+
 // todo -------------------------- Animations ----------------------------------
 const isMobile = /Mobi|Android/i.test(navigator.userAgent);
 document.addEventListener('DOMContentLoaded', function () {

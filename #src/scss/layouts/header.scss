@@ -1,25 +1,28 @@
 @use '../core/all' as *;
 
 .header {
-	position: relative;
 	width: 100%;
-	z-index: 9;
 	background: transparent;
 	display: flex;
 	align-items: center;
+	backdrop-filter: blur(3px);
+	// background: linear-gradient(to right, transparent, #a58e745d);
 
 	&::before {
 		z-index: 7;
 		opacity: 0;
 		content: '';
 		position: absolute;
-		height: 10rem;
+		height: 8rem;
 		width: 100%;
 		background-size: 111% 200%;
 		background-position: 0 0;
 		transition: opacity 0.5s ease-in-out;
 		animation: fadeOutGradient 0.5s ease-in-out alternate-reverse;
-		@extend .gradient-header;
+		// @extend .gradient-header;
+
+		background: #42453094;
+		backdrop-filter: blur(20px);
 	}
 
 	&::after {
@@ -27,23 +30,22 @@
 		position: absolute;
 		bottom: 0;
 		left: 0;
-		width: 0;
+		width: 100%;
 		height: 1px;
-		transition: all 0.7s ease-in-out;
-		@extend .gradient-border-bottom;
+		border-bottom: 1px solid $color-fern;
+		opacity: 0.3;
+		transition: opacity 0.7s ease-in-out;
+		// @extend .gradient-border-bottom;
 	}
 
 	&.with-border {
-		@extend .box-shadow;
-
 		&::before {
 			animation: fadeInGradient 1.9s ease-in-out forwards;
 			opacity: 1;
 		}
 
 		&::after {
-			z-index: 9;
-			width: 100%;
+			z-index: 7;
 		}
 	}
 
@@ -74,6 +76,8 @@
 
 	// .header__logo-wrapper
 	&__logo-wrpper {
+		position: relative;
+		z-index: 9;
 		display: flex;
 		align-items: center;
 
@@ -93,9 +97,25 @@
 		align-items: center;
 
 		&:nth-child(2) {
+			padding: 1.3rem 2rem;
 			flex-direction: column;
 			justify-content: center;
-			transform: translateY(1px);
+
+			.network-icons {
+				position: absolute;
+				bottom: -150%;
+				// transform: translateY(-50%);
+				right: 0;
+				filter: contrast(150%);
+
+				._icon {
+					&::before {
+						font-size: 3.8rem;
+						font-weight: 400;
+						color: $color-arricot;
+					}
+				}
+			}
 		}
 
 		.icon-home {
@@ -104,15 +124,6 @@
 			&::before {
 				font-size: 22px;
 			}
-		}
-	}
-
-	// .header__phon
-	&__phone {
-		color: $color-arricot;
-
-		@include screen-375 {
-			font-size: 10px;
 		}
 	}
 
@@ -142,6 +153,22 @@
 	// .header__item
 	&__item {
 		position: relative;
+		color: $color-fern;
+
+		a {
+			transition: all 0.5s ease;
+			letter-spacing: 0;
+			font-variation-settings:
+				'wght' 500,
+				'ital' 0;
+			&:hover {
+				letter-spacing: -0.13px;
+				font-variation-settings:
+					'wght' 600,
+					'ital' 1;
+			}
+		}
+		filter: contrast(200%);
 
 		&:not(:last-child) {
 			margin-right: 2rem;
@@ -166,6 +193,21 @@
 				@extend .text-shadow;
 			}
 		}
+
+		@include screen-375 {
+			font-size: 10px;
+		}
+	}
+
+	// .header__phone
+	&__phone {
+		color: $color-arricot;
+		font-weight: 600;
+		filter: contrast(120%);
+		border: 1px solid $color-fern;
+		padding: 0 0.5rem;
+		border-radius: 0.2rem;
+		backdrop-filter: blur(20px);
 
 		@include screen-375 {
 			font-size: 10px;
@@ -211,4 +253,15 @@
 	100% {
 		background-position: 100% 0;
 	}
+}
+.social-share__share-link {
+	color: #d01584;
+	text-decoration: none;
+	border-bottom: 1px solid rgba(0, 137, 255, 0.3);
+	-webkit-transition:
+		color 0.3s ease,
+		border-color 0.3s ease;
+	transition:
+		color 0.3s ease,
+		border-color 0.3s ease;
 }

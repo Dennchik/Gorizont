@@ -58,7 +58,7 @@
 }
 
 @mixin screen-690 {
-	@media (max-width: 690px) {
+	@media screen and (max-width: 690px) {
 		@content;
 	}
 }
