@@ -1,4 +1,4 @@
-import { smoother, applyParallax } from './animations/animations.jsx';
+// import { smoother, applyParallax } from './animations/animations.jsx';
 
 //* ----------------------------------------------------------------------------
 document.addEventListener('DOMContentLoaded', () => {
@@ -7,8 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	// 	const parallax = document.querySelector('.parallax');
 
 	if (!isMobile) {
-		smoother();
-		applyParallax('.bg-image');
+		// smoother();
+		// applyParallax('.bg-image');
 	}
 
 

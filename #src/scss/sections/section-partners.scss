@@ -1,8 +1,8 @@
 @use 'core/all.scss' as *;
 
 .partners {
+	background: $color-natural;
 	// .partners__body
-
 	&__body {
 		padding: 8rem 0;
 	}
@@ -12,7 +12,6 @@
 		width: 100%;
 
 		text-align: center;
-		margin-bottom: 8rem;
 
 		h2 {
 			font-weight: 500;
@@ -28,6 +27,7 @@
 	// .partners__content
 
 	&__content {
+		padding: 4rem;
 	}
 
 	// .partners__slide
@@ -46,12 +46,16 @@
 	// .partners-slide__column
 
 	&__column {
+		display: flex;
+		justify-content: space-between;
 	}
 
 	// .partners-slide__image
 
 	&__image {
 		max-height: 70px;
+		display: flex;
+		justify-content: center;
 		img {
 			object-fit: fill;
 			height: 100%;

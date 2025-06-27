@@ -29,7 +29,7 @@
 		&::before {
 			text-shadow: none;
 			font-weight: 400;
-			color: #fff;
+			color: $color-fern;
 		}
 	}
 
@@ -45,7 +45,7 @@
 		transition: all 0.5s ease-in-out;
 		color: $black-color;
 		border-radius: 50%;
-		background: #42453094;
+		background: $color-arricot;
 
 		&:hover {
 			animation: fadeInBackground;

@@ -32,6 +32,7 @@
 
 	// .burger-button__item
 	&__item {
+		pointer-events: none;
 		border-radius: 2px;
 		transition: all 0.7s ease-in-out;
 		height: 11px;

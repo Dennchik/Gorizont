@@ -1,32 +1,31 @@
 // todo --------------------------- Modules ------------------------------------
 //* ------------------------------ Прелоадер -----------------------------------
-import loaded from './assets/preloader.js';
-
-loaded('.preloader');
+// import loaded from './assets/preloader.js';
+// loaded('.preloader');
 // todo --------------------------- Assets -------------------------------------
-//* ---------------- Плавная прокрутка страницы до позиции ---------------------
-import { anchorsSmoothScrolling } from './assets/anchors-smooth-scrolling.js';
-anchorsSmoothScrolling();
-
+//* ----------------------------- [Slide] --------------------------------------
 import { buildSwiper } from './layouts/build-swiper.js';
 buildSwiper();
-
 import { mainSlide } from './layouts/slide.js';
 mainSlide('.main-slide');
 import { slidePartners } from './layouts/slide.js';
 slidePartners('.slide-partners');
 // todo --------------------------- Plugins ------------------------------------
 //* --------------------------- Адаптив блоков ---------------------------------
-import { dynamicAdaptive } from './plugins/dynamic-adaptive.js';
+// import { dynamicAdaptive } from './plugins/dynamic-adaptive.js';
 
-dynamicAdaptive();
+// dynamicAdaptive();
+
+//* ---------------- Плавная прокрутка страницы до позиции ---------------------
+// import { anchorsSmoothScrolling } from './assets/anchors-smooth-scrolling.js';
+// anchorsSmoothScrolling();
 //* -------------- Возврат к предидущей позиции на страници --------------------
 import returnToSavedPosition from './modules/return-position.js';
 returnToSavedPosition();
 //* ----------------------------------------------------------------------------
 import {
-	timeLineHeaderItem,
-	timeLineTextItem,
+	// timeLineHeaderItem,
+	// timeLineTextItem,
 } from './animations/anime-js.jsx';
 
 //* ------------------- [ResizeObserver shape-outside ] ------------------------
@@ -40,67 +39,13 @@ syncHeight({
 });
 // todo ---------------------- [Animations] ------------------------------------
 import { animationHeader } from './utils/animation-header.jsx';
+import { doc } from 'prettier';
 document.addEventListener('DOMContentLoaded', () => {
 	animationHeader();
 });
 
-// import { smoother, applyParallax } from './animations/animations.jsx';
-// document.addEventListener('DOMContentLoaded', () => {
-// 	const isMobile = /Mobi|Android/i.test(navigator.userAgent);
-// 	if (!isMobile) {
-// 		smoother();
-// 		// applyParallax('.bg-image');
-// 	}
-// });
-
-// window.addEventListener('load', () => {
-// 	const shapeBlock = document.querySelector('.perform__shape-block');
-// 	const textBlock = document.querySelector('.perform__text-block');
-
-// 	if (shapeBlock && textBlock) {
-// 		const textHeight = textBlock.offsetHeight;
-// 		shapeBlock.style.height = (textHeight - 4) + 'px'; // небольшой запас на 4px
-// 	}
-// });
-
-// window.addEventListener('resize', () => {
-// 	const shapeBlock = document.querySelector('.perform__shape-block');
-// 	console.log(shapeBlock);
-// 	const textBlock = document.querySelector('.perform__text-block');
-// 	console.log(textBlock);
-
-// 	if (shapeBlock && textBlock) {
-// 		const textHeight = textBlock.offsetHeight;
-// 		shapeBlock.style.height = (textHeight - 4) + 'px';
-// 	}
-// });
-
-// todo -------------------------- Animations ----------------------------------
 const isMobile = /Mobi|Android/i.test(navigator.userAgent);
 document.addEventListener('DOMContentLoaded', function () {
-	const el2 = document.querySelector('.el-2');
-	if (!isMobile) {
-		timeLineTextItem();
-	} else {
-		el2.style.transform = 'scaleY(1.5)';
-	}
-
-
-
-	let dateContainer = document.querySelector('.performance__date');
-	if (!dateContainer) return;
-
-	let now = new Date();
-	let options = { month: 'short' }; // Сокращённое название месяца
-	let day = now.getDate();
-	let month = new Intl.DateTimeFormat('ru-RU', options).format(now);
-
-	// Убираем точку и делаем первую букву заглавной
-	month = month.replace('.', '').charAt(0).toUpperCase() + month.slice(1, -1);
-
-	dateContainer.innerHTML = `<div class="day">${day}</div> <div class="data-wrapper">
-<div class="month">${month}</div><div class="status"><p>Доступен</br> для&nbsp;работы</p></div></div>`;
-
 	//* --------------------------- Animation Header -----------------------------
 	const header = document.querySelector('.header');
 	const mainContent = document.querySelector('.page__main-content');
@@ -117,8 +62,6 @@ document.addEventListener('DOMContentLoaded', function () {
 				header.classList.remove('with-border');
 			}
 		};
-		// Выполнение timeLineHeaderItem при загрузке
-		timeLineHeaderItem();
 
 		// Добавление обработчика скроллинга
 		window.addEventListener('scroll', handleScroll);
@@ -128,24 +71,52 @@ document.addEventListener('DOMContentLoaded', function () {
 			window.removeEventListener('scroll', handleScroll);
 		});
 	}
+	//* --------------------------- Animation title -----------------------------
+	const el2 = document.querySelector('.el-2');
+	if (!isMobile) {
+		// timeLineTextItem();
+	} else {
+		el2.style.transform = 'scaleY(1.5)';
+	}
+
+	//* ------------------------------ [Date]-------------------------------------
+	let dateContainer = document.querySelector('.performance__date');
+	if (!dateContainer) return;
+
+	let now = new Date();
+	let options = { month: 'short' }; // Сокращённое название месяца
+	let day = now.getDate();
+	let month = new Intl.DateTimeFormat('ru-RU', options).format(now);
+
+	// Убираем точку и делаем первую букву заглавной
+	month = month.replace('.', '').charAt(0).toUpperCase() + month.slice(1, -1);
+
+	dateContainer.innerHTML = `<div class="day">${day}</div> <div class="data-wrapper">
+<div class="month">${month}</div><div class="status"><p>Доступен</br> для&nbsp;работы</p></div></div>`;
 });
 
 //* ------------------------------ Burger Menu ---------------------------------
 const burgerButton = document.querySelector('.burger-button');
 const accelerate = document.querySelector('.accelerate');
-const itemButton = document.querySelector('.item-button');
-const closeButton = document.querySelector('.project-list__close-button');
-const projectList = document.querySelector('.project-list');
+const networkLinks = document.querySelector('.network-menu__links');
+const networkButton = document.querySelector('.network-menu__button');
+
+// const itemButton = document.querySelector('.item-button');
+// const closeButton = document.querySelector('.project-list__close-button');
+// const projectList = document.querySelector('.project-list');
 const anchorLinks = document.querySelectorAll('.anchor-link');
 
 burgerButton.addEventListener('click', () => {
-	accelerate.classList.toggle('hide');
+	networkLinks.classList.toggle('_rotate');
+	networkButton.classList.toggle('_active');
+	// accelerate.classList.toggle('hide');
 	burgerButton.classList.toggle('_open-menu');
-	if (burgerButton.classList.contains('_open-menu')) {
-		document.body.classList.add('no-scroll');
-	} else {
-		document.body.classList.remove('no-scroll');
-	}
+
+	// if (burgerButton.classList.contains('_open-menu')) {
+	// 	document.body.classList.add('no-scroll');
+	// } else {
+	// 	document.body.classList.remove('no-scroll');
+	// }
 });
 //* ----------------------------- Burger Button --------------------------------
 anchorLinks.forEach(anchorLink => {

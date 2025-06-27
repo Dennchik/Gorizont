@@ -16,36 +16,38 @@
 					li._item
 						a(href="#contacts" data-letters="Контакты")._link-key.anchor-link.link_underline-center 
 							| Контакты
-				._phone 
-					| +375 33 317-67-40
-				.network-icons
-					._links
-						a(href="https://github.com/Dennchik" target="_blank" aria-label="Git-Hub")._icon-link
-							+iconfont('git-hub-circle', '_icon')
-						a(href="https://t.me/allexandrw" target="_blank" aria-label="Telegram")._icon-link
-							+iconfont('telegram-fly', '_icon')
-						a(href="https://wa.me/79852605079" target="_blank" aria-label="WhatsApp")._icon-link
-							+iconfont('whatsapp', '_icon')
-						svg#arc.arcs(width="92" height="184")
-							g#arcs.arcs(width="92" height="184")
-								// Facebook
-								g.ring.ring-fb
-									a.social-share__share-link(href="https://www.facebook.com/sharer/sharer.php?u=%url%")
-										path.ring(d="M 91.99999999999999 42 L 91.99999999999999 10 A 82 82 0 0 0 34.01724394270309 34.01724394270311 L 56.644660940672615 56.64466094067263 A 50 50 0 0 1 91.99999999999999 42" fill="#007bff" stroke="#007bff" stroke-width="0.5px" data-index="3")
-										use(x="56.742893463904096" y="22.02395085425507" width="20px" height="18px" xlink:href="img/sprites/sprite.svg#vk-icon")
-								g.ring.ring-vk
-									a.social-share__share-link(xlink:href="#")
-										path.ring( d="M 56.644660940672615 56.64466094067263 L 34.01724394270309 34.01724394270311 A 82 82 0 0 0 10 92.00000000000001 L 42 92 A 50 50 0 0 1 56.644660940672615 56.64466094067263" fill="#1164bb" stroke="#1164bb" stroke-width="0.5px" data-index="2" )
-										use(x="21.023950854255062" y="60.74289346390411" width="20px" height="18px" xlink:href="./img/sprites/sprite.svg#whatsapp")
-								g.ring.ring-tg
-									a.social-share__share-link(xlink:href="#")
-										path.ring(d="M 42 92 L 10 92.00000000000001 A 82 82 0 0 0 34.01724394270311 149.9827560572969 L 56.64466094067263 127.35533905932738 A 50 50 0 0 1 42 92" fill="#2ea5e1" stroke="#2ea5e1" stroke-width="0.5px" data-index="1" )
-										use(x="21.023950854255077" y="109.25710653609593" width="20px" height="16px" xlink:href="./img/sprites/sprite.svg#telegram") 
-								g.ring.ring-twitter
-									a.social-share__share-link(xlink:href="https://twitter.com/intent/tweet?url=%url%&text=%title%")
-										path.ring(d="M 56.64466094067263 127.35533905932738 L 34.01724394270311 149.9827560572969 A 82 82 0 0 0 92 174 L 92 142 A 50 50 0 0 1 56.64466094067263 127.35533905932738" fill="#00c4ff" stroke="#00c4ff" stroke-width="0.5px" data-index="0" )
-										use(x="56.74289346390408" y="145.47604914574492" width="20px" height="15px" xlink:href="img/sprites/sprite.svg#github") 
-	._column.el-community 
-		._burger-button
-			include ../modules/burger-button
+				._phone +375 33 317-67-40
+					//- a(href="https://github.com/Dennchik" target="_blank" aria-label="Git-Hub")._icon-link
+					//- 	+iconfont('git-hub-circle', '_icon')
+					//- a(href="https://t.me/allexandrw" target="_blank" aria-label="Telegram")._icon-link
+					//- 	+iconfont('telegram-fly', '_icon')
+					//- a(href="https://wa.me/79852605079" target="_blank" aria-label="WhatsApp")._icon-link
+					//- 	+iconfont('whatsapp', '_icon')
+			._column
+				.network-menu 
+					._body
+						._button 
+							include ../modules/burger-button
+						._links
+							svg#arc._circle-svg(width="92" height="184")
+								g#arcs._rings(width="92" height="184")
+									// Facebook
+									g._ring
+										a._social-link(href="#")
+											path.ring(d="M 91.99999999999999 42 L 91.99999999999999 10 A 82 82 0 0 0 34.01724394270309 34.01724394270311 L 56.644660940672615 56.64466094067263 A 50 50 0 0 1 91.99999999999999 42" fill="#e09132" stroke="#b4762a" stroke-width="0.5px" data-index="3")
+											use(x="56.742893463904096" y="22.02395085425507" width="20px" height="18px" xlink:href="img/sprites/sprite.svg#vk-icon")
+									g._ring
+										a._social-link(href="#")
+											path.ring( d="M 56.644660940672615 56.64466094067263 L 34.01724394270309 34.01724394270311 A 82 82 0 0 0 10 92.00000000000001 L 42 92 A 50 50 0 0 1 56.644660940672615 56.64466094067263" fill="#e29d4a" stroke="#b4762a" stroke-width="0.5px" data-index="2" )
+											use(x="21.023950854255062" y="56.74289346390411" width="20px" height="20px" xlink:href="./img/sprites/sprite.svg#whatsapp")
+									g._ring
+										a._social-link(href="#")
+											path.ring(d="M 42 92 L 10 92.00000000000001 A 82 82 0 0 0 34.01724394270311 149.9827560572969 L 56.64466094067263 127.35533905932738 A 50 50 0 0 1 42 92" fill="#e4aa64" stroke="#b4762a" stroke-width="0.5px" data-index="1" )
+											use(x="20.023950854255077" y="107.25710653609593" width="22px" height="22px" xlink:href="./img/sprites/sprite.svg#telegram") 
+									g._ring
+										a._social-link(href="#")
+											path.ring(d="M 56.64466094067263 127.35533905932738 L 34.01724394270311 149.9827560572969 A 82 82 0 0 0 92 174 L 92 142 A 50 50 0 0 1 56.64466094067263 127.35533905932738" fill="#e2bd8f" stroke="#b4762a" stroke-width="0.5px" data-index="0" )
+											use(x="55.74289346390408" y="142.47604914574492" width="20px" height="20px" xlink:href="img/sprites/sprite.svg#youtube") 
+				//- ._burger-button
+					include ../modules/burger-button
 

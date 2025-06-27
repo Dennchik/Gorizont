@@ -179,32 +179,34 @@ export const app = {
 			id: {
 				separator: '--',
 				pseudo: '~',
-				whitespace: '_'
+				whitespace: '_',
 			},
-			dimension: { // Set maximum dimensions
+			dimension: { // Максимальные размеры иконок
 				maxWidth: 500,
-				maxHeight: 500
+				maxHeight: 500,
 			},
-			spacing: { // Add padding
-				padding: 0
+			spacing: { // Отступы вокруг иконок
+				padding: 0,
 			},
 			transform: [{
 				svgo: {
 					plugins: [
 						'cleanupAttrs',
 						'convertColors',
-						'removeEmptyAttrs'
-					]
-				}
+						'removeEmptyAttrs',
+					],
+				},
 			}],
 		},
 		mode: {
-			defs: {
-				dest: './',
-				sprite: './sprite.svg',
+			symbol: {       // Режим symbol для создания <symbol> спрайта
+				dest: './',   // Папка назначения относительно gulp.dest
+				sprite: 'sprite.svg',  // Имя итогового файла спрайта
+				example: false, // Если true - создаст пример использования спрайта (html файл)
 			},
 		},
 	},
+
 	imageMin: (
 		[
 			svgo({
