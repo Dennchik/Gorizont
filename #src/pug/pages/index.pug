@@ -5,14 +5,11 @@ prepend script
 	+script(`${webRoot}/js/index.min.js`) 
 	script(defer src="@@webRoot/js/vendors/runtime.min.js")
 	script(defer src="@@webRoot/js/vendors/anime-vendors.min.js")
-	//- script(defer="defer" src="@@webRoot/js/vendors/swiper-bundle.min.js")
+	script(defer="defer" src="@@webRoot/js/vendors/swiper-bundle.min.js")
 	//- script(defer="defer" src="@@webRoot/js/vendors/react-vendors.min.js")
 block title
 	- var text='"Витебская швейная фабрика ГОРИЗОНТ"'
 
-//- block header 
-//- 	header.page__header
-//- 		include ../layouts/header
 block main-content
 	section.main-content__sections.top-box
 		.bg-image
@@ -21,9 +18,9 @@ block main-content
 		include ../sections/section-perform
 		.bg-bottom 
 	section.main-content__sections#about
+		include ../sections/section-about
+	section.main-content__sections#partners
 		include ../sections/section-partners
-		//- section.main-content__sections#project
-		//- include ../section/section-project
 		//- section.main-content__footer
 			include ../layouts/footer 
 //- block content-hidden

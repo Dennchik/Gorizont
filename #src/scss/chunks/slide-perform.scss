@@ -3,7 +3,7 @@
 .slide {
 	// .slide__body
 	&__body {
-		padding: 0;
+		padding: 1rem 0;
 		overflow: hidden;
 	}
 
@@ -25,13 +25,8 @@
 	// .slide__image
 	&__image {
 		img {
-			width: 100%;
-			display: block;
-			height: 100%;
 			border-radius: 0.4rem;
-			object-fit: cover;
-			box-shadow: 0 0 20px #383838;
-			overflow: hidden;
+			box-shadow: 0 0 15px -2px rgba(56, 56, 56, 0.5);
 
 			@include screen-620 {
 				max-height: 390px;

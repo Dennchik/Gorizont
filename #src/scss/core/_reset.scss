@@ -1,6 +1,5 @@
 @use 'variables' as *;
-@use 'mixins.scss' as *;
-@use 'extend.scss' as *;
+@use 'mixins' as *;
 
 html {
 	font: {
@@ -8,12 +7,11 @@ html {
 		size: 62.5%;
 		weight: $font-weight-default;
 		family: $font-default;
-		// font-family: 'Great Vibes', Helvetica, sans-serif;
 	}
 	height: 100%;
 	counter-reset: heading;
 	letter-spacing: 1.1px;
-	color: var(--font-body-color);
+	color: $color-fill;
 
 	@include screen-1024 {
 		font-size: 50%;
@@ -21,10 +19,9 @@ html {
 }
 
 body {
-	// user-select: none;
-	// overscroll-behavior: none;
+	overscroll-behavior: none;
 	font: 1.6rem/1.6 $font-default;
-	background: $color-warm;
+	background: $color-ivory;
 
 	&.no-scroll {
 		overflow: hidden;
@@ -51,11 +48,10 @@ body {
 
 img,
 svg {
-	vertical-align: top;
 	user-select: none;
-	pointer-events: none;
+	// pointer-events: none;
 	width: 100%;
-	height: auto;
+	height: 100%;
 	max-width: 100%;
 }
 
@@ -78,11 +74,6 @@ a:focus {
 a:visited {
 	vertical-align: middle;
 	text-emphasis-style: none;
-}
-
-h2,
-h3 {
-	font-family: $font-family-secondary;
 }
 
 input,
@@ -185,7 +176,6 @@ h6 {
 
 ::-webkit-scrollbar-track {
 	background: var(--scrollbar-thumb-bgcolor);
-	// background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {

@@ -5,58 +5,6 @@
 		transition: opacity 0.9s ease-in-out;
 		opacity: 0 !important;
 	}
-
-	.main-slide__text {
-		transition: opacity 0.9s ease-in-out;
-		opacity: 0 !important;
-	}
-}
-
-//* ----------------------------------------------------------------------------
-.return-button {
-	position: fixed;
-	z-index: 13;
-	top: 50%;
-	left: 0;
-	margin-top: -17px;
-	width: 45px;
-	height: 45px;
-	margin-left: 2vw;
-
-	i {
-		box-shadow: 0 0 7px #fff;
-
-		&::before {
-			text-shadow: none;
-			font-weight: 400;
-			color: $color-fern;
-		}
-	}
-
-	._button {
-		font-size: 3.8rem;
-		position: absolute;
-		z-index: 13;
-		left: 0;
-		width: 35px;
-		height: 35px;
-		margin-right: 1rem;
-		cursor: pointer;
-		transition: all 0.5s ease-in-out;
-		color: $black-color;
-		border-radius: 50%;
-		background: $color-arricot;
-
-		&:hover {
-			animation: fadeInBackground;
-		}
-	}
-
-	&._rotate {
-		i {
-			scale: -1;
-		}
-	}
 }
 
 //* --------------------------- [Checkbox] -------------------------------------
@@ -172,9 +120,7 @@
 		object-fit: cover;
 	}
 }
-//* ------------------------- [Class _img] -------------------------------------
-._img {
-}
+
 //* ----------------------- [Text Calc ()] -------------------------------------
 .t-h1 {
 	@include minmax-490-1920 {
@@ -187,6 +133,7 @@
 		text-align: center;
 	}
 }
+
 .t-h2 {
 	@include minmax-490-1920 {
 		font-size: calc(
@@ -202,7 +149,7 @@
 .t-h3 {
 	@include minmax-490-1920 {
 		font-size: calc(
-			16px + (24 - 16) * ((100vw - 490px) / (1920 - 490))
+			16px + (28 - 16) * ((100vw - 490px) / (1920 - 490))
 		) !important;
 	}
 	@include screen-490 {

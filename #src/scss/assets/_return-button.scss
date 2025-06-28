@@ -1,0 +1,46 @@
+@use '../core/all' as *;
+
+.return-button {
+	position: fixed;
+	z-index: 13;
+	top: 50%;
+	left: 0;
+	margin-top: -17px;
+	width: 45px;
+	height: 45px;
+	margin-left: 1vw;
+
+	i {
+		box-shadow: 0 0 7px #fff;
+
+		&::before {
+			text-shadow: none;
+			font-weight: 400;
+			color: $color-fern;
+		}
+	}
+
+	._button {
+		font-size: 3.8rem;
+		position: absolute;
+		z-index: 13;
+		left: 0;
+		width: 35px;
+		height: 35px;
+		margin-right: 1rem;
+		cursor: pointer;
+		transition: all 0.5s ease-in-out;
+		border-radius: 50%;
+		background: $color-arricot;
+
+		&:hover {
+			animation: fadeInBackground;
+		}
+	}
+
+	&._rotate {
+		i {
+			scale: -1;
+		}
+	}
+}

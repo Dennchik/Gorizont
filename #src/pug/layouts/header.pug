@@ -16,21 +16,16 @@
 					li._item
 						a(href="#contacts" data-letters="Контакты")._link-key.anchor-link.link_underline-center 
 							| Контакты
-				._phone +375 33 317-67-40
-					//- a(href="https://github.com/Dennchik" target="_blank" aria-label="Git-Hub")._icon-link
-					//- 	+iconfont('git-hub-circle', '_icon')
-					//- a(href="https://t.me/allexandrw" target="_blank" aria-label="Telegram")._icon-link
-					//- 	+iconfont('telegram-fly', '_icon')
-					//- a(href="https://wa.me/79852605079" target="_blank" aria-label="WhatsApp")._icon-link
-					//- 	+iconfont('whatsapp', '_icon')
+				._phone
+					span +375 33 317-67-40 
 			._column
+				._button 
+					include ../modules/burger-button
 				.network-menu 
 					._body
-						._button 
-							include ../modules/burger-button
 						._links
-							svg#arc._circle-svg(width="92" height="184")
-								g#arcs._rings(width="92" height="184")
+							svg._circle-svg(width="92" height="184")
+								g._rings(width="92" height="184")
 									// Facebook
 									g._ring
 										a._social-link(href="#")

@@ -5,8 +5,6 @@
 	background: transparent;
 	display: flex;
 	align-items: center;
-	backdrop-filter: blur(3px);
-	// background: linear-gradient(to right, transparent, #a58e745d);
 
 	&::before {
 		z-index: 7;
@@ -19,9 +17,7 @@
 		background-position: 0 0;
 		transition: opacity 0.5s ease-in-out;
 		animation: fadeOutGradient 0.5s ease-in-out alternate-reverse;
-
-		background: #424530;
-		backdrop-filter: blur(20px);
+		backdrop-filter: blur(40px);
 	}
 
 	&::after {
@@ -34,15 +30,14 @@
 		border-bottom: 1px solid $color-fern;
 		opacity: 0.3;
 		transition: opacity 0.7s ease-in-out;
-		// @extend .gradient-border-bottom;
 	}
 
 	&.with-border {
 		.header__item {
-			color: $color-arricot;
 			filter: contrast(190%);
 		}
 		&::before {
+			backdrop-filter: blur(40px);
 			animation: fadeInGradient 1.9s ease-in-out forwards;
 			opacity: 1;
 		}
@@ -133,7 +128,6 @@
 	// .header__item
 	&__item {
 		position: relative;
-		color: $color-fern;
 
 		a {
 			transition: all 0.5s ease;
@@ -181,14 +175,18 @@
 
 	// .header__phone
 	&__phone {
-		color: $color-arricot;
+		position: absolute;
+		top: 100%;
 		font-weight: 600;
-		filter: contrast(120%);
-		border: 1px solid $color-fern;
+		//
+		// border: 1px solid $color-fern;
 		padding: 0 0.5rem;
 		border-radius: 0.2rem;
-		backdrop-filter: blur(20px);
-
+		backdrop-filter: blur(30px);
+		// background-color: #e6e1cd;
+		span {
+			filter: contrast(190%);
+		}
 		@include screen-375 {
 			font-size: 10px;
 		}
@@ -199,6 +197,30 @@
 
 		&:not(:first-child) {
 			opacity: 1;
+		}
+	}
+
+	// .header__button
+	&__button {
+		pointer-events: all;
+		position: relative;
+		right: 0;
+		top: 0;
+		// transform: translateY(-50%);
+		z-index: 9;
+
+		&._active {
+			top: 5.2rem;
+			// transform: translateY(250%);
+			animation: fadeInOutButton 0.5s ease-in-out;
+
+			@include screen-1024 {
+				top: 7.5rem;
+			}
+
+			@include screen-375 {
+				top: 8rem;
+			}
 		}
 	}
 }
@@ -226,40 +248,6 @@
 
 //* ----------------------------------------------------------------------------
 .network-menu {
-	position: absolute;
-	// bottom: -150%;
-	// transform: translateY(-50%);
-	right: 0;
-	filter: contrast(150%);
-
-	// .network-menu__body
-	&__body {
-		position: relative;
-	}
-
-	._icon {
-		&::before {
-			font-size: 3.8rem;
-			font-weight: 400;
-			color: $color-arricot;
-		}
-	}
-}
-//* ----------------------------------------------------------------------------
-@keyframes fadeOutGradient {
-	100% {
-		background-position: 100% 0;
-	}
-}
-
-@keyframes fadeInGradient {
-	100% {
-		background-position: 100% 0;
-	}
-}
-
-//* ----------------------------------------------------------------------------
-.network-menu {
 	pointer-events: none;
 	position: absolute;
 	top: 0;
@@ -271,24 +259,12 @@
 		position: relative;
 	}
 
-	// .network-menu__button
-	&__button {
-		pointer-events: all;
-		position: absolute;
-		right: 0;
-		top: 10%;
-		z-index: 9;
-
-		&._active {
-			top: 50%;
-			transform: translateY(-50%);
-			animation: fadeInOutButton 0.5s ease-in-out;
-		}
-	}
-
 	// .network-menu__links
 	&__links {
 		overflow: hidden;
+		use {
+			fill: $color-fill;
+		}
 
 		&._rotate {
 			.network-menu__circle-svg {
@@ -325,15 +301,21 @@
 	// .network-menu__ring
 	&__ring {
 	}
-
-	._icon {
-		&::before {
-			font-size: 3.8rem;
-			font-weight: 400;
-			color: $color-arricot;
-		}
+}
+//* ----------------------------------------------------------------------------
+@keyframes fadeOutGradient {
+	100% {
+		background-position: 100% 0;
 	}
 }
+
+@keyframes fadeInGradient {
+	100% {
+		background-position: 100% 0;
+	}
+}
+
+//* ----------------------------------------------------------------------------
 
 @keyframes fadeInOutButton {
 	0% {

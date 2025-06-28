@@ -1,7 +1,7 @@
 // todo --------------------------- Modules ------------------------------------
 //* ------------------------------ Прелоадер -----------------------------------
-// import loaded from './assets/preloader.js';
-// loaded('.preloader');
+import loaded from './assets/preloader.js';
+loaded('.preloader');
 // todo --------------------------- Assets -------------------------------------
 //* ----------------------------- [Slide] --------------------------------------
 import { buildSwiper } from './layouts/build-swiper.js';
@@ -39,38 +39,38 @@ syncHeight({
 });
 // todo ---------------------- [Animations] ------------------------------------
 import { animationHeader } from './utils/animation-header.jsx';
-import { doc } from 'prettier';
 document.addEventListener('DOMContentLoaded', () => {
 	animationHeader();
 });
 
 const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+
+//* --------------------------- Animation Header -----------------------------
+const header = document.querySelector('.header');
+const mainContent = document.querySelector('.page__main-content');
+if (header && mainContent) {
+	// Именованная функция для обработки скроллинга
+	const handleScroll = () => {
+		const mainContentTop = mainContent.getBoundingClientRect().top;
+
+		if (mainContentTop < 0) {
+			header.classList.add('with-border');
+			header.classList.remove('without-border');
+		} else {
+			header.classList.add('without-border');
+			header.classList.remove('with-border');
+		}
+	};
+
+	// Добавление обработчика скроллинга
+	window.addEventListener('scroll', handleScroll);
+
+	// Очистка обработчиков при выгрузке страницы
+	window.addEventListener('beforeunload', () => {
+		window.removeEventListener('scroll', handleScroll);
+	});
+}
 document.addEventListener('DOMContentLoaded', function () {
-	//* --------------------------- Animation Header -----------------------------
-	const header = document.querySelector('.header');
-	const mainContent = document.querySelector('.page__main-content');
-	if (header && mainContent) {
-		// Именованная функция для обработки скроллинга
-		const handleScroll = () => {
-			const mainContentTop = mainContent.getBoundingClientRect().top;
-
-			if (mainContentTop < 0) {
-				header.classList.add('with-border');
-				header.classList.remove('without-border');
-			} else {
-				header.classList.add('without-border');
-				header.classList.remove('with-border');
-			}
-		};
-
-		// Добавление обработчика скроллинга
-		window.addEventListener('scroll', handleScroll);
-
-		// Очистка обработчиков при выгрузке страницы
-		window.addEventListener('beforeunload', () => {
-			window.removeEventListener('scroll', handleScroll);
-		});
-	}
 	//* --------------------------- Animation title -----------------------------
 	const el2 = document.querySelector('.el-2');
 	if (!isMobile) {
@@ -80,26 +80,26 @@ document.addEventListener('DOMContentLoaded', function () {
 	}
 
 	//* ------------------------------ [Date]-------------------------------------
-	let dateContainer = document.querySelector('.performance__date');
-	if (!dateContainer) return;
+	// 	let dateContainer = document.querySelector('.performance__date');
+	// 	if (!dateContainer) return;
 
-	let now = new Date();
-	let options = { month: 'short' }; // Сокращённое название месяца
-	let day = now.getDate();
-	let month = new Intl.DateTimeFormat('ru-RU', options).format(now);
+	// 	let now = new Date();
+	// 	let options = { month: 'short' }; // Сокращённое название месяца
+	// 	let day = now.getDate();
+	// 	let month = new Intl.DateTimeFormat('ru-RU', options).format(now);
 
-	// Убираем точку и делаем первую букву заглавной
-	month = month.replace('.', '').charAt(0).toUpperCase() + month.slice(1, -1);
+	// 	// Убираем точку и делаем первую букву заглавной
+	// 	month = month.replace('.', '').charAt(0).toUpperCase() + month.slice(1, -1);
 
-	dateContainer.innerHTML = `<div class="day">${day}</div> <div class="data-wrapper">
-<div class="month">${month}</div><div class="status"><p>Доступен</br> для&nbsp;работы</p></div></div>`;
+	// 	dateContainer.innerHTML = `<div class="day">${day}</div> <div class="data-wrapper">
+	// <div class="month">${month}</div><div class="status"><p>Доступен</br> для&nbsp;работы</p></div></div>`;
 });
 
 //* ------------------------------ Burger Menu ---------------------------------
 const burgerButton = document.querySelector('.burger-button');
 const accelerate = document.querySelector('.accelerate');
 const networkLinks = document.querySelector('.network-menu__links');
-const networkButton = document.querySelector('.network-menu__button');
+const headerButton = document.querySelector('.header__button');
 
 // const itemButton = document.querySelector('.item-button');
 // const closeButton = document.querySelector('.project-list__close-button');
@@ -108,7 +108,7 @@ const anchorLinks = document.querySelectorAll('.anchor-link');
 
 burgerButton.addEventListener('click', () => {
 	networkLinks.classList.toggle('_rotate');
-	networkButton.classList.toggle('_active');
+	headerButton.classList.toggle('_active');
 	// accelerate.classList.toggle('hide');
 	burgerButton.classList.toggle('_open-menu');
 

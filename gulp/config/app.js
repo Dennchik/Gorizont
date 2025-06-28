@@ -114,7 +114,6 @@ export const app = {
 			// разрешаем импорт файлов с расширениями .js и .jsx
 		},
 	},
-
 	scss: {
 		outputStyle: 'expanded',
 		silenceDeprecations: ['legacy-js-api'],

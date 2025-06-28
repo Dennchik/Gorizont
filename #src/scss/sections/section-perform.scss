@@ -2,7 +2,6 @@
 
 .vertical-reverse {
 	height: 100vh;
-	// transform: translateY(-10px);
 	z-index: 9;
 }
 
@@ -90,12 +89,11 @@
 		height: auto;
 
 		p {
-			color: $color-fern;
 			line-height: 115%; /* 25/16 */
 			filter: contrast(160%);
 			transform: scaleY(1.2);
 			&:not(:last-child) {
-				margin-bottom: 1rem;
+				margin-bottom: 0.5rem;
 			}
 		}
 	}
@@ -155,7 +153,6 @@
 .hgroup-items {
 	h1,
 	h3 {
-		color: $color-fern;
 		line-height: 100%;
 		text-transform: uppercase;
 		margin-bottom: 2rem;
