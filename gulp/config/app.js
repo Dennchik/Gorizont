@@ -33,8 +33,8 @@ export const app = {
 			app: { import: ['./#src/js/app.js'] },
 			main: {
 				import: ['./#src/js/main.js'],
-				dependOn: ['anime-vendors'],
-				filename: '[name].min.js'
+				// dependOn: ['anime-vendors'],
+				// filename: '[name].min.js'
 			},
 			// dinamic: { import: ['./#src/js/assets/dynamic.js'] },
 			index: {
@@ -49,7 +49,9 @@ export const app = {
 			// },
 
 			'anime-vendors': {
-				import: ['gsap', 'gsap/ScrollSmoother', 'gsap/ScrollTrigger'],
+				import: ['gsap', 'gsap/ScrollSmoother',
+					// 'gsap/ScrollTrigger'
+				],
 				filename: 'vendors/[name].min.js',
 			},
 

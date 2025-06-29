@@ -135,12 +135,6 @@
 			font-variation-settings:
 				'wght' 500,
 				'ital' 0;
-			&:hover {
-				letter-spacing: -0.13px;
-				font-variation-settings:
-					'wght' 600,
-					'ital' 1;
-			}
 		}
 		filter: contrast(200%);
 
@@ -169,7 +163,7 @@
 		}
 
 		@include screen-375 {
-			font-size: 10px;
+			font-size: 12px;
 		}
 	}
 
@@ -178,12 +172,10 @@
 		position: absolute;
 		top: 100%;
 		font-weight: 600;
-		//
-		// border: 1px solid $color-fern;
 		padding: 0 0.5rem;
 		border-radius: 0.2rem;
 		backdrop-filter: blur(30px);
-		// background-color: #e6e1cd;
+
 		span {
 			filter: contrast(190%);
 		}
@@ -206,12 +198,10 @@
 		position: relative;
 		right: 0;
 		top: 0;
-		// transform: translateY(-50%);
 		z-index: 9;
 
 		&._active {
 			top: 5.2rem;
-			// transform: translateY(250%);
 			animation: fadeInOutButton 0.5s ease-in-out;
 
 			@include screen-1024 {
@@ -296,10 +286,6 @@
 	// .network-menu__rings
 	&__rings {
 		pointer-events: all;
-	}
-
-	// .network-menu__ring
-	&__ring {
 	}
 }
 //* ----------------------------------------------------------------------------

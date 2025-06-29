@@ -43,9 +43,10 @@
 
 		img {
 			object-fit: fill;
-			height: 100%;
-			width: 100%;
+			height: auto;
+			width: auto;
 			object-position: auto 100%;
+			aspect-ratio: 600 / 140;
 			filter: grayscale(1);
 		}
 	}

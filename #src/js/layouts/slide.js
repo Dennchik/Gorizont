@@ -4,6 +4,7 @@ export function mainSlide(Slide) {
 	if (Slide) {
 		new Swiper(Slide, {
 			// effect: 'slide',
+			lazy: true,
 			// autoplay: {
 			// 	delay: 1500,
 			// 	disableOnInteraction: true,
