@@ -6,7 +6,43 @@
 		opacity: 0 !important;
 	}
 }
+.about,
+.services,
+.stage-swork,
+.price,
+.products,
+.partners {
+	&::before {
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 1px;
+		background: $color-fern;
+		opacity: 0.3;
+		top: 8rem;
+	}
 
+	&__body {
+		padding-top: 10rem !important;
+		padding-bottom: 10rem !important;
+	}
+
+	&__title {
+		text-align: right;
+		margin-bottom: 6rem;
+		margin-top: -3.8rem;
+
+		h2 {
+			margin-bottom: 6rem;
+			padding: 0.5rem 4rem;
+			display: inline-block;
+
+			span {
+				filter: contrast(150%);
+			}
+		}
+	}
+}
 //* --------------------------- [Checkbox] -------------------------------------
 .checkbox {
 	&._error {

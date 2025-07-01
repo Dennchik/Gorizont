@@ -3,32 +3,11 @@
 
 .about {
 	background-color: $color-fill-transparent;
-	&::before {
-		content: '';
-		position: absolute;
-		width: 100%;
-		height: 1px;
-		background: $color-fern;
-		opacity: 0.3;
-		top: 8rem;
-	}
-
-	// .about__body
-	&__body {
-		padding-top: 10rem;
-		padding-bottom: 10rem;
-	}
 
 	// .about__title
 	&__title {
-		text-align: right;
-		margin-bottom: 4rem;
-		margin-top: -3.8rem;
-
 		h2 {
 			background-color: #d3cbe5;
-			padding: 0.5rem 4rem;
-			display: inline-block;
 		}
 	}
 

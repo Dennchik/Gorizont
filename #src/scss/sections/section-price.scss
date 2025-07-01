@@ -3,36 +3,11 @@
 
 .price {
 	background-color: $color-fill-transparent;
-	&::before {
-		content: '';
-		position: absolute;
-		width: 100%;
-		height: 1px;
-		background: $color-fill;
-		opacity: 0.3;
-		top: 8rem;
-	}
-
-	// .price__body
-	&__body {
-		padding-top: 10rem;
-		padding-bottom: 10rem;
-	}
 
 	// .price__title
 	&__title {
-		text-align: right;
-		margin-bottom: 4rem;
-		margin-top: -3.8rem;
-
 		h2 {
 			background-color: $color-fill-transparent;
-			padding: 0.5rem 4rem;
-			display: inline-block;
-
-			span {
-				filter: contrast(150%);
-			}
 		}
 	}
 
@@ -61,13 +36,14 @@
 			border: 1px solid $background-color;
 			height: fit-content;
 			border-radius: 0.5rem;
+			// max-width: 31.93%;
 		}
 
 		&:nth-child(2) {
 			background-color: $background-color;
 			border-radius: 0.4rem;
 			filter: contrast(103%);
-			max-width: 49rem;
+			max-width: 31.93%;
 			p {
 				strong {
 					color: $color-Rouse;
