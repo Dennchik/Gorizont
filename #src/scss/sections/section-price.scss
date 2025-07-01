@@ -2,12 +2,12 @@
 @use '../core/mixins' as *;
 
 .price {
-	background-color: $color-fill-transparent;
+	background-color: $color-Blue;
 
 	// .price__title
 	&__title {
 		h2 {
-			background-color: $color-fill-transparent;
+			background-color: $color-Blue;
 		}
 	}
 

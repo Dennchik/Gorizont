@@ -2,12 +2,12 @@
 @use '../core/mixins' as *;
 
 .about {
-	background-color: $color-fill-transparent;
+	background-color: $color-Blue;
 
 	// .about__title
 	&__title {
 		h2 {
-			background-color: #d3cbe5;
+			background-color: $color-Blue;
 		}
 	}
 
