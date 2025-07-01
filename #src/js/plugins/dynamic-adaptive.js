@@ -1,5 +1,3 @@
-
-
 export function dynamicAdaptive() {
 	let originalPositions = [];
 	let daElements = document.querySelectorAll('[data-da]');
@@ -140,3 +138,8 @@ export function dynamicAdaptive() {
 	// }
 
 };
+
+//* --------------------------- Адаптив блоков ---------------------------------
+// import { dynamicAdaptive } from './plugins/dynamic-adaptive.js';
+
+// dynamicAdaptive();

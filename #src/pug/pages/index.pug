@@ -2,8 +2,8 @@ extends ../layouts/app_layout
 append link
 	link(rel="stylesheet" type="text/css" href="@@webRoot/css/index.min.css")
 prepend script
-	+script(`${webRoot}/js/index.min.js`) 
-	script(defer src="@@webRoot/js/vendors/runtime.min.js")
+	+script(`${webRoot}/js/vendors/runtime.min.js`)
+	//- script(defer src="@@webRoot/js/vendors/runtime.min.js")
 	//- script(defer src="@@webRoot/js/vendors/anime-vendors.min.js")
 	//- script(defer="defer" src="@@webRoot/js/vendors/swiper-bundle.min.js")
 	//- script(defer="defer" src="@@webRoot/js/vendors/react-vendors.min.js")
@@ -12,19 +12,28 @@ block title
 
 block main-content
 	section.main-content__sections.top-box
-		.bg-image
-			._image 
-				img(src="@@webRoot/img/parallax/prew.jpg" alt="image")
 		include ../sections/section-perform
-		.bg-bottom 
-		include ../layouts/page-grid-4
+		.bg-bottom-t 
+		//- include ../layouts/page-grid-4 
 	section.main-content__sections#about
 		include ../sections/section-about
-		include ../layouts/page-grid-3
+		//- include ../layouts/page-grid-3
+		.bg-bottom-r
+	section.main-content__sections#services
+		include ../sections/section-services 
+		.bg-bottom-t
+	section.main-content__sections#price
+		include ../sections/section-price
+	section.main-content__sections#stage
+		include ../sections/section-stageswork
+	section.main-content__sections#products
+		include ../sections/section-products
+
+
 	section.main-content__sections#partners
-		include ../sections/section-partners
-		//- section.main-content__footer
-			include ../layouts/footer 
+		include ../sections/section-partners 
+			//- section.main-content__footer
+				include ../layouts/footer 
 //- block content-hidden
 //- include ../chunks/content-hidden
 //- block project-list

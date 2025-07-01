@@ -8,7 +8,7 @@
 	// .page__header
 	&__header {
 		position: fixed;
-		z-index: 12;
+		z-index: 11;
 		top: 0;
 		left: 0;
 		width: 100%;
@@ -47,7 +47,7 @@
 		z-index: 1;
 		width: 100%;
 		height: 100%;
-		background-color: $color-ivory;
+		background-color: $background-color;
 		overflow: hidden;
 	}
 
@@ -67,9 +67,8 @@
 			width: 100%;
 			background-size: 111% 200%;
 			background-position: 0 0;
-			box-shadow: 0 -7px 10px $black-color;
+			box-shadow: 0 -7px 10px $color-fill;
 			backdrop-filter: blur(22px);
-			@extend .gradient-footer;
 		}
 	}
 
@@ -91,7 +90,7 @@
 		background: rgb(28, 21, 63);
 	}
 	100% {
-		background: $black-color;
+		background: $color-fill;
 	}
 }
 

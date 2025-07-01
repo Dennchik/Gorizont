@@ -3,10 +3,10 @@
 // todo --------------------------- Assets -------------------------------------
 @use 'assets/swiper-11.2.8';
 @use 'assets/preloader';
-@use 'assets/return-button';
 // todo --------------------------- Modules ------------------------------------
 @use 'modules/parallax';
 @use 'modules/burger-button';
+@use 'modules/return-button';
 // @use 'modules/burger-menu';
 // todo --------------------------- Chunks -------------------------------------
 
@@ -24,10 +24,6 @@
 @use 'pages/page';
 // todo -------------------------- Section -------------------------------------
 
-// todo ------------------------ Default fonts ---------------------------------
-// &display=swap&subset=cyrillic-ext
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
-// #region
 // todo ---------------------------- Style -------------------------------------
 .wrapper {
 	min-height: 100vh;
@@ -39,7 +35,7 @@
 	max-width: $maxWidthContainer;
 	box-sizing: content-box;
 	margin: 0 auto;
-	padding: 0 4rem;
+	padding: 0 2rem;
 
 	@include screen-1140 {
 		padding: 0 2rem;
@@ -61,15 +57,47 @@
 }
 
 [class*='_title'] {
+	h1 {
+		font-weight: 500;
+		text-transform: uppercase;
+		// transform: scale(1, 1.5);
+		span {
+			// filter: contrast(150%);
+		}
+	}
 	h2 {
 		font-weight: 500;
-		color: $color-fill;
 		line-height: 100%;
-		margin-bottom: 2.5rem;
 		text-transform: uppercase;
 		transform: scale(1, 1.3);
 		letter-spacing: 1.2px;
-		filter: contrast(150%);
+		span {
+			filter: contrast(150%);
+		}
+	}
+
+	h3 {
+		font-weight: 500;
+		line-height: 100%;
+		text-transform: uppercase;
+		transform: scale(1, 1.2);
+		letter-spacing: 1.2px;
+
+		span {
+			filter: contrast(150%);
+		}
+	}
+
+	h4 {
+		font-weight: 500;
+		line-height: 100%;
+		text-transform: uppercase;
+		transform: scale(1, 1.2);
+		letter-spacing: 1.2px;
+
+		span {
+			filter: contrast(150%);
+		}
 	}
 }
 

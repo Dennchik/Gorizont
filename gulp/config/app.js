@@ -37,28 +37,26 @@ export const app = {
 				// filename: '[name].min.js'
 			},
 			// dinamic: { import: ['./#src/js/assets/dynamic.js'] },
-			index: {
-				import: ['./#src/js/pages/index.jsx'],
-				// dependOn: ['react-vendors', 'anime-vendors', 'swiper-bundle'],
-				// filename: '[name].min.js'
-			},
+			// index: {
+			// import: ['./#src/js/pages/index.jsx'],
+			// dependOn: ['react-vendors', 'anime-vendors', 'swiper-bundle'],
+			// filename: '[name].min.js'
+			// },
 			//! depend On - vendors
 			// 'react-vendors': {
 			// 	import: ['react', 'react-dom', 'react-router-dom', 'prop-types'],
 			// 	filename: 'vendors/[name].min.js',
 			// },
 
-			'anime-vendors': {
-				import: ['gsap', 'gsap/ScrollSmoother',
-					// 'gsap/ScrollTrigger'
-				],
-				filename: 'vendors/[name].min.js',
-			},
+			// 'anime-vendors': {
+			// 	import: ['gsap', 'gsap/ScrollSmoother', 'gsap/ScrollTrigger'],
+			// 	filename: 'vendors/[name].min.js',
+			// },
 
-			'swiper-bundle': {
-				import: ['swiper/bundle'],
-				filename: 'vendors/[name].min.js',
-			},
+			// 'swiper-bundle': {
+			// 	import: ['swiper/bundle'],
+			// 	filename: 'vendors/[name].min.js',
+			// },
 
 			// 'video-vendors': {
 			// 	import: ['video.js'], // Название для отдельного chunks

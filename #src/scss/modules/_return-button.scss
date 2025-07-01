@@ -11,12 +11,12 @@
 	margin-left: 1vw;
 
 	i {
-		box-shadow: 0 0 7px #fff;
+		box-shadow: $boxShadow;
 
 		&::before {
 			text-shadow: none;
 			font-weight: 400;
-			color: $color-fern;
+			color: $background-color;
 		}
 	}
 
@@ -31,7 +31,7 @@
 		cursor: pointer;
 		transition: all 0.5s ease-in-out;
 		border-radius: 50%;
-		background: $color-arricot;
+		background: $color-fill;
 
 		&:hover {
 			animation: fadeInBackground;

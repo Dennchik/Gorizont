@@ -10,7 +10,7 @@ export function mainSlide(Slide) {
 			// 	disableOnInteraction: true,
 			// },
 			speed: 800,
-			spaceBetween: 20,
+			spaceBetween: 5,
 			loop: true,
 			grabCursor: true,
 			centeredSlides: false,

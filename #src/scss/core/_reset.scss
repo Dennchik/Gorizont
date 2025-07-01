@@ -1,6 +1,12 @@
 @use 'variables' as *;
 @use 'mixins' as *;
+// todo ----------------------- [Default fonts] --------------------------------
+// &display=swap&subset=cyrillic-ext
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
 
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900&display=swap');
+// #region\
+// todo ----------------------- [Reset codes] ----------------------------------
 html {
 	font: {
 		style: normal;
@@ -10,8 +16,6 @@ html {
 	}
 	height: 100%;
 	counter-reset: heading;
-	letter-spacing: 1.1px;
-	color: $color-fill;
 
 	@include screen-1024 {
 		font-size: 50%;
@@ -21,7 +25,8 @@ html {
 body {
 	overscroll-behavior: none;
 	font: 1.6rem/1.6 $font-default;
-	background: $color-ivory;
+	color: $color-fill;
+	background-color: transparent;
 
 	&.no-scroll {
 		overflow: hidden;

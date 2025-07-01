@@ -1,41 +1,58 @@
 @use 'core/all.scss' as *;
 
 .partners {
-	background: $color-natural;
+	&::before {
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 1px;
+		background: $color-fill;
+		opacity: 0.3;
+		top: 8rem;
+	}
+
 	// .partners__body
 	&__body {
-		padding: 8rem 0;
+		padding-top: 10rem;
+		padding-bottom: 10rem;
 	}
 
 	// .partners__title
 	&__title {
-		width: 100%;
-		text-align: center;
+		text-align: right;
+		margin-bottom: 4rem;
+		margin-top: -3.8rem;
+
+		h2 {
+			background-color: $background-color;
+			padding: 0.5rem 4rem;
+			display: inline-block;
+
+			span {
+				filter: contrast(150%);
+			}
+		}
 	}
 
 	// .partners__content
-
 	&__content {
-		padding: 4rem;
+		padding: 4rem 0;
 	}
 }
 
 .partners-slide {
 	// .partners-slide__body
-
 	&__body {
 		overflow: hidden;
 	}
 
 	// .partners-slide__column
-
 	&__column {
 		display: flex;
 		justify-content: space-between;
 	}
 
 	// .partners-slide__image
-
 	&__image {
 		max-height: 70px;
 		display: flex;

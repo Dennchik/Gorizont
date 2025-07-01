@@ -1,0 +1,106 @@
+@use '../core/variables' as *;
+@use '../core/mixins' as *;
+
+.services {
+	position: relative;
+	z-index: 1;
+	&::before {
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 1px;
+		background: $color-fill;
+		opacity: 0.3;
+		top: 8rem;
+	}
+
+	// .services__body
+	&__body {
+		padding-top: 10rem;
+		padding-bottom: 10rem;
+	}
+
+	// .services__title
+	&__title {
+		text-align: right;
+		margin-bottom: 4rem;
+		margin-top: -3.8rem;
+
+		h2 {
+			background-color: $background-color;
+			padding: 0.5rem 4rem;
+			display: inline-block;
+
+			span {
+				filter: contrast(150%);
+			}
+		}
+	}
+
+	// .services__content
+	&__content {
+		position: relative;
+		display: grid;
+		grid-template-columns: repeat(3, minmax(200px, 1fr));
+		gap: 3rem;
+
+		@include screen-768 {
+			grid-template-columns: repeat(2, minmax(200px, 1fr));
+		}
+
+		@include screen-690 {
+			grid-template-columns: repeat(1, minmax(200px, 1fr));
+		}
+	}
+
+	// .services__column
+	&__column {
+		height: 100%;
+	}
+}
+
+.card {
+	padding: 2rem 1.8rem 3rem;
+	box-shadow: 3px 3px 10px 0px rgba(36, 18, 33, 0.3);
+	background: $color-Rouse;
+	border-radius: 0.5rem;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+
+	// card__title
+	&__title {
+		display: flex;
+		align-items: center;
+		gap: 1.6rem;
+		margin-bottom: 2rem;
+	}
+
+	// .card__text
+	&__text {
+		flex: 1 1 auto;
+		filter: contrast(180%);
+
+		&:not(:last-child) {
+			margin-bottom: 3rem;
+		}
+
+		p {
+			transform: scaleY(1.2);
+			line-height: 120%;
+
+			&:not(:last-child) {
+				margin-bottom: 2rem;
+			}
+		}
+	}
+
+	&__image {
+		max-width: 20%;
+		width: 100%;
+		img {
+			width: 100%;
+			display: block;
+		}
+	}
+}

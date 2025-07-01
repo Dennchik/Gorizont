@@ -26,7 +26,7 @@
 	&__image {
 		img {
 			border-radius: 0.4rem;
-			box-shadow: 0 0 15px -2px rgba(56, 56, 56, 0.5);
+			box-shadow: $boxShadow;
 
 			@include screen-620 {
 				max-height: 390px;
@@ -53,7 +53,7 @@
 			cursor: pointer;
 			filter: contrast(190%);
 			display: block;
-			background-color: $color-fern;
+			background-color: $color-fill;
 			opacity: 1;
 			border-radius: 0.1rem;
 			width: 1rem;
@@ -65,7 +65,7 @@
 		}
 
 		.swiper-pagination-bullet-active {
-			background-color: $color-arricot;
+			background-color: $color-Rouse;
 			scale: 1.5;
 		}
 	}
@@ -122,7 +122,7 @@
 			font-family: swiper-icons;
 			font-size: 1.6rem;
 			font-weight: 900;
-			color: $color-fern;
+			color: $color-fill;
 			display: flex;
 			align-items: center;
 
@@ -138,14 +138,14 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		filter: contrast(190%);
+		filter: contrast(150%);
 	}
 
 	// .slide__value
 	&__value {
 		font-size: 2.4rem;
 		font-weight: 600;
-		color: $color-fern;
+		color: $color-fill;
 		width: 100%;
 		white-space: nowrap;
 	}
@@ -154,7 +154,7 @@
 	&__line-prev {
 		width: 36px;
 		height: 2px;
-		background-color: $color-fern;
+		background-color: $color-fill;
 		margin-left: 0.5rem;
 		margin-right: 1.6rem;
 		filter: contrast(190%);
@@ -164,7 +164,7 @@
 	&__line-next {
 		width: 36px;
 		height: 2px;
-		background-color: $color-fern;
+		background-color: $color-fill;
 		margin-left: 1.6rem;
 		margin-right: 0.5rem;
 		filter: contrast(190%);

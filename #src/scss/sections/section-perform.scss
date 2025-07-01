@@ -1,22 +1,46 @@
 @use 'core/all.scss' as *;
 
-.vertical-reverse {
-	height: 100vh;
-	z-index: 9;
-}
+// .vertical-reverse {
+// 	height: 100vh;
+// 	z-index: 9;
+// 	background-color: $color-warm;
+// }
 
 .perform {
+	position: relative;
 	z-index: 11;
 
 	// .perform__body
 	&__body {
 		position: relative;
-		min-height: 100vh;
+		min-height: calc(100vh - 12rem);
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		padding-top: 8rem;
-		padding-bottom: 8rem;
+		padding-top: 10rem;
+		padding-bottom: 2rem;
+	}
+
+	// .perform__title
+	&__title {
+		position: relative;
+		z-index: 9;
+		h1 {
+			font-weight: 700;
+			font-size: clamp(3.4375rem, calc(2.427125rem + 4.051875vw), 8.489375rem);
+			-webkit-text-stroke: 2px $color-fill-light;
+			text-transform: uppercase;
+			line-height: 100%;
+			margin-bottom: 2rem;
+
+			span {
+				display: block;
+				&:nth-child(1) {
+					color: transparent;
+					-webkit-text-stroke: 1px $color-fill;
+				}
+			}
+		}
 	}
 
 	// .perform__content
@@ -26,7 +50,6 @@
 		display: flex;
 		justify-content: space-between;
 		gap: 1.6rem;
-		backdrop-filter: blur(10px);
 
 		@include screen-768 {
 			flex-direction: column;
@@ -39,19 +62,20 @@
 	// .perform__column
 	&__column {
 		flex: 0 1 50%;
-		padding-top: 2rem;
 
 		&:nth-child(1) {
-			padding-top: 6.5rem;
-
-			@include screen-620 {
-				padding-top: 4rem;
+			.perform__items {
+				padding-top: 3.5rem;
+				@include screen-620 {
+					padding-top: 4rem;
+				}
 			}
 		}
 
 		&:nth-child(2) {
 			border-radius: 0.4rem;
 			min-width: 260px;
+			overflow: hidden;
 
 			.perform__items {
 				display: flex;
@@ -63,11 +87,6 @@
 				padding-top: 0;
 			}
 		}
-	}
-
-	// .perform__items
-	&__items {
-		padding: 2rem 0.5rem;
 	}
 
 	// .perform__text
@@ -137,6 +156,7 @@
 		}
 	}
 }
+
 @keyframes arrow {
 	0% {
 		opacity: 0;
@@ -150,13 +170,14 @@
 		transform: translate(0, 20px) rotate(45deg);
 	}
 }
+
 .hgroup-items {
 	h1,
 	h3 {
 		line-height: 100%;
 		text-transform: uppercase;
-		margin-bottom: 2rem;
-		filter: contrast(180%);
+		margin-bottom: 1.6rem;
+		filter: contrast(150%);
 	}
 	h3 {
 		transform: scaleY(1.2);

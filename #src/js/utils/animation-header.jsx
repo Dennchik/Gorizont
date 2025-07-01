@@ -16,7 +16,6 @@ export function animationHeader() {
 				header.classList.add('without-border');
 				header.classList.remove('with-border');
 				arrow.classList.add('anime');
-
 			}
 		};
 		// Выполнение timeLineHeaderItem при загрузке

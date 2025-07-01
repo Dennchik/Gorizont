@@ -7,17 +7,13 @@
 	align-items: center;
 
 	&::before {
-		z-index: 7;
-		opacity: 0;
 		content: '';
 		position: absolute;
-		height: 8rem;
-		width: 100%;
-		background-size: 111% 200%;
-		background-position: 0 0;
-		transition: opacity 0.5s ease-in-out;
-		animation: fadeOutGradient 0.5s ease-in-out alternate-reverse;
-		backdrop-filter: blur(40px);
+		inset: 0;
+		background: rgba(248, 245, 255, 0.8);
+		backdrop-filter: blur(15px);
+		border-bottom: 1px solid #d1c6dd;
+		z-index: -1;
 	}
 
 	&::after {
@@ -32,30 +28,15 @@
 		transition: opacity 0.7s ease-in-out;
 	}
 
-	&.with-border {
-		.header__item {
-			filter: contrast(190%);
-		}
-		&::before {
-			backdrop-filter: blur(40px);
-			animation: fadeInGradient 1.9s ease-in-out forwards;
-			opacity: 1;
-		}
-
-		&::after {
-			z-index: 7;
-		}
-	}
-
 	// .header__container
 	&__container {
 		width: 100%;
-		padding-left: 1rem !important;
 	}
 
 	// .header__burger-menu
 	&__burger-button {
 		margin-left: 1rem;
+
 		@include min-768 {
 			// display: none;
 		}
@@ -95,7 +76,7 @@
 		align-items: center;
 
 		&:nth-child(2) {
-			padding: 1.3rem 2rem;
+			padding: 1.3rem 1.3rem;
 			flex-direction: column;
 			justify-content: center;
 			position: relative;
@@ -108,7 +89,8 @@
 		height: 8rem;
 		padding: 1rem;
 		transform: translateY(40%);
-		border: 1px solid #99826a;
+		border: 1px solid $color-fill-light;
+		background-color: $background-color;
 
 		@include screen-375 {
 			width: 7rem;
@@ -216,25 +198,6 @@
 }
 
 //* ----------------------------------------------------------------------------
-.el-community {
-	display: flex;
-	align-items: center;
-
-	.icon-contacts {
-		font-size: 4.4rem;
-		margin-right: 1rem;
-		transition: all 0.4s ease-in-out;
-		color: $gray;
-
-		@include screen-425 {
-			margin-right: 0;
-		}
-
-		@include screen-690 {
-			font-size: 34px;
-		}
-	}
-}
 
 //* ----------------------------------------------------------------------------
 .network-menu {
