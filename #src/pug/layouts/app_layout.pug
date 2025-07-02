@@ -15,9 +15,8 @@ html(lang="ru")
 			link(rel="stylesheet" type="text/css" href="@@webRoot/css/main.min.css")
 		block style
 		block script
-			script(defer src="@@webRoot/js/app.min.js")
-			script(defer src="@@webRoot/js/main.min.js")
-
+			+script(`${webRoot}/js/app.min.js`)
+			+script(`${webRoot}/js/main.min.js`)
 		block title
 		- var text
 		title #{text}
@@ -41,6 +40,6 @@ html(lang="ru")
 					block button
 						.return-button#scrollButton
 							+iconfont('angle-down', '_button')
-				block content-hidden
+				//- block content-hidden
 				//- block burger-menu
 					include ../modules/burger-menu 

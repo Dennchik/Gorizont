@@ -1,7 +1,7 @@
 {
   "name": "portfolio",
   "version": "1.0.0",
-  "description": "Portfolio",
+  "description": "Gorizont",
   "main": "index.js",
   "type": "module",
   "scripts": {

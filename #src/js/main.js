@@ -50,16 +50,17 @@ document.addEventListener('DOMContentLoaded', function () {
 	// }
 });
 
+
 //* ------------------------------ Burger Menu ---------------------------------
 const burgerButton = document.querySelector('.burger-button');
-const accelerate = document.querySelector('.accelerate');
+// const accelerate = document.querySelector('.accelerate');
 const networkLinks = document.querySelector('.network-menu__links');
 const headerButton = document.querySelector('.header__button');
 
 // const itemButton = document.querySelector('.item-button');
 // const closeButton = document.querySelector('.project-list__close-button');
 // const projectList = document.querySelector('.project-list');
-const anchorLinks = document.querySelectorAll('.anchor-link');
+// const anchorLinks = document.querySelectorAll('.anchor-link');
 
 burgerButton.addEventListener('click', () => {
 	networkLinks.classList.toggle('_rotate');
@@ -74,15 +75,15 @@ burgerButton.addEventListener('click', () => {
 	// }
 });
 //* ----------------------------- Burger Button --------------------------------
-anchorLinks.forEach(anchorLink => {
-	anchorLink.addEventListener('click', () => {
-		if (!accelerate.classList.contains('hide')) {
-			accelerate.classList.add('hide');
-			document.body.classList.remove('no-scroll');
-		}
-		burgerButton.classList.remove('_open-menu');
-	});
-});
+// anchorLinks.forEach(anchorLink => {
+// 	anchorLink.addEventListener('click', () => {
+// 		if (!accelerate.classList.contains('hide')) {
+// 			accelerate.classList.add('hide');
+// 			document.body.classList.remove('no-scroll');
+// 		}
+// 		burgerButton.classList.remove('_open-menu');
+// 	});
+// });
 
 
 //* ----------------------------------------------------------------------------

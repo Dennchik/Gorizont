@@ -1,134 +1,77 @@
 @use '../core/all' as *;
-.preloader {
-	position: fixed;
-	left: 0px;
-	top: 0px;
-	width: 100%;
-	min-height: 100vh;
-	z-index: 19;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	transition: all 0.5s;
-	opacity: 1;
-	background: $color-fill;
-
-	// svg {
-	// 	transform: translateY(40%);
-	// 	z-index: 7;
-	// 	overflow: visible;
-	// 	width: 100px;
-	// 	height: 150px;
-
-	// 	g {
-	// 		animation: preloader-slide 2s linear infinite;
-	// 		&:nth-child(2) {
-	// 			animation-delay: 0.5s;
-	// 			path {
-	// 				animation-delay: 0.5s;
-	// 				stroke-dasharray: 0px 158px;
-	// 				stroke-dashoffset: 1px;
-	// 			}
-	// 		}
-	// 	}
-
-	// 	path {
-	// 		stroke: url(#gradient);
-	// 		stroke-width: 20px;
-	// 		stroke-linecap: round;
-	// 		fill: none;
-	// 		stroke-dasharray: 0 157px;
-	// 		stroke-dashoffset: 0;
-	// 		animation: preloader-escalade 2s cubic-bezier(0.8, 0, 0.2, 1) infinite;
-	// 	}
-	// }
-
-	&__title {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		gap: 4rem;
-		position: absolute;
-		z-index: 1;
+.loaded {
+	.preloader {
+		position: fixed;
+		left: 0px;
+		top: 0px;
+		width: 100%;
 		min-height: 100vh;
-		padding: 8rem 2rem;
+		z-index: 19;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		opacity: 1;
+		background: $color-fill;
+		transition: opacity 0.5s ease-in-out;
 
-		span {
-			display: block;
-			font-size: clamp(
-				3.4375rem,
-				calc(2.427125rem + 10.051875vw),
-				12.489375rem
-			);
+		&__title {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			gap: 4rem;
+			position: absolute;
+			z-index: 1;
+			min-height: 100vh;
+			padding: 8rem 2rem;
 
-			&:nth-child(1),
-			&:nth-child(2) {
-				animation: anime-title 3s cubic-bezier(0.22, 0.61, 0.36, 1) infinite;
-			}
+			span {
+				display: block;
+				font-size: clamp(
+					1.4375rem,
+					calc(1.2427125rem + 10.051875vw),
+					12.489375rem
+				);
 
-			&:nth-child(1) {
-				position: relative;
-				-webkit-text-stroke: 2px $color-Rouse;
-				text-shadow: 1px 1px 5px #bbbbbb;
-				display: flex;
-				justify-content: center;
+				&:nth-child(1),
+				&:nth-child(2) {
+					animation: anime-title 3s cubic-bezier(0.22, 0.61, 0.36, 1) infinite;
+					text-shadow: 7px 7px 15px #030303;
+				}
 
-				// &::after {
-				// 	content: '';
-				// 	position: absolute;
-				// 	display: block;
-				// 	left: 0;
-				// 	bottom: 0.2em;
-				// 	width: 70%;
-				// 	height: 0.6rem;
-				// 	background: transparent;
-				// 	left: 50%;
-				// 	transform: translateX(-50%);
-				// 	box-shadow:
-				// 		1px 1px 0 $color-Rouse,
-				// 		-1px -1px 0 $color-Rouse; /* имитация контура */
-				// }
-			}
+				&:nth-child(1) {
+					position: relative;
+					-webkit-text-stroke: 2px $color-Rouse;
+					display: flex;
+					justify-content: center;
 
-			&:nth-child(2) {
-				-webkit-text-stroke: 2px $color-Rouse;
-				text-shadow: 1px 1px 5px #bbbbbb;
-				// animation
-				animation: anime-title-r 3s cubic-bezier(0.22, 0.61, 0.36, 1) infinite;
-				// animation-duration: 6.3s;
-				// animation-iteration-count: infinite;
-				// animation-timing-function: linear;
+					// &::after {
+					// 	content: '';
+					// 	position: absolute;
+					// 	display: block;
+					// 	left: 0;
+					// 	bottom: 0.2em;
+					// 	width: 70%;
+					// 	height: 0.6rem;
+					// 	background: transparent;
+					// 	left: 50%;
+					// 	transform: translateX(-50%);
+					// 	box-shadow:
+					// 		1px 1px 0 $color-Rouse,
+					// 		-1px -1px 0 $color-Rouse; /* имитация контура */
+					// }
+				}
+
+				&:nth-child(2) {
+					-webkit-text-stroke: 2px $color-Rouse;
+					animation: anime-title-r 3s cubic-bezier(0.22, 0.61, 0.36, 1) infinite;
+				}
 			}
 		}
-	}
-}
 
-.preloader-remove {
-	opacity: 0;
-	z-index: -2;
-}
-
-@keyframes preloader-slide {
-	0% {
-		transform: translateY(-50px);
-	}
-	100% {
-		transform: translateY(50px);
-	}
-}
-
-@keyframes preloader-escalade {
-	0% {
-		stroke-dasharray: 0 157px;
-		stroke-dashoffset: 0;
-	}
-	50% {
-		stroke-dasharray: 156px 157px;
-		stroke-dashoffset: 0;
-	}
-	100% {
-		stroke-dasharray: 156px 157px;
-		stroke-dashoffset: -156px;
+		&.preloader-remove {
+			// opacity: 0;
+			// z-index: -2;
+		}
 	}
 }
 
@@ -136,15 +79,9 @@
 	0% {
 		transform: translateY(0%);
 	}
-	// 25% {
-	// 	transform: translateY(21.14%);
-	// }
 	50% {
 		transform: translateY(50%);
 	}
-	// 75% {
-	// 	transform: translateY(-21.14%);
-	// }
 	100% {
 		transform: translateY(0%);
 	}
@@ -154,15 +91,9 @@
 	0% {
 		transform: translateY(50%);
 	}
-	// 25% {
-	// 	transform: translateY(21.14%);
-	// }
 	50% {
 		transform: translateY(0%);
 	}
-	// 75% {
-	// 	transform: translateY(-21.14%);
-	// }
 	100% {
 		transform: translateY(50%);
 	}
