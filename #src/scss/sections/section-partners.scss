@@ -34,9 +34,9 @@
 
 		img {
 			object-fit: fill;
-			height: auto;
+			height: 100%;
 			width: auto;
-			object-position: auto 100%;
+			object-position: center;
 			aspect-ratio: 600 / 140;
 			filter: grayscale(1);
 		}

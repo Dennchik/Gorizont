@@ -12,8 +12,8 @@ import { slidePartners } from './layouts/slide.js';
 slidePartners('.slide-partners');
 // todo --------------------------- Plugins ------------------------------------
 //* ---------------- Плавная прокрутка страницы до позиции ---------------------
-// import { anchorsSmoothScrolling } from './assets/anchors-smooth-scrolling.js';
-// anchorsSmoothScrolling();
+import { anchorsSmoothScrolling } from './plugins/anchors-smooth-scrolling.js';
+anchorsSmoothScrolling();
 //* -------------- Возврат к предидущей позиции на страници --------------------
 import returnToSavedPosition from './modules/return-position.js';
 returnToSavedPosition();

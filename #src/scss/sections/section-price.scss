@@ -8,6 +8,7 @@
 	&__title {
 		h2 {
 			background-color: $color-Blue;
+			// margin-bottom: 1rem !important;
 		}
 	}
 
@@ -26,6 +27,13 @@
 		display: flex;
 		justify-content: flex-end;
 		gap: 3rem;
+
+		@include screen-768 {
+			&:nth-child(1) {
+				flex-direction: column;
+				align-items: flex-end;
+			}
+		}
 	}
 
 	// .price__info
@@ -36,7 +44,8 @@
 			border: 1px solid $background-color;
 			height: fit-content;
 			border-radius: 0.5rem;
-			// max-width: 31.93%;
+			max-width: fit-content;
+			text-align: right;
 		}
 
 		&:nth-child(2) {
@@ -48,6 +57,10 @@
 				strong {
 					color: $color-Rouse;
 				}
+			}
+
+			@include screen-768 {
+				min-width: 100%;
 			}
 		}
 
