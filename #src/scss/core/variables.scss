@@ -10,26 +10,18 @@ $min-height: calc(100% - ($headerHeight + $footerHeight));
 //* ---------------------------- [Font Variables] ------------------------------
 $font-path: '../fonts';
 $font-default: 'Source Sans 3', sans-serif;
-// $font-default: 'Montserrat', sans-serif;
-$font-family-secondary: 'Amatic SC', sans-serif;
-$font-family-exclude: 'Rubik Wet Paint', sans-serif;
-$font-family-exclude-secondary: 'Sofia Sans Extra Condensed', sans-serif;
 $font-weight-default: 400;
 $font-size: 1.6rem;
 $font-size-default: 1.4rem;
 //* -------------------------------- [Color] -----------------------------------
-$color-arricot: #e09132;
-$color-natural: #a58e74;
 $color-warm: #ffefcd;
 $color-ivory: #fff4db;
 $color-fern: #8a9064;
 $color-fill-dark: #211041;
 $color-fill: #48386b;
 $color-fill-light: #7e6aa8;
-// $color-Rouse: #bd8db1; //#e887be
 $color-Rouse: #e887be;
 $color-Blue: #d2eaff;
-// $color-Rouse-light: #e6c9de;
 $color-fill-transparent: #d3cbe5;
 $color-dgreen: #304537;
 

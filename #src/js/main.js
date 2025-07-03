@@ -28,7 +28,7 @@ import { syncHeight } from './utils/syncHeight.jsx';
 syncHeight({
 	sourceSelector: '.perform__text',
 	targetSelector: '.perform__shape-block',
-	offset: 20, // немного больше, чтобы не врезалась последняя строка
+	offset: 25, // немного больше, чтобы не врезалась последняя строка
 	autoResize: true,
 });
 // todo ---------------------- [Animations] ------------------------------------

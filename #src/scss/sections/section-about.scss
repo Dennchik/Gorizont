@@ -39,7 +39,6 @@
 
 	// .about__title-text
 	&__title-text {
-		transform: scaleY(1.2);
 		margin-bottom: 3rem;
 	}
 
@@ -47,11 +46,6 @@
 	&__text {
 		&:not(:last-child) {
 			margin-bottom: 3rem;
-		}
-
-		.t-h3 {
-			line-height: 100%;
-			margin-bottom: 2rem;
 		}
 
 		p {
@@ -79,7 +73,7 @@
 		@include screen-768 {
 			max-width: 100%;
 			float: none;
-			margin: 0 0 4rem;
+			margin: 0 0 6rem;
 		}
 
 		@include min-768 {

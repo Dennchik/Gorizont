@@ -1,17 +1,16 @@
 //* --------------------------------[jScript]-----------------------------------
 export default function loaded(item) {
-	document.documentElement.classList.add('loaded');
 	window.onload = function () {
-
+		document.documentElement.classList.add('loaded');
 		setInterval(() => {
-			document.querySelector(item).classList.add('preloader-remove');
 			const preloader = document.querySelector('.preloader');
 			if (preloader) {
-				preloader.classList.contains('.preloader-remove');
 				setInterval(() => {
-					preloader.style.opacity = '-2';
-				}, 500);
+					preloader.style.zIndex = '-2';
+					preloader.style.display = 'none';
+				}, 700);
 			}
-		}, 1000);
+			document.querySelector(item).classList.add('preloader-remove');
+		}, 2000);
 	};
 }
