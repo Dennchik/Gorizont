@@ -67,12 +67,19 @@
 		}
 	}
 
-	&__image {
+	&__icon {
 		max-width: 20%;
 		width: 100%;
+
 		img {
 			width: 100%;
 			display: block;
+		}
+
+		._icon {
+			color: $color-blue;
+			filter: contrast(190%);
+			font-size: 7rem;
 		}
 	}
 }

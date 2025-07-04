@@ -77,6 +77,50 @@
 			justify-content: center;
 			position: relative;
 		}
+
+		&:nth-child(3) {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 2rem;
+
+			@include screen-620 {
+				gap: 1rem;
+			}
+		}
+	}
+
+	// .header__country
+	&__country {
+		width: auto;
+		display: flex;
+		align-items: center;
+
+		img {
+			height: 2.4rem;
+			margin-right: 1rem;
+			@include screen-620 {
+				padding-right: 0;
+			}
+		}
+
+		@include screen-425 {
+			display: none;
+		}
+
+		p {
+			text-transform: uppercase;
+			line-height: 100%; /* 24/20 */
+			letter-spacing: 0;
+			font-variation-settings:
+				'wght' 500,
+				'ital' 0;
+			filter: contrast(150%);
+
+			@include screen-620 {
+				display: none;
+			}
+		}
 	}
 
 	// .header__logo
@@ -120,7 +164,7 @@
 			font-variation-settings:
 				'wght' 500,
 				'ital' 0;
-			filter: contrast(200%);
+			filter: contrast(150%);
 		}
 
 		&:not(:last-child) {
@@ -172,22 +216,16 @@
 
 	// .header__button
 	&__button {
-		pointer-events: all;
 		position: relative;
-		right: 0;
-		top: 0;
+		pointer-events: all;
 		z-index: 9;
 
 		&._active {
-			top: 4.6rem;
-			animation: fadeInOutButton 0.5s ease-in-out;
+			top: 6.2rem;
+			animation: fadeInOutButton 0.1s ease-in-out;
 
 			@include screen-1024 {
-				top: 7.5rem;
-			}
-
-			@include screen-375 {
-				top: 8rem;
+				top: 8.5rem;
 			}
 		}
 	}
@@ -196,9 +234,14 @@
 .network-menu {
 	pointer-events: none;
 	position: absolute;
-	top: 0;
+	z-index: 11;
+	top: 1.3rem;
 	right: 0;
 	filter: contrast(150%);
+
+	@include screen-490 {
+		top: -0.7rem;
+	}
 
 	// .network-menu__body
 	&__body {
@@ -219,41 +262,27 @@
 		}
 	}
 
-	// .network-menu__social-link
-	&__social-link {
-		pointer-events: all;
-		z-index: 99;
-	}
-
 	// .network-menu__circle-svg
 	&__circle-svg {
-		pointer-events: all;
+		pointer-events: none;
 		transform: translateX(2px) rotate(179deg);
 		transform-origin: 92px 92px;
 		transition: opacity 0.5s steps(1, end);
 		transition:
-			transform 0.5s cubic-bezier(0.19, 1, 0.22, 1),
-			opacity 0.5s steps(1, end);
-		transition:
-			transform 0.5s cubic-bezier(0.19, 1, 0.22, 1),
+			// transform 0.5s cubic-bezier(1, 2.13, 0, 0.5),
+			transform 0.5s cubic-bezier(1, 2.01, 0, 0.09),
 			opacity 0.5s steps(1, end);
 	}
 
 	// .network-menu__rings
 	&__rings {
-		pointer-events: all;
+		pointer-events: none;
 	}
-}
-//* ----------------------------------------------------------------------------
-@keyframes fadeOutGradient {
-	100% {
-		background-position: 100% 0;
-	}
-}
 
-@keyframes fadeInGradient {
-	100% {
-		background-position: 100% 0;
+	// .network-menu__social-link
+	&__social-link {
+		pointer-events: all;
+		z-index: 9;
 	}
 }
 

@@ -81,12 +81,6 @@
 	}
 }
 
-@mixin max-490 {
-	@media (max-width: 490px) {
-		@content;
-	}
-}
-
 @mixin screen-425 {
 	@media screen and (max-width: 425px) {
 		@content;

@@ -16,27 +16,6 @@
 		position: relative;
 	}
 
-	// .about__column
-	&__column {
-		&:nth-child(1) {
-			position: relative;
-			z-index: 9;
-			grid-column: 1 / 3;
-
-			@include screen-1920 {
-				margin-block: auto;
-			}
-		}
-
-		&:nth-child(2) {
-			grid-column: 3 / 4;
-			position: relative;
-			z-index: 1;
-			display: flex;
-			align-items: flex-start;
-		}
-	}
-
 	// .about__title-text
 	&__title-text {
 		margin-bottom: 3rem;
@@ -68,7 +47,6 @@
 		width: 100%;
 		height: fit-content;
 		float: right;
-		margin-left: 3rem;
 
 		@include screen-768 {
 			max-width: 100%;

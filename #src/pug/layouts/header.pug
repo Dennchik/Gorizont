@@ -5,7 +5,7 @@
 				._logo-wrpper 
 					._logo
 						img(src="@@webRoot/img/icons/horizon.svg" alt="logo") 
-			._column 
+			nav._column 
 				ul._menu(data-da="bp-1" data-da-position="0" data-da-resolution="10" )
 					li._item
 						a(href="#about" data-letters="О нас")._link-key.anchor-link.link_underline-center
@@ -20,8 +20,11 @@
 						a(href="#contacts" data-letters="Контакты")._link-key.anchor-link.link_underline-center 
 							| Контакты
 				._phone 
-					span +375 33 317-67-40  
+					span +375 33 317-67-40 
 			._column
+				//- ._country
+					img(src="@@webRoot/img/icons/flag-belarus.svg" alt="флаг")
+					p.t-01 Беларусь
 				._button 
 					include ../modules/burger-button
 				.network-menu 
@@ -45,5 +48,5 @@
 									g._ring
 										a._social-link(href="#")
 											path.ring(d="M 56.64466094067263 127.35533905932738 L 34.01724394270311 149.9827560572969 A 82 82 0 0 0 92 174 L 92 142 A 50 50 0 0 1 56.64466094067263 127.35533905932738" fill="#d7bad3" stroke="#d7bad3" stroke-width="0.5px" data-index="0" )
-											use(x="55.74289346390408" y="142.47604914574492" width="20px" height="20px" xlink:href="img/sprites/sprite.svg#youtube")
+											use(x="55.74289346390408" y="142.47604914574492" width="20px" height="20px" xlink:href="img/sprites/sprite.svg#viber")
 

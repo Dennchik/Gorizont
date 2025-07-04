@@ -74,7 +74,7 @@
 			}
 		}
 
-		@include max-490 {
+		@include screen-490 {
 			&:nth-child(3) {
 				display: none;
 			}
