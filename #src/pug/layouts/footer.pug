@@ -1,4 +1,75 @@
 .footer#contacts._container
 	._body 
 		._content
-			._column
+			._top
+				._column
+					._logo-wrpper 
+						a(href="@@webRoot/index.html")._logo
+							img(src="@@webRoot/img/icons/horizon-lght.svg" alt="logo") 
+						._text
+				._column 
+					._title 
+						h5.t-h5 
+							span Навигация:
+					._link 
+						ul._menu(data-da="bp-1" data-da-position="0" data-da-resolution="10" )
+							li._item
+								a(href="#about" data-letters="О нас")._link-key.anchor-link.link_underline-center О нас 
+							li._item
+								a(href="#services" data-letters="Услуги")._link-key.anchor-link.link_underline-center Услуги
+							li._item
+								a(href="#products" data-letters="Услуги")._link-key.anchor-link.link_underline-center Продукция 
+				._column 
+					._title 
+						h5.t-h5 
+							span О компании:
+					._text 
+						strong Вид деятельности:
+						p Швейное производство
+						p Предприятие работает на&nbsp;белорусском и&nbsp;российсском рынках с&nbsp;1997 года. 
+						p Фабрика имеет опыт работы на&nbsp;рынке Евросоюза. 
+				._column 
+					._title 
+						h5.t-h5 
+							span Наши контакты:
+					._contacts 
+						._item 
+							+iconfont('location', '_icon')
+							p Республика Беларусь  
+						._item 
+							p Витебская область  
+						._item 
+							p г. Витебск, ул. Зеленогурская 12Б
+						._item 
+							+iconfont('phone-ringing', '_icon')
+							p Телефон: 
+								strong +375 33 317-67-40 
+						._item 
+							p (МТС,&nbsp;Viber,&nbsp;Telegram,&nbsp;WatsApp)
+						._item 
+							a(href="mailto:fabrika-gorizont@yandex.ru") E-mail: 
+								strong fabrika-gorizont@yandex.ru
+				._column 
+					._title 
+						h5.t-h5 
+							span Присоединяйся к нам:
+					._line
+						._icon
+							+iconfont('vk-brand', '_icon')
+						._icon
+							+iconfont('whatsapp', '_icon')
+						._icon
+							+iconfont('telegram-fly', '_icon')
+						._icon
+							+iconfont('viber', '_icon')
+			._bottom 
+				._column 
+					._title 
+						h3 
+							span
+			._info 
+				._column
+					a(href="#") Политика конфиденциальности
+					p.t-01 ООО «Витебская швейная фабрика Горизонт» © 2025
+				._column
+					a(href="https://gusli-studio.ru/" target="_blank") Сайт разработан творческой студией «Gusli Media-Group»

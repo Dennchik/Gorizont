@@ -27,6 +27,11 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
+.icon-angle-down {
+	&:before {
+		content: $icon-angle-down;
+	}
+}
 .icon-package {
 	&:before {
 		content: $icon-package;

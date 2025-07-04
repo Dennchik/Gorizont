@@ -18,7 +18,7 @@
 // todo --------------------------- layout -------------------------------------
 @use 'layouts/bem-block';
 @use 'layouts/header';
-// @use 'layouts/footer';
+@use 'layouts/footer';
 @use 'layouts/page-grid';
 // todo ---------------------------- Pages -------------------------------------
 @use 'pages/page';
@@ -53,39 +53,24 @@
 }
 
 [class*='_title'] {
-	h2 {
+	h2,
+	h3,
+	h4,
+	h5 {
 		font-weight: 500;
 		line-height: 100%;
-		text-transform: uppercase;
 		transform: scaleY(1.3);
-		letter-spacing: 1.1px;
-		span {
-			filter: contrast(150%);
-		}
-	}
-
-	h3 {
-		font-weight: 500;
-		line-height: 100%;
-		text-transform: uppercase;
-		transform: scaleY(1.3);
-		letter-spacing: 1.1px;
 
 		span {
 			filter: contrast(150%);
+			letter-spacing: 1.1px;
 		}
 	}
 
+	h2,
+	h3,
 	h4 {
-		font-weight: 500;
-		line-height: 100%;
 		text-transform: uppercase;
-		transform: scaleY(1.3);
-		letter-spacing: 1.1px;
-
-		span {
-			filter: contrast(150%);
-		}
 	}
 }
 

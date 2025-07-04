@@ -35,10 +35,14 @@
 
 	&__title {
 		text-align: right;
-		margin-block: -1.8rem 6rem;
+		margin-block: -2.1rem 6rem;
 
 		@include screen-690 {
 			margin-top: 1.6rem;
+		}
+
+		@include screen-490 {
+			margin-top: 3.6rem;
 		}
 
 		h2 {
@@ -169,7 +173,7 @@
 .t-h1 {
 	font-size: 12rem;
 	@include screen-490 {
-		font-size: 20px;
+		// font-size: 20px;
 		text-align: center;
 	}
 }
@@ -178,7 +182,7 @@
 	font-size: 3.2rem;
 	@include minmax-490-1920 {
 		font-size: calc(
-			18px + (28 - 16) * ((100vw - 490px) / (1920 - 490))
+			18px + (34 - 16) * ((100vw - 490px) / (1920 - 490))
 		) !important;
 	}
 	@include screen-490 {
@@ -201,6 +205,19 @@
 }
 
 .t-h4 {
+	font-size: 2.2rem;
+	@include minmax-490-1920 {
+		font-size: calc(
+			14px + (22 - 14) * ((100vw - 490px) / (1920 - 490))
+		) !important;
+	}
+	@include screen-490 {
+		font-size: 12px !important;
+		text-align: center;
+	}
+}
+
+.t-h5 {
 	font-size: 2rem;
 	@include minmax-490-1920 {
 		font-size: calc(
@@ -311,27 +328,3 @@
 		}
 	}
 }
-//* --------------------------- [HR] -------------------------------------------
-// .hr-shelf {
-// 	position: relative;
-// 	z-index: 11;
-
-// 	// .hr-shelf__content
-// 	&__content {
-// 		margin: -50px auto 10px;
-// 		padding: 0;
-// 		height: 50px;
-// 		border: none;
-// 		width: 80%;
-// 		border-bottom: 1px solid rgba(56, 31, 71, 0.47);
-// 		box-shadow: 0 20px 20px -20px #100e10;
-// 	}
-// }
-
-//* ----------------------------------------------------------------------------
-// canvas {
-// 	position: fixed;
-// 	top: 0;
-// 	left: 0;
-// 	opacity: 0;
-// }
