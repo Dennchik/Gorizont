@@ -66,21 +66,12 @@
 	// .checkbox__input
 	&__input {
 		display: none;
+		position: absolute;
 
 		&:checked + .checkbox__label .icon-angle-down {
-			display: block;
 			scale: 1;
 			opacity: 1;
 		}
-	}
-
-	&__checed {
-		cursor: pointer;
-		position: relative;
-		display: flex;
-		align-items: center;
-		font-size: 16px;
-		line-height: 140%;
 	}
 }
 //* ------------------------- [Clip-Circle] ------------------------------------
@@ -112,34 +103,34 @@
 	}
 }
 
-.community {
-	// .community__icon
-	&__icon {
-		font-size: 2.2rem;
-		overflow: hidden;
-		width: 4.2rem;
-		height: 4.2rem;
-		transition: all 0.2s ease-in-out;
-		color: $color-fill;
-		border-radius: 50%;
-		background: $color-fill-dark;
+// .community {
+// 	// .community__icon
+// 	&__icon {
+// 		font-size: 2.2rem;
+// 		overflow: hidden;
+// 		width: 4.2rem;
+// 		height: 4.2rem;
+// 		transition: all 0.2s ease-in-out;
+// 		color: $color-fill;
+// 		border-radius: 50%;
+// 		background: $color-fill-dark;
 
-		i {
-			&::before {
-				transition: color 0.2s ease-in-out;
-			}
-		}
+// 		i {
+// 			&::before {
+// 				transition: color 0.2s ease-in-out;
+// 			}
+// 		}
 
-		&:not(:last-child) {
-			margin-right: 1rem;
-		}
+// 		&:not(:last-child) {
+// 			margin-right: 1rem;
+// 		}
 
-		&:hover {
-			color: $color-fill;
-			background: $color-fill;
-		}
-	}
-}
+// 		&:hover {
+// 			color: $color-fill;
+// 			background: $color-fill;
+// 		}
+// 	}
+// }
 
 //* ------------------------- [Class _ibg] -------------------------------------
 ._ibg {
@@ -245,18 +236,16 @@
 	position: relative;
 	display: flex;
 	align-items: center;
-	border-radius: 4px;
-	padding: 0.5rem 2.6rem;
-	transform: skewX(-10deg);
+	justify-content: center;
+	padding: 10px 3rem 10px;
 	text-transform: uppercase;
-	font-weight: 400;
 	overflow: hidden;
-	border: 1px solid #8a8a8a;
+	border-radius: 4px;
+	background-color: $color-Rouse;
 
 	font: {
 		family: $font-default;
-		size: 32px;
-		weight: 400;
+		weight: 500;
 	}
 
 	&:hover {
@@ -275,18 +264,18 @@
 	}
 
 	span {
-		display: block;
-		text-transform: uppercase;
-		transform: skewX(10deg);
+		display: inline-block;
 		pointer-events: none;
 		opacity: 1;
-		@extend .text-shadow;
+		filter: contrast(150%);
+		font-weight: 600;
 		transition: opacity 0.9s ease-in-out;
 
 		@include screen-490 {
 			letter-spacing: 1.1px;
 		}
 	}
+
 	.running-line {
 		padding: 0.5rem;
 		position: absolute;

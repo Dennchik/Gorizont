@@ -27,6 +27,21 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
+.icon-angle-left {
+	&:before {
+		content: $icon-angle-left;
+	}
+}
+.icon-angle-right {
+	&:before {
+		content: $icon-angle-right;
+	}
+}
+.icon-angle-up {
+	&:before {
+		content: $icon-angle-up;
+	}
+}
 .icon-angle-down {
 	&:before {
 		content: $icon-angle-down;
@@ -110,16 +125,6 @@
 .icon-bookmarks {
 	&:before {
 		content: $icon-bookmarks;
-	}
-}
-.icon-marketo {
-	&:before {
-		content: $icon-marketo;
-	}
-}
-.icon-map-pin {
-	&:before {
-		content: $icon-map-pin;
 	}
 }
 .icon-viber {

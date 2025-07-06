@@ -14,27 +14,17 @@ block main-content
 	section.main-content__sections.top-box
 		include ../sections/section-perform
 		.bg-bottom-t 
-		//- include ../layouts/page-grid-4 
 	section.main-content__sections#about
 		include ../sections/section-about
 	section.main-content__sections#services
-		include ../sections/section-services 
-		//- include ../layouts/page-grid-3 
+		include ../sections/section-services
 	section.main-content__sections#price
 		include ../sections/section-price
-		//- include ../layouts/page-grid-3 
 	section.main-content__sections#stage
 		include ../sections/section-stageswork
 	section.main-content__sections#products
 		include ../sections/section-products
-
-
 	section.main-content__sections#partners
 		include ../sections/section-partners 
-			//- section.main-content__footer
-				include ../layouts/footer 
-//- block content-hidden
-//- include ../chunks/content-hidden
-//- block project-list
-	aside.main-content__project-list
-		include ../modules/project-list
+	section.main-content__order-place
+		include ../sections/section-order

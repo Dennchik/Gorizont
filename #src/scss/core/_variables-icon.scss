@@ -2,6 +2,9 @@
 $icon-font-family: 'icon-set' !default;
 $icon-font-path: '../fonts' !default;
 
+$icon-angle-left: string.unquote('"\\f104"');
+$icon-angle-right: string.unquote('"\\f105"');
+$icon-angle-up: string.unquote('"\\f106"');
 $icon-angle-down: string.unquote('"\\f107"');
 $icon-package: string.unquote('"\\e90b"');
 $icon-fabric-pattern: string.unquote('"\\e906"');
@@ -19,8 +22,6 @@ $icon-telegram-fly: string.unquote('"\\e91b"');
 $icon-location: string.unquote('"\\e909"');
 $icon-information-outline: string.unquote('"\\e90a"');
 $icon-bookmarks: string.unquote('"\\e938"');
-$icon-marketo: string.unquote('"\\e939"');
-$icon-map-pin: string.unquote('"\\e93a"');
 $icon-viber: string.unquote('"\\e93c"');
 $icon-bookmarks1: string.unquote('"\\e9d3"');
 $icon-services: string.unquote('"\\e903"');

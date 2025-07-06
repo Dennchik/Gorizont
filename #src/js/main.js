@@ -1,7 +1,3 @@
-// todo --------------------------- Modules ------------------------------------
-//* ------------------------------ Прелоадер -----------------------------------
-import loaded from './assets/preloader.js';
-loaded('.preloader');
 // todo --------------------------- Assets -------------------------------------
 //* ----------------------------- [Slide] --------------------------------------
 import { buildSwiper } from './layouts/build-swiper.js';
@@ -10,13 +6,7 @@ import { mainSlide } from './layouts/slide.js';
 mainSlide('.main-slide');
 import { slidePartners } from './layouts/slide.js';
 slidePartners('.slide-partners');
-// todo --------------------------- Plugins ------------------------------------
-//* ---------------- Плавная прокрутка страницы до позиции ---------------------
-import { anchorsSmoothScrolling } from './plugins/anchors-smooth-scrolling.js';
-anchorsSmoothScrolling();
-//* -------------- Возврат к предидущей позиции на страници --------------------
-import returnToSavedPosition from './modules/return-position.js';
-returnToSavedPosition();
+
 //* ----------------------------------------------------------------------------
 import {
 	// timeLineTextItem,

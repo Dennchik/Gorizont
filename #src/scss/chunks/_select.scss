@@ -1,0 +1,92 @@
+@use '../core/variables' as *;
+
+.select > ._collapse:not(._show) {
+	display: none;
+}
+
+.select {
+	&._active-collapse {
+		// box-shadow: 3px 3px 5px 0 rgb(36, 18, 33, 0.2);
+		transition: box-shadow 0.2s ease-in-out;
+	}
+
+	// .select__input
+	&__input {
+		border-radius: 4px;
+		border: 1px solid $color-Rouse;
+		display: flex;
+		justify-content: space-between;
+
+		._icon {
+			position: absolute;
+			right: 0;
+			font-size: 2.8rem;
+			transition: transform 0.3s ease-in-out;
+			pointer-events: none;
+			padding: 10px;
+		}
+
+		input {
+			cursor: pointer;
+			padding: 10px;
+			width: 100%;
+			height: 100%;
+			font-weight: 500;
+			filter: contrast(150%);
+			transition: box-shadow 0.3s ease-in-out;
+
+			&:focus {
+				box-shadow: 3px 3px 5px 0 rgb(36, 18, 33, 0.2);
+			}
+		}
+	}
+
+	// .select__button
+	&__button {
+		text-align-last: left;
+	}
+
+	// .select__list
+	&__list {
+		position: absolute;
+		margin-top: 3px;
+		width: 100%;
+		border: 1px solid $color-Rouse;
+		border-radius: 4px;
+		background-color: $background-color;
+		z-index: 9;
+		transition: box-shadow 0.3s ease-in-out;
+		box-shadow: 3px 3px 5px 0 rgba(36, 18, 33, 0.2);
+	}
+
+	// .select__item
+	&__item {
+		cursor: pointer;
+		padding: 0 10px;
+		line-height: 150%;
+		color: $color-fill-dark;
+
+		&:first-child {
+			margin-top: 5px;
+		}
+
+		&:last-child {
+			margin-bottom: 5px;
+		}
+
+		&._selected {
+			background-color: $color-fill-light;
+			color: $background-color;
+		}
+
+		&:hover {
+			background-color: #7e6aa869;
+		}
+	}
+
+	&._active-collapse {
+		._icon {
+			transform: rotate(90deg);
+		}
+	}
+}

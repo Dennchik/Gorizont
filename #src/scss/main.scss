@@ -1,5 +1,6 @@
 //todo ---------------------------- Core ---------------------------------------
-@use 'core/all.scss' as *;
+@use 'core/variables' as *;
+@use 'core/mixins' as *;
 // todo --------------------------- Assets -------------------------------------
 @use 'assets/swiper-11.2.8';
 @use 'assets/preloader';
@@ -76,7 +77,8 @@
 
 [class*='icon-'] {
 	cursor: pointer;
-	display: inline-flex;
+	color: inherit;
+	display: flex;
 	align-items: center;
 	justify-content: center;
 }

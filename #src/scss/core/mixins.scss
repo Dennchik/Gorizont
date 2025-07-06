@@ -64,13 +64,13 @@
 }
 
 @mixin screen-620 {
-	@media (max-width: 620px) {
+	@media screen and (max-width: 620px) {
 		@content;
 	}
 }
 
 @mixin screen-580 {
-	@media (max-width: 580px) {
+	@media screen and (max-width: 580px) {
 		@content;
 	}
 }

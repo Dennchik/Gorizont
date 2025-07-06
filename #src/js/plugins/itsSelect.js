@@ -1,11 +1,11 @@
-import ItcCollapse from '../plugins/collapse.js';
+import ItcCollapse from '../assets/collapse.js';
 //* ------------------------------ [Select]-------------------------------------
 export function select() {
 	document.querySelectorAll('[data-select]').forEach(function (selectGroup) {
 		const itsSelects = selectGroup.querySelectorAll('.select');
 		if (itsSelects) {
 			itsSelects.forEach(itsSelect => {
-				const listItems = itsSelect.querySelectorAll('.select__list-item');
+				const listItems = itsSelect.querySelectorAll('.select__item');
 				const selectButton = itsSelect.querySelector('.select__button');
 
 				let start = listItems.length > 0 ? listItems[0] : null;
@@ -15,8 +15,8 @@ export function select() {
 					if (target.closest('.select__button')) {
 						const opened_select = document.querySelector('._active-collapse');
 						_toggleOpen(itsSelect);
-						if (target.closest('.select__box-button')) {
-							start = target.closest('.select__box-button').nextElementSibling.querySelector('._selected');
+						if (target.closest('.select__input')) {
+							start = target.closest('.select__input').nextElementSibling.querySelector('._selected');
 						}
 						if (!target.closest('.select').classList.contains('_active-collapse')) {
 							selectButton.blur();
@@ -29,7 +29,7 @@ export function select() {
 
 				if (listItems.length !== 0) {
 					[].forEach.call(listItems, function (listItem) {
-						listItem.addEventListener('click', function (e) {
+						listItem.addEventListener('click', function () {
 							start = this;
 							start.focus();
 							selectButton.value = listItem.textContent;
@@ -47,7 +47,6 @@ export function select() {
 				selectGroup.addEventListener('keydown', function (e) {
 					e = e || window.e;
 					e.preventDefault();
-					// let target = e.target;
 					if (e.key == 'ArrowUp') {
 						//* Arrow Up -------------------------------------
 						let sibling = start.previousElementSibling;
@@ -100,7 +99,7 @@ export function select() {
 					switch (true) {
 						case classList.contains('select__button'):
 							break;
-						case classList.contains('select__list-item'):
+						case classList.contains('select__item'):
 							break;
 						default:
 							closeBox();

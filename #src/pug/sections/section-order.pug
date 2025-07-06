@@ -1,0 +1,34 @@
+.order-place._container
+	._body 
+		._title
+			h2.t-h2 
+				span Оставьте заявку и&nbsp;наш специалист перезвонить вам в&nbsp;ближайшее время
+		._content
+			form(action="#" metod="get" id="form").order-form._form
+				._line 
+					._col-line
+						label(for="name")._lebel
+						._input
+							input(type="text" id="name" placeholder="*имя" autocomplete="off" name="name" error="Обязательное поле").t-01
+					._col-line
+						label(for="service")._lebel
+						include ../modules/itsSelect 
+				._line 
+					._col-line
+						label(for="phone")._lebel
+						._input
+							input(type="tel" id="phone" placeholder="+375 33 (___) ___-__-__" autocomplete="on" name="name" error="Обязательное поле").phone.t-01
+					._col-line
+						butoon.button.t-01
+							span Оформить заказ 
+				._line
+					.checkbox
+						input(type="checkbox" name="policy" id="agreement")._input
+						label(for="agreement")._label
+							span._icon
+								+iconfont('angle-down', '_icon') 
+							span Пользуясь сайтом или отправляя любые формы запросов, Вы соглашаетесь с&nbsp;условиями 
+								a(href="" target="_blanck")
+									strong «Полтики&nbsp;конфиденциальности»
+
+

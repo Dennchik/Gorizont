@@ -47,8 +47,14 @@
 		z-index: 1;
 		width: 100%;
 		height: 100%;
-		background-color: $background-color;
+		// background-color: $background-color;
 		overflow: hidden;
+	}
+
+	// .main-content__order-place
+	&__order-place {
+		background-color: $color-fill;
+		padding-block: 8rem;
 	}
 
 	// .main-content__footer

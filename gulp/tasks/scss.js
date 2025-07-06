@@ -3,7 +3,8 @@ import autoprefixer from 'gulp-autoprefixer';
 import csso from 'gulp-csso';
 import postcss from 'gulp-postcss';
 import rename from 'gulp-rename';
-import sortMediaQueries from 'postcss-sort-media-queries';
+// import sortMediaQueries from 'postcss-sort-media-queries';
+import combineMediaQuery from 'postcss-combine-media-query';
 import sass from 'gulp-dart-sass';
 // import gulpSass from 'gulp-sass'; 
 // import * as dartSass from 'sass';
@@ -35,8 +36,8 @@ export function scss() {
 				this.emit('end');
 			})
 		)
-		// .pipe(postcss([combineMediaQuery]))
-		.pipe(postcss([sortMediaQueries()]))
+		.pipe(postcss([combineMediaQuery]))
+		// .pipe(postcss([sortMediaQueries()]))
 		.pipe($.gulpIf($.app.isProd, autoprefixer($.app.autoprefixer)))
 		.pipe($.gulpIf($.app.isProd, $.debug({
 			title: '(Autoprefixer)'

@@ -309,59 +309,59 @@
 		/* Первое изображение */ 0 1px; /* Второе изображение */
 }
 //! ----------------------------------------------------------------------------
-.border-present {
-	position: absolute;
-	display: block;
-	color: $color-fill-dark;
-	background-image: linear-gradient(
-			to right,
-			currentColor 0%,
-			$color-fill-dark 8%,
-			transparent 8%,
-			transparent 92%,
-			$color-fill-dark 92%,
-			currentColor 100%
-		),
-		linear-gradient(
-			to right,
-			currentColor 0%,
-			$color-fill-dark 8%,
-			transparent 8%,
-			transparent 92%,
-			$color-fill-dark 92%,
-			currentColor 100%
-		),
-		linear-gradient(
-			to bottom,
-			currentColor 0%,
-			$color-fill-dark 11%,
-			transparent 11%,
-			transparent 89%,
-			$color-fill-dark 89%,
-			currentColor 100%
-		),
-		linear-gradient(
-			to bottom,
-			currentColor 0%,
-			$color-fill-dark 11%,
-			transparent 11%,
-			transparent 89%,
-			$color-fill-dark 89%,
-			currentColor 100%
-		);
-	background-repeat: no-repeat;
-	background-position:
-		0 0,
-		0 100%,
-		0 0,
-		100% 0;
-	background-size:
-		100% 1px,
-		100% 1px,
-		1px 100%,
-		1px 100%;
-	inset: 0.7rem;
-}
+// .border-present {
+// 	position: absolute;
+// 	display: block;
+// 	color: $color-fill-dark;
+// 	background-image: linear-gradient(
+// 			to right,
+// 			currentColor 0%,
+// 			$color-fill-dark 8%,
+// 			transparent 8%,
+// 			transparent 92%,
+// 			$color-fill-dark 92%,
+// 			currentColor 100%
+// 		),
+// 		linear-gradient(
+// 			to right,
+// 			currentColor 0%,
+// 			$color-fill-dark 8%,
+// 			transparent 8%,
+// 			transparent 92%,
+// 			$color-fill-dark 92%,
+// 			currentColor 100%
+// 		),
+// 		linear-gradient(
+// 			to bottom,
+// 			currentColor 0%,
+// 			$color-fill-dark 11%,
+// 			transparent 11%,
+// 			transparent 89%,
+// 			$color-fill-dark 89%,
+// 			currentColor 100%
+// 		),
+// 		linear-gradient(
+// 			to bottom,
+// 			currentColor 0%,
+// 			$color-fill-dark 11%,
+// 			transparent 11%,
+// 			transparent 89%,
+// 			$color-fill-dark 89%,
+// 			currentColor 100%
+// 		);
+// 	background-repeat: no-repeat;
+// 	background-position:
+// 		0 0,
+// 		0 100%,
+// 		0 0,
+// 		100% 0;
+// 	background-size:
+// 		100% 1px,
+// 		100% 1px,
+// 		1px 100%,
+// 		1px 100%;
+// 	inset: 0.7rem;
+// }
 //* ----------------------------------------------------------------------------
 .pagination {
 	display: flex;

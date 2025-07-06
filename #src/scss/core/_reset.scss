@@ -12,6 +12,7 @@ html {
 		weight: $font-weight-default;
 		family: $font-default;
 	}
+	color: $color-fill;
 	height: 100%;
 	counter-reset: heading;
 
@@ -24,7 +25,7 @@ body {
 	overscroll-behavior: none;
 	font: 1.6rem/1.6 $font-default;
 	color: $color-fill;
-	background-color: transparent;
+	background-color: $background-color;
 
 	&.no-scroll {
 		overflow: hidden;
@@ -80,12 +81,6 @@ a:visited {
 	text-emphasis-style: none;
 }
 
-input,
-button,
-textarea {
-	border: none;
-}
-
 button,
 input[type='submit'] {
 	display: inline-block;
@@ -104,8 +99,9 @@ button,
 select {
 	font-family: inherit;
 	font-size: inherit;
-	color: inherit;
+	color: inherit !important;
 	background-color: transparent;
+	border: none;
 }
 
 input:focus,
@@ -115,23 +111,9 @@ button:active {
 	outline: none;
 }
 
-input,
-textarea,
-button,
-select {
-	font-family: inherit;
-	font-size: inherit;
-	color: inherit;
-	background-color: transparent;
-}
-
 button::-moz-focus-inner {
 	padding: 0;
 	border: 0;
-}
-
-label {
-	cursor: pointer;
 }
 
 a:focus,
@@ -210,4 +192,8 @@ h6 {
 		transparent 75%,
 		transparent
 	);
+}
+::placeholder {
+	/* Most modern browsers support this now. */
+	color: $color-fill-light;
 }
