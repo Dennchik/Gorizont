@@ -4,7 +4,7 @@
 .order-place {
 	// .order-place__body
 	&__body {
-		padding: 6rem 3rem;
+		padding: 6rem 2rem;
 		max-width: 86.8rem;
 		margin: 0 auto;
 		border-radius: 4px;
@@ -103,6 +103,10 @@
 		span {
 			filter: contrast(150%);
 			font-size: 13px;
+
+			&:nth-child(2) {
+				margin-left: 11px;
+			}
 		}
 
 		a {
@@ -116,10 +120,7 @@
 
 	// .checkbox__icon
 	&__icon {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		transform: translateX(-22px);
+		margin-left: -22px;
 
 		.icon-angle-down {
 			transition: scale 0.3s ease-in-out;
