@@ -1,8 +1,13 @@
-@use 'sass:string'; // Импортируем модуль string
-$icon-font-family: 'icon-set' !default;
-$icon-font-path: '../fonts' !default;
+@use "sass:string"; // Импортируем модуль string
+$icon-font-family: "icon-set" !default;
+$icon-font-path: "../fonts" !default;
 
-$icon-plus: string.unquote('"\\e911"');
+$icon-services: string.unquote('"\\e903"');
+$icon-calculator: string.unquote('"\\e90f"');
+$icon-factory: string.unquote('"\\e90c"');
+$icon-order-list: string.unquote('"\\e90d"');
+$icon-hand-shake: string.unquote('"\\f2b6"');
+$icon-management: string.unquote('"\\e90e"');
 $icon-angle-left: string.unquote('"\\f104"');
 $icon-angle-right: string.unquote('"\\f105"');
 $icon-angle-up: string.unquote('"\\f106"');
@@ -12,7 +17,6 @@ $icon-fabric-pattern: string.unquote('"\\e906"');
 $icon-fabric-patterns: string.unquote('"\\e907"');
 $icon-sewing: string.unquote('"\\e908"');
 $icon-marks: string.unquote('"\\e900"');
-$icon-bookmark-o: string.unquote('"\\f097"');
 $icon-assortment: string.unquote('"\\e901"');
 $icon-quality: string.unquote('"\\e902"');
 $icon-youtube: string.unquote('"\\f167"');
@@ -20,10 +24,9 @@ $icon-delivery: string.unquote('"\\e905"');
 $icon-whatsapp: string.unquote('"\\f232"');
 $icon-vk-brand: string.unquote('"\\f189"');
 $icon-telegram-fly: string.unquote('"\\e91b"');
-$icon-location: string.unquote('"\\e909"');
-$icon-information-outline: string.unquote('"\\e90a"');
+$icon-plus: string.unquote('"\\e911"');
 $icon-bookmarks: string.unquote('"\\e938"');
 $icon-viber: string.unquote('"\\e93c"');
-$icon-bookmarks1: string.unquote('"\\e9d3"');
-$icon-services: string.unquote('"\\e903"');
+$icon-location: string.unquote('"\\e909"');
+$icon-information-outline: string.unquote('"\\e90a"');
 $icon-phone-ringing: string.unquote('"\\e904"');

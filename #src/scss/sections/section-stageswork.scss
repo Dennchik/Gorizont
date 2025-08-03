@@ -1,21 +1,132 @@
-@use '../core/variables' as *;
-@use '../core/mixins' as *;
+@use "../core/variables" as *;
+@use "../core/mixins" as *;
 
 .stage-swork {
-	&::before {
-		content: '';
-		position: absolute;
-		width: 100%;
-		height: 1px;
-		background: $color-fill;
-		opacity: 0.3;
-		top: 8rem;
-	}
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: $color-fill;
+    opacity: 0.3;
+    top: 8rem;
+  }
 
-	// .stage-swork__title
-	&__title {
-		h2 {
-			background-color: $background-color;
-		}
-	}
+  // .stage-swork__title
+  &__title {
+    h2 {
+      background-color: $background-color;
+    }
+  }
+
+  // .stage-swork__content
+  &__content {
+    display: flex;
+    gap: 6rem;
+  }
+
+  // .stage-swork__column
+  &__column {
+    flex: 0 1 50%;
+
+    &:nth-child(2) {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 701px;
+      min-height: 640px;
+      flex-grow: 1;
+      position: relative;
+    }
+  }
+
+  // .stage-swork__list
+  &__list {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  // .stage-swork__item
+  &__item {
+    border-radius: 4px;
+    height: auto;
+    width: 50%;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
+    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+
+    ._icon {
+      font-size: 6rem;
+      color: $color-fill;
+      filter: contrast(150%);
+    }
+  }
+
+  &__icon {
+    .icon-hand-shake {
+      &::before {
+        font-weight: 300;
+        opacity: 0.8;
+      }
+    }
+
+    .icon-services {
+      &::before {
+        font-weight: 100;
+        opacity: 0.8;
+      }
+    }
+  }
+
+  &__text {
+    text-transform: uppercase;
+    font-weight: 600;
+    filter: contrast(150%);
+  }
+
+  // .stage-swork__item--bd-right
+  &__item--bd-right {
+    border-right: 1px solid #d1c6dd;
+  }
+
+  // .stage-swork__item--bd-bottom
+  &__item--bd-bottom {
+    border-bottom: 1px solid #d1c6dd;
+  }
+}
+
+.tab-list {
+  // .stage-swork__number
+  &__number {
+    font-weight: 700;
+    color: #615081;
+    border: 1px solid #615081;
+    font-size: 3rem;
+    line-height: 1.4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    margin-right: 3rem;
+  }
+  // .stage-swork__list-item
+  &__lisy-item {
+    display: flex;
+    align-items: center;
+    padding: 2rem 0;
+    border-bottom: 1px solid #d1c6dd;
+  }
+
+  // .stage-swork__text
+  &__item-text {
+    max-width: calc(100% - 120px);
+    line-height: 120%;
+  }
 }

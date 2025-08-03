@@ -1,154 +1,169 @@
-@use 'all' as *;
+@use "all" as *;
 
 @font-face {
-	font-family: '#{$icon-font-family}';
-	src:
-		url('#{$icon-font-path}/#{$icon-font-family}.ttf?9njddx') format('truetype'),
-		url('#{$icon-font-path}/#{$icon-font-family}.woff?9njddx') format('woff'),
-		url('#{$icon-font-path}/#{$icon-font-family}.svg?9njddx##{$icon-font-family}')
-			format('svg');
-	font-weight: normal;
-	font-style: normal;
-	font-display: block;
+  font-family: "#{$icon-font-family}";
+  src:
+    url("#{$icon-font-path}/#{$icon-font-family}.ttf?9njddx") format("truetype"),
+    url("#{$icon-font-path}/#{$icon-font-family}.woff?9njddx") format("woff"),
+    url("#{$icon-font-path}/#{$icon-font-family}.svg?9njddx##{$icon-font-family}")
+      format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
 }
 
-[class^='icon-']::before,
-[class*=' icon-']::before {
-	font-family: '#{$icon-font-family}' !important;
-	speak: never;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
+[class^="icon-"]::before,
+[class*=" icon-"]::before {
+  font-family: "#{$icon-font-family}" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
 
-	/* Better Font Rendering =========== */
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-plus {
-	&:before {
-		content: $icon-plus;
-	}
+.icon-services {
+  &:before {
+    content: $icon-services;
+  }
+}
+.icon-calculator {
+  &:before {
+    content: $icon-calculator;
+  }
+}
+.icon-factory {
+  &:before {
+    content: $icon-factory;
+  }
+}
+.icon-order-list {
+  &:before {
+    content: $icon-order-list;
+  }
+}
+.icon-hand-shake {
+  &:before {
+    content: $icon-hand-shake;
+  }
+}
+.icon-management {
+  &:before {
+    content: $icon-management;
+  }
 }
 .icon-angle-left {
-	&:before {
-		content: $icon-angle-left;
-	}
+  &:before {
+    content: $icon-angle-left;
+  }
 }
 .icon-angle-right {
-	&:before {
-		content: $icon-angle-right;
-	}
+  &:before {
+    content: $icon-angle-right;
+  }
 }
 .icon-angle-up {
-	&:before {
-		content: $icon-angle-up;
-	}
+  &:before {
+    content: $icon-angle-up;
+  }
 }
 .icon-angle-down {
-	&:before {
-		content: $icon-angle-down;
-	}
+  &:before {
+    content: $icon-angle-down;
+  }
 }
 .icon-package {
-	&:before {
-		content: $icon-package;
-	}
+  &:before {
+    content: $icon-package;
+  }
 }
 .icon-fabric-pattern {
-	&:before {
-		content: $icon-fabric-pattern;
-	}
+  &:before {
+    content: $icon-fabric-pattern;
+  }
 }
 .icon-fabric-patterns {
-	&:before {
-		content: $icon-fabric-patterns;
-	}
+  &:before {
+    content: $icon-fabric-patterns;
+  }
 }
 .icon-sewing {
-	&:before {
-		content: $icon-sewing;
-	}
+  &:before {
+    content: $icon-sewing;
+  }
 }
 .icon-marks {
-	&:before {
-		content: $icon-marks;
-	}
-}
-.icon-bookmark-o {
-	&:before {
-		content: $icon-bookmark-o;
-	}
+  &:before {
+    content: $icon-marks;
+  }
 }
 .icon-assortment {
-	&:before {
-		content: $icon-assortment;
-	}
+  &:before {
+    content: $icon-assortment;
+  }
 }
 .icon-quality {
-	&:before {
-		content: $icon-quality;
-	}
+  &:before {
+    content: $icon-quality;
+  }
 }
 .icon-youtube {
-	&:before {
-		content: $icon-youtube;
-	}
+  &:before {
+    content: $icon-youtube;
+  }
 }
 .icon-delivery {
-	&:before {
-		content: $icon-delivery;
-	}
+  &:before {
+    content: $icon-delivery;
+  }
 }
 .icon-whatsapp {
-	&:before {
-		content: $icon-whatsapp;
-	}
+  &:before {
+    content: $icon-whatsapp;
+  }
 }
 .icon-vk-brand {
-	&:before {
-		content: $icon-vk-brand;
-	}
+  &:before {
+    content: $icon-vk-brand;
+  }
 }
 .icon-telegram-fly {
-	&:before {
-		content: $icon-telegram-fly;
-	}
+  &:before {
+    content: $icon-telegram-fly;
+  }
 }
-.icon-location {
-	&:before {
-		content: $icon-location;
-	}
-}
-.icon-information-outline {
-	&:before {
-		content: $icon-information-outline;
-	}
+.icon-plus {
+  &:before {
+    content: $icon-plus;
+  }
 }
 .icon-bookmarks {
-	&:before {
-		content: $icon-bookmarks;
-	}
+  &:before {
+    content: $icon-bookmarks;
+  }
 }
 .icon-viber {
-	&:before {
-		content: $icon-viber;
-	}
+  &:before {
+    content: $icon-viber;
+  }
 }
-.icon-bookmarks1 {
-	&:before {
-		content: $icon-bookmarks1;
-	}
+.icon-location {
+  &:before {
+    content: $icon-location;
+  }
 }
-.icon-services {
-	&:before {
-		content: $icon-services;
-	}
+.icon-information-outline {
+  &:before {
+    content: $icon-information-outline;
+  }
 }
 .icon-phone-ringing {
-	&:before {
-		content: $icon-phone-ringing;
-	}
+  &:before {
+    content: $icon-phone-ringing;
+  }
 }

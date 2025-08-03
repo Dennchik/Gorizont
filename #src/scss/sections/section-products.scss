@@ -1,13 +1,13 @@
-@use '../core/variables' as *;
-@use '../core/mixins' as *;
+@use "../core/variables" as *;
+@use "../core/mixins" as *;
 
 .products {
-	background-color: $color-Blue;
+  background-color: $color;
 
-	// .products__title
-	&__title {
-		h2 {
-			background-color: $color-Blue;
-		}
-	}
+  // .products__title
+  &__title {
+    h2 {
+      background-color: $color;
+    }
+  }
 }

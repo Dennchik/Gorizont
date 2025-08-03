@@ -1,77 +1,77 @@
-@use '../core/variables' as *;
-@use '../core/mixins' as *;
+@use "../core/variables" as *;
+@use "../core/mixins" as *;
 
 .price {
-	background-color: $color-Blue;
+  background-color: $color;
 
-	// .price__title
-	&__title {
-		h2 {
-			background-color: $color-Blue;
-		}
+  // .price__title
+  &__title {
+    h2 {
+      background-color: $color;
+    }
 
-		.t-h4 {
-			margin-top: 1rem;
-			text-align: right;
-		}
-	}
+    .t-h4 {
+      margin-top: 1rem;
+      text-align: right;
+    }
+  }
 
-	// .price__content
-	&__content {
-		position: relative;
-	}
+  // .price__content
+  &__content {
+    position: relative;
+  }
 
-	// .price__column
-	&__column {
-		height: 100%;
-	}
+  // .price__column
+  &__column {
+    height: 100%;
+  }
 
-	// .price__row
-	&__row {
-		display: flex;
-		justify-content: flex-end;
-		gap: 3rem;
+  // .price__row
+  &__row {
+    display: flex;
+    justify-content: flex-end;
+    gap: 3rem;
 
-		@include screen-768 {
-			&:nth-child(1) {
-				flex-direction: column;
-				align-items: flex-end;
-			}
-		}
-	}
+    @include screen-768 {
+      &:nth-child(1) {
+        flex-direction: column;
+        align-items: flex-end;
+      }
+    }
+  }
 
-	// .price__info
-	&__info {
-		padding: 2rem;
+  // .price__info
+  &__info {
+    padding: 2rem;
 
-		&:nth-child(1) {
-			border: 1px solid $background-color;
-			height: fit-content;
-			border-radius: 0.5rem;
-			max-width: fit-content;
-			text-align: right;
-		}
+    &:nth-child(1) {
+      border: 1px solid $background-color;
+      height: fit-content;
+      border-radius: 0.5rem;
+      max-width: fit-content;
+      text-align: right;
+    }
 
-		&:nth-child(2) {
-			background-color: $background-color;
-			border-radius: 0.4rem;
-			filter: contrast(103%);
-			max-width: 31.93%;
-			p {
-				strong {
-					color: $color-Rouse;
-					text-transform: uppercase;
-				}
-			}
+    &:nth-child(2) {
+      background-color: $background-color;
+      border-radius: 0.4rem;
+      filter: contrast(103%);
+      max-width: 31.93%;
+      p {
+        strong {
+          color: $color-Rouse;
+          text-transform: uppercase;
+        }
+      }
 
-			@include screen-768 {
-				min-width: 100%;
-			}
-		}
+      @include screen-768 {
+        min-width: 100%;
+      }
+    }
 
-		p {
-			filter: contrast(150%);
-			transform: scaleY(1.1);
-		}
-	}
+    p {
+      filter: contrast(150%);
+      transform: scaleY(1.1);
+    }
+  }
 }
