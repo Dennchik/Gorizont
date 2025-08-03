@@ -8,19 +8,18 @@
 @use 'modules/parallax';
 @use 'modules/burger-button';
 @use 'modules/return-button';
-// @use 'modules/burger-menu';
 // todo --------------------------- Chunks -------------------------------------
 
 // todo --------------------------- Fonts --------------------------------------
-@use 'core/_fonts.scss';
-@use 'core/_iconfonts.scss';
+@use 'core/iconfonts';
+@use 'core/fonts';
 // todo --------------------------- Plugins ------------------------------------
 
 // todo --------------------------- layout -------------------------------------
 @use 'layouts/bem-block';
 @use 'layouts/header';
 @use 'layouts/footer';
-@use 'layouts/page-grid';
+@use 'layouts/page-grid'; //! delete
 // todo ---------------------------- Pages -------------------------------------
 @use 'pages/page';
 // todo -------------------------- Section -------------------------------------
@@ -41,6 +40,14 @@
 	@include screen-1140 {
 		padding: 0 2rem;
 	}
+}
+
+[class*='icon-'] {
+	cursor: pointer;
+	color: inherit;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
 }
 
 [class*='_img'] {
@@ -73,12 +80,4 @@
 	h4 {
 		text-transform: uppercase;
 	}
-}
-
-[class*='icon-'] {
-	cursor: pointer;
-	color: inherit;
-	display: flex;
-	align-items: center;
-	justify-content: center;
 }

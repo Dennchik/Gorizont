@@ -13,6 +13,8 @@ import notify from 'gulp-notify';
 import plumber from 'gulp-plumber';
 import size from 'gulp-size';
 import sourcemaps from 'gulp-sourcemaps';
+import htmlmin from 'gulp-htmlmin';
+import fs from 'fs';
 
 //* Configuration options
 import { app } from './gulp/config/app.js';
@@ -31,6 +33,7 @@ import { server } from './gulp/tasks/server.js';
 import { sprite } from './gulp/tasks/sprite.js';
 //* Global variables;
 global.$ = {
+	fs: fs,
 	path: path,
 	app: app,
 	gulp: gulp,
@@ -38,6 +41,7 @@ global.$ = {
 	browserSync: browserSync,
 	plumber: plumber,
 	notify: notify,
+	htmlmin: htmlmin,
 	debug: debug,
 	newer: newer,
 	babel: babel,
@@ -48,8 +52,8 @@ global.$ = {
 };
 
 //* Watcher
-const change = gulp.series(clearFonts, fonts, fontsStyle);
-const changeJson = gulp.series(json, pugJade);
+const change = $.gulp.series(clearFonts, fonts, fontsStyle);
+const changeJson = $.gulp.series(json, pugJade);
 
 function reload(done) {
 	browserSync.reload();
@@ -58,22 +62,21 @@ function reload(done) {
 
 const watcher = () => {
 	// gulp.watch(path.react.watch, gulp.series(react, reload));
-	gulp.watch(path.js.watch, gulp.series(js, reload));
-	gulp.watch(path.pug.watch, gulp.series(pugJade, reload));
-	gulp.watch(path.json.watch, gulp.series(changeJson, reload));
-	gulp.watch(path.json.readFile, gulp.series(pugJade, reload));
-	gulp.watch(path.scss.watch, gulp.series(scss, reload));
-	gulp.watch(path.image.watch, gulp.series(image, reload));
-	gulp.watch(path.sprite.watch, gulp.series(sprite, reload));
-	gulp.watch(path.fonts.watch, gulp.series(change, reload));
-	gulp.watch(path.fontsStyle.watch, gulp.series(fontsStyle, reload));
-
+	$.gulp.watch(path.js.watch, $.gulp.series(js, reload));
+	$.gulp.watch(path.pug.watch, $.gulp.series(pugJade, reload));
+	$.gulp.watch(path.json.watch, $.gulp.series(changeJson, reload));
+	$.gulp.watch(path.json.readFile, $.gulp.series(pugJade, reload));
+	$.gulp.watch(path.scss.watch, $.gulp.series(scss, reload));
+	$.gulp.watch(path.image.watch, $.gulp.series(image, reload));
+	$.gulp.watch(path.sprite.watch, $.gulp.series(sprite, reload));
+	$.gulp.watch(path.fonts.watch, $.gulp.series(change, reload));
+	$.gulp.watch(path.fontsStyle.watch, $.gulp.series(fontsStyle, reload));
 };
 
-const end = gulp.series(clear, clearFonts, json,
-	gulp.parallel(pugJade, scss, js, fonts, image, sprite), fontsStyle,
+const end = $.gulp.series(clear, clearFonts, json,
+	$.gulp.parallel(pugJade, scss, js, fonts, image, sprite), fontsStyle,
 );
-const dev = gulp.series(end, gulp.parallel(watcher, server));
+const dev = $.gulp.series(end, $.gulp.parallel(watcher, server));
 //* Call back
 export {
 	clear,
@@ -87,7 +90,8 @@ export {
 	scss,
 	server,
 	sprite,
-	redirect
+	redirect,
+	change
 };
 //* Default Task
 export default app.isProd ? end : dev;

@@ -86,32 +86,6 @@
 	pointer-events: none;
 }
 
-.gradient-border-bottom {
-	background-image: linear-gradient(
-		to left top,
-		rgb(52, 62, 85) 25%,
-		transparent 75%
-	);
-}
-
-.gradient-services {
-	background-image: linear-gradient(
-		to right,
-		#050202ff 20%,
-		#1c153f 50%,
-		#050202ff 80%
-	);
-}
-
-.icon-style {
-	display: flex;
-	align-items: center;
-	height: 100%;
-	padding: 0 1.5rem;
-	border: 1px var(--border-color);
-	border-style: none solid;
-}
-
 .text-shadow {
 	text-shadow:
 		0 0 15px #876b53b4,

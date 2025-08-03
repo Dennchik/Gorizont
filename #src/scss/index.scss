@@ -7,6 +7,8 @@
 @use 'sections/section-products';
 @use 'sections/section-partners';
 @use 'sections/section-order';
+@use 'modules/personal-data';
 // todo -------------------------- Chunks --------------------------------------
 @use 'chunks/slide-perform';
 @use 'chunks/select';
+@use 'chunks/check-box.scss';

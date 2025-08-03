@@ -23,13 +23,18 @@ syncHeight({
 });
 // todo ---------------------- [Animations] ------------------------------------
 import { animationHeader } from './utils/animation-header.jsx';
+import { cookiesAccept } from './layouts/layouts.js';
 document.addEventListener('DOMContentLoaded', () => {
 	animationHeader();
+	cookiesAccept('.cookies-accept', '.cookies-accept__button');
 });
+// todo ----------------------- [Modules] --------------------------------------
+import { modalPage } from './layouts/layouts.js';
 
-// const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+modalPage();
 
 
+// const isMobile = /Mobi|Android/i.test(navigator.userAgent); 
 document.addEventListener('DOMContentLoaded', function () {
 	//* --------------------------- Animation title -----------------------------
 	// const el2 = document.querySelector('.el-2');

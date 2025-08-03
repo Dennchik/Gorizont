@@ -23,16 +23,12 @@ html {
 
 body {
 	overscroll-behavior: none;
-	font: 1.6rem/1.6 $font-default;
+	font: 1.6rem/1.6$font-default;
 	color: $color-fill;
 	background-color: $background-color;
 
 	&.no-scroll {
 		overflow: hidden;
-	}
-
-	@include screen-490 {
-		font: 1.5rem/1.5 $font-default;
 	}
 }
 
@@ -42,6 +38,7 @@ body {
 	padding: 0;
 	border: none;
 	scrollbar-width: none;
+	-webkit-tap-highlight-color: transparent;
 }
 
 *,
@@ -69,7 +66,6 @@ a {
 a:hover {
 	text-decoration: none;
 	vertical-align: baseline;
-	background-color: transparent;
 }
 
 a:focus {

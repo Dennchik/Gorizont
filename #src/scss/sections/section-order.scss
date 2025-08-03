@@ -42,7 +42,6 @@
 	// .order-form__col-line
 	&__col-line {
 		flex: 0 1 50%;
-		height: 100%;
 	}
 
 	// .order-form__input
@@ -68,63 +67,5 @@
 	// .order-form__select-tipe
 	&__select-tipe {
 		position: relative;
-	}
-}
-
-.checkbox {
-	// .checkbox__label
-	&__label {
-		display: flex;
-		align-items: center;
-		position: relative;
-		line-height: 120%;
-
-		&::before {
-			content: '';
-			position: relative;
-			z-index: 9;
-			flex: 0 0 22px;
-			height: 22px;
-			width: 22px;
-			align-self: center;
-			border: 1px solid $color-Rouse;
-			border-radius: 4px;
-			cursor: pointer;
-		}
-
-		._icon {
-			width: 22px;
-			&::before {
-				font-size: 30px;
-				filter: contrast(150%);
-			}
-		}
-
-		span {
-			filter: contrast(150%);
-			font-size: 13px;
-
-			&:nth-child(2) {
-				margin-left: 11px;
-			}
-		}
-
-		a {
-			text-decoration: underline;
-
-			&:hover {
-				text-decoration: none;
-			}
-		}
-	}
-
-	// .checkbox__icon
-	&__icon {
-		margin-left: -22px;
-
-		.icon-angle-down {
-			transition: scale 0.3s ease-in-out;
-			scale: 0;
-		}
 	}
 }

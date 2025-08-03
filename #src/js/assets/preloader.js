@@ -1,6 +1,6 @@
 //* --------------------------------[jScript]-----------------------------------
 export default function loaded(item) {
-	window.onload = function () {
+	window.onload = () => {
 		document.documentElement.classList.add('loaded');
 		setInterval(() => {
 			const preloader = document.querySelector('.preloader');

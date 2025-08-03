@@ -91,11 +91,15 @@
 			color: $color-blue;
 			filter: contrast(190%);
 			font-size: 7rem;
+
+			&::before {
+				font-weight: 300;
+			}
 		}
 	}
 
 	.icon-information-outline {
-		font-size: 5rem;
+		font-size: 4rem;
 		color: $background-color;
 	}
 }

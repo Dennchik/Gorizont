@@ -1,11 +1,14 @@
 @use '../core/all' as *;
-//* --------------------------- [Collapse] -------------------------------------
+
+//* - [ Collapse ] -
 .swiper-wrapper > .swiper-slide:not(.swiper-slide-active) {
 	.main-slide__title {
 		transition: opacity 0.9s ease-in-out;
 		opacity: 0 !important;
 	}
 }
+
+//* - [ --- ] -
 .about,
 .services,
 .stage-swork,
@@ -55,26 +58,8 @@
 		}
 	}
 }
-//* --------------------------- [Checkbox] -------------------------------------
-.checkbox {
-	&._error {
-		.checkbox__label::before {
-			box-shadow: 0 0 14px 3px #f16666;
-		}
-	}
 
-	// .checkbox__input
-	&__input {
-		display: none;
-		position: absolute;
-
-		&:checked + .checkbox__label .icon-angle-down {
-			scale: 1;
-			opacity: 1;
-		}
-	}
-}
-//* ------------------------- [Clip-Circle] ------------------------------------
+//* - [ Clip-Circle ] -
 ._clip-circle {
 	@include min-960 {
 		cursor: pointer;
@@ -103,36 +88,7 @@
 	}
 }
 
-// .community {
-// 	// .community__icon
-// 	&__icon {
-// 		font-size: 2.2rem;
-// 		overflow: hidden;
-// 		width: 4.2rem;
-// 		height: 4.2rem;
-// 		transition: all 0.2s ease-in-out;
-// 		color: $color-fill;
-// 		border-radius: 50%;
-// 		background: $color-fill-dark;
-
-// 		i {
-// 			&::before {
-// 				transition: color 0.2s ease-in-out;
-// 			}
-// 		}
-
-// 		&:not(:last-child) {
-// 			margin-right: 1rem;
-// 		}
-
-// 		&:hover {
-// 			color: $color-fill;
-// 			background: $color-fill;
-// 		}
-// 	}
-// }
-
-//* ------------------------- [Class _ibg] -------------------------------------
+//* - [ Class _ibg ] -
 ._ibg {
 	position: absolute;
 	top: 0;
@@ -160,7 +116,123 @@
 	}
 }
 
-//* ----------------------- [Text Calc ()] -------------------------------------
+//* - [ Button ] -
+.button {
+	padding: 10px 3rem;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-transform: uppercase;
+	overflow: hidden;
+	border-radius: 4px;
+	background-color: #e887be;
+	transition: box-shadow 0.4s ease-in-out;
+	cursor: pointer;
+
+	&:hover {
+		box-shadow: 3px 3px 5px 0 #2412216e;
+	}
+
+	span {
+		display: inline-block;
+		pointer-events: none;
+		font-weight: 600;
+		transition: opacity 0.4s ease-in-out;
+		filter: contrast(150%);
+	}
+
+	.running-line {
+		padding: 0.5rem;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		overflow: hidden;
+		pointer-events: none;
+		height: 100%;
+		display: flex;
+		align-items: center;
+
+		// .running-line__inner
+		&__inner {
+			transform: translate3d(calc(-25% + 1rem), 0, 0);
+			width: fit-content;
+			position: relative;
+			display: flex;
+			opacity: 0;
+			transition: opacity 0.9s ease-in-out;
+
+			@include min-1024 {
+				animation: lineMarquee 3s linear infinite;
+			}
+
+			span {
+				white-space: nowrap;
+			}
+		}
+
+		@keyframes lineMarquee {
+			0% {
+				transform: translate3d(calc(-25% + 1rem), 0, 0);
+			}
+
+			100% {
+				transform: translate3d(calc(-50% + 1rem), 0, 0);
+			}
+		}
+	}
+}
+
+//* - [ Cookies - accept] -
+.cookies-accept {
+	width: 100%;
+	position: fixed;
+	z-index: 15;
+	bottom: 0;
+	transform: translateY(100%);
+
+	// .cookies-accept__content
+	&__content {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 2rem;
+		max-width: 86.8rem;
+		padding: 1.6rem;
+		margin: 0 auto;
+		background-color: #d2eaff46;
+		backdrop-filter: blur(40px);
+		border-radius: 4px;
+
+		@include screen-425 {
+			flex-direction: column;
+		}
+	}
+
+	// .cookies-accept__text
+	&__text {
+		p {
+			font-size: 12px;
+			color: $color-fill-dark;
+			filter: contrast(150%);
+			line-height: 120%;
+		}
+	}
+
+	// .cookies-accept_buttom
+	&__button {
+		max-height: 30px;
+		padding: 10px 24px;
+
+		span {
+			font-size: 14px;
+			text-transform: none;
+		}
+	}
+}
+
+//* - [ Text Calc () ] -
 .t-h1 {
 	font-size: 12rem;
 	@include screen-490 {
@@ -228,92 +300,5 @@
 	}
 	@include screen-490 {
 		font-size: 14px;
-	}
-}
-//* -------------------------- [Button] ----------------------------------------
-.button {
-	cursor: pointer;
-	position: relative;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	padding: 10px 3rem 10px;
-	text-transform: uppercase;
-	overflow: hidden;
-	border-radius: 4px;
-	background-color: $color-Rouse;
-
-	font: {
-		family: $font-default;
-		weight: 500;
-	}
-
-	&:hover {
-		.running-line__inner {
-			@include min-1024 {
-				opacity: 1;
-				transition-duration: 0.6s;
-			}
-		}
-
-		@include min-1024 {
-			> span {
-				opacity: 0;
-			}
-		}
-	}
-
-	span {
-		display: inline-block;
-		pointer-events: none;
-		opacity: 1;
-		filter: contrast(150%);
-		font-weight: 600;
-		transition: opacity 0.9s ease-in-out;
-
-		@include screen-490 {
-			letter-spacing: 1.1px;
-		}
-	}
-
-	.running-line {
-		padding: 0.5rem;
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		overflow: hidden;
-		pointer-events: none;
-		height: 100%;
-		display: flex;
-		align-items: center;
-
-		// .running-line__inner
-		&__inner {
-			transform: translate3d(calc(-25% + 1rem), 0, 0);
-			width: fit-content;
-			position: relative;
-			display: flex;
-			opacity: 0;
-			transition: opacity 0.9s ease-in-out;
-
-			@include min-1024 {
-				animation: lineMarquee 3s linear infinite;
-			}
-
-			span {
-				white-space: nowrap;
-			}
-		}
-
-		@keyframes lineMarquee {
-			0% {
-				transform: translate3d(calc(-25% + 1rem), 0, 0);
-			}
-
-			100% {
-				transform: translate3d(calc(-50% + 1rem), 0, 0);
-			}
-		}
 	}
 }

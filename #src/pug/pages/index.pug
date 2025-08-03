@@ -3,7 +3,6 @@ append link
 	link(rel="stylesheet" type="text/css" href="@@webRoot/css/index.min.css")
 prepend script
 	+script(`${webRoot}/js/vendors/runtime.min.js`)
-	//- script(defer src="@@webRoot/js/vendors/runtime.min.js")
 	//- script(defer src="@@webRoot/js/vendors/anime-vendors.min.js")
 	//- script(defer="defer" src="@@webRoot/js/vendors/swiper-bundle.min.js")
 	//- script(defer="defer" src="@@webRoot/js/vendors/react-vendors.min.js")
@@ -13,7 +12,7 @@ block title
 block main-content
 	section.main-content__sections.top-box
 		include ../sections/section-perform
-		.bg-bottom-t 
+		//- .bg-bottom-t 
 	section.main-content__sections#about
 		include ../sections/section-about
 	section.main-content__sections#services
@@ -26,5 +25,9 @@ block main-content
 		include ../sections/section-products
 	section.main-content__sections#partners
 		include ../sections/section-partners 
-	section.main-content__order-place
+	section.main-content__order-place#order
 		include ../sections/section-order
+block cookies
+	include ../modules/cookies-accept
+block personal-data
+	include ../chunks/personal-data

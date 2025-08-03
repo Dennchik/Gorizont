@@ -1,0 +1,98 @@
+@use '../core/variables' as *;
+
+.personal-data {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 14;
+	min-height: 100vh;
+	pointer-events: none;
+	// opacity: 0;
+	scale: 0;
+	transition: scale 0.4s ease-in-out;
+	overflow-x: hidden;
+	border: 4px solid #000;
+
+	// .personal-data__icon
+	&__icon {
+		position: sticky;
+		top: 0;
+		right: 0;
+		cursor: pointer;
+		display: flex;
+		justify-content: flex-end;
+		padding: 2rem 1rem;
+
+		.icon-plus {
+			pointer-events: none;
+			transform: rotate(-45deg);
+			filter: contrast(150%);
+			font-size: 3.2rem;
+			transition: transform 0.5s ease 0s;
+		}
+
+		&:hover {
+			.icon-plus {
+				transform: rotate(135deg);
+			}
+		}
+	}
+
+	&._show {
+		pointer-events: all;
+		// opacity: 1;
+		scale: 1;
+	}
+
+	&__body {
+		position: relative;
+		background-color: $background-color;
+		padding: 6rem 8rem;
+		box-shadow: 0 0 15px $color-fill-light;
+	}
+
+	&__content {
+		// overflow-x: hidden;
+	}
+}
+
+//todo - [Анимация открытия / закрытия модального окна ] -
+/* Анимация открытия */
+@keyframes expand-height {
+	0% {
+		width: 0;
+		height: 2px; /* Тонкая полоска */
+		transform: translate(-50%, -50%) scaleX(0); /* Сжатие по ширине */
+	}
+	50% {
+		width: 100%; /* Полоса расширяется по ширине */
+		height: 2px; /* Пока остаётся тонкой */
+		transform: translate(-50%, -50%) scaleX(1); /* Расширение по ширине */
+	}
+	100% {
+		width: 100%; /* Полная ширина */
+		height: 100%; /* Полная высота */
+		transform: translate(-50%, -50%) scaleX(1); /* Завершение */
+	}
+}
+
+/* Анимация закрытия */
+@keyframes collapse-width {
+	0% {
+		width: 100%; /* Полная ширина */
+		height: 100%; /* Полная высота */
+		transform: translate(-50%, -50%) scaleX(1); /* Полное состояние */
+	}
+	50% {
+		width: 100%; /* Полоса остаётся широкой */
+		height: 2px; /* Высота уменьшается до тонкой линии */
+		transform: translate(-50%, -50%) scaleX(1); /* Ширина сохраняется */
+	}
+	100% {
+		width: 0; /* Полоса исчезает по ширине */
+		height: 2px; /* Тонкая полоска */
+		transform: translate(-50%, -50%) scaleX(0); /* Сжатие по ширине */
+	}
+}

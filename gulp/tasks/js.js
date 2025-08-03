@@ -1,6 +1,5 @@
 //* Importing modules  
 import webPackStream from 'webpack-stream';
-
 //* JavaScript task
 export function js() {
 	return $.gulp.src($.path.js.src)
@@ -10,9 +9,7 @@ export function js() {
 				message: error.message
 			}))
 		}))
-		.pipe($.gulpIf($.app.isDev, $.sourcemaps.init({
-			loadMaps: true
-		})))
+		.pipe($.gulpIf($.app.isDev, $.sourcemaps.init({ loadMaps: true })))
 		.pipe($.babel())
 		.pipe(webPackStream($.app.webpack))
 		.pipe($.fileInclude())

@@ -4,7 +4,7 @@
 .footer {
 	// .footer__body
 	&__body {
-		padding-block: 8rem 4rem;
+		padding-block: 8rem 6rem;
 	}
 
 	// .footer__content
@@ -16,7 +16,7 @@
 	&__top {
 		padding-bottom: 3rem;
 		display: grid;
-		grid-template-columns: max-content 15% 1fr max-content min-content;
+		grid-template-columns: max-content 15% 1fr 1fr min-content;
 		justify-content: space-between;
 		// column-gap: 1.6rem;
 		row-gap: 6rem;
@@ -94,7 +94,6 @@
 				&:nth-child(5) {
 					grid-column: 2 / 3;
 					grid-row: 3 / 4;
-					padding-left: 0;
 				}
 			}
 
@@ -108,6 +107,7 @@
 				&:nth-child(5) {
 					grid-column: 1 / 3 !important;
 					grid-row: 4 / 5 !important;
+					padding-left: 0;
 				}
 			}
 		}
@@ -133,11 +133,18 @@
 	// .footer__column
 	&__column {
 		width: 100%;
+		p,
+		li {
+			font-size: 14px;
+			line-height: 140%;
+		}
 	}
 
 	// .footer__title
 	&__title {
-		margin-bottom: 2rem;
+		margin-bottom: 1.4rem;
+		white-space: nowrap;
+
 		h5 {
 			text-align-last: left;
 		}
@@ -195,6 +202,10 @@
 		&:not(:first-child) {
 			margin-top: 0.4rem;
 		}
+		a {
+			display: inline;
+			cursor: pointer;
+		}
 	}
 
 	// .footer__line
@@ -215,6 +226,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		font-size: 14px;
 	}
 
 	// .footer__politics
@@ -223,6 +235,9 @@
 		justify-content: space-between;
 		align-items: flex-end;
 		gap: 2rem;
+		p {
+			font-size: 12px;
+		}
 
 		a {
 			text-decoration: underline;
@@ -234,6 +249,11 @@
 
 		@include screen-490 {
 			flex-direction: column;
+			align-items: flex-start;
 		}
+	}
+	// .footer__info-col
+	&__info-col {
+		font-size: 12px;
 	}
 }
