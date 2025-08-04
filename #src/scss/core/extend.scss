@@ -1,373 +1,319 @@
-@use 'variables' as *;
-@use 'mixins.scss' as *;
+@use "variables" as *;
+@use "mixins.scss" as *;
 
 .top-box {
-	// padding: 6rem 0 8rem;
-	// display: flex;
-	align-items: center;
+  // padding: 6rem 0 8rem;
+  // display: flex;
+  align-items: center;
 
-	@include min-960 {
-		min-height: 100vh;
-		// padding: 10rem 0;
-	}
+  @include min-960 {
+    min-height: 100vh;
+    // padding: 10rem 0;
+  }
 }
 
 .bg-image {
-	position: absolute;
-	top: 0;
-	z-index: -1;
-	width: 100%;
-	height: 100%;
-	pointer-events: none;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-position: center;
-	background-size: cover;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
 
-	// .bg-section__image
-	&__image {
-		position: absolute;
-		bottom: 0;
-		width: 100%;
-		height: 100%;
+  // .bg-section__image
+  &__image {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
 
-		img {
-			position: absolute;
-			top: 0;
-			width: 100%;
-			height: 100%;
-			pointer-events: none;
-			object-fit: cover;
-			object-position: top center;
-			will-change: transform;
-			filter: grayscale(50%);
-			// filter: drop-shadow(16px 16px 20px $color-warm) invert(25%);
-		}
-	}
+    img {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      object-fit: cover;
+      object-position: top center;
+      will-change: transform;
+      filter: grayscale(50%);
+      // filter: drop-shadow(16px 16px 20px $color-warm) invert(25%);
+    }
+  }
 }
 
 .bg-bottom {
-	z-index: 0;
-	width: 100%;
-	height: 45%;
-	position: absolute;
-	bottom: 0;
-	background-image: linear-gradient(
-		$color-Blue 30%,
-		$background-color 100%,
-		transparent
-	);
-	pointer-events: none;
+  z-index: 0;
+  width: 100%;
+  height: 45%;
+  position: absolute;
+  bottom: 0;
+  background-image: linear-gradient(
+    $accent-color 30%,
+    $primary-color 100%,
+    transparent
+  );
+  pointer-events: none;
 }
 .bg-bottom-t {
-	z-index: 0;
-	width: 100%;
-	height: 30%;
-	position: absolute;
-	bottom: 0;
-	background-image: linear-gradient(
-		transparent,
-		$background-color 20%,
-		$color-Blue 100%
-	);
-	pointer-events: none;
+  z-index: 0;
+  width: 100%;
+  height: 30%;
+  position: absolute;
+  bottom: 0;
+  background-image: linear-gradient(
+    transparent,
+    $primary-color 20%,
+    $accent-color 100%
+  );
+  pointer-events: none;
 }
 .bg-bottom-r {
-	z-index: 0;
-	width: 100%;
-	height: 30%;
-	position: absolute;
-	bottom: 0;
-	background-image: linear-gradient(
-		$color-Blue 20%,
-		$background-color 100%,
-		transparent
-	);
-	pointer-events: none;
+  z-index: 0;
+  width: 100%;
+  height: 30%;
+  position: absolute;
+  bottom: 0;
+  background-image: linear-gradient(
+    $accent-color 20%,
+    $primary-color 100%,
+    transparent
+  );
+  pointer-events: none;
 }
 
 .text-shadow {
-	text-shadow:
-		0 0 15px #876b53b4,
-		0 0 1em #876b5362,
-		0 0 0.2em rgba(81, 79, 252, 0.589);
+  text-shadow:
+    0 0 15px #876b53b4,
+    0 0 1em #876b5362,
+    0 0 0.2em rgba(81, 79, 252, 0.589);
 }
 
 .link_split {
-	position: relative;
-	outline: 0;
-	line-height: 1;
-	transition: color 0s 0.5s;
-	display: inline-block;
-	white-space: nowrap;
+  position: relative;
+  outline: 0;
+  line-height: 1;
+  transition: color 0s 0.5s;
+  display: inline-block;
+  white-space: nowrap;
 
-	&:hover {
-		text-shadow: none;
-		color: transparent;
-		transition: none;
+  &:hover {
+    text-shadow: none;
+    color: transparent;
+    transition: none;
 
-		&::before {
-			transform: translate3d(0px, -2px, 0);
-		}
+    &::before {
+      transform: translate3d(0px, -2px, 0);
+    }
 
-		&::after {
-			transform: translate3d(0px, 2px, 0);
-		}
+    &::after {
+      transform: translate3d(0px, 2px, 0);
+    }
 
-		&::before,
-		&::after {
-			color: $color-fill-dark;
-			transition:
-				color 0.5s,
-				transform 0.5s;
-		}
-	}
+    &::before,
+    &::after {
+      color: $text-color;
+      transition:
+        color 0.5s,
+        transform 0.5s;
+    }
+  }
 
-	&::before,
-	&::after {
-		content: attr(data-letters);
-		position: absolute;
-		top: 0;
-		left: 0;
-		color: #fff;
-		transition:
-			color 0.5s,
-			transform 0.5s;
-	}
+  &::before,
+  &::after {
+    content: attr(data-letters);
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #fff;
+    transition:
+      color 0.5s,
+      transform 0.5s;
+  }
 
-	&::before {
-		clip-path: polygon(0 0, 100% 0%, 100% 30%, 0 65%);
-	}
+  &::before {
+    clip-path: polygon(0 0, 100% 0%, 100% 30%, 0 65%);
+  }
 
-	&::after {
-		clip-path: polygon(0 65%, 100% 30%, 100% 100%, 0 100%);
-	}
+  &::after {
+    clip-path: polygon(0 65%, 100% 30%, 100% 100%, 0 100%);
+  }
 }
 
 .link_underline-center {
-	position: relative;
-	transition: color 0.3s ease-in-out;
+  position: relative;
+  transition: color 0.3s ease-in-out;
 
-	&::before {
-		content: '';
-		transform: scaleX(0);
-		position: absolute;
-		bottom: 0;
-		width: 100%;
-		height: 1px;
-		transition: transform 0.3s ease-in-out;
-		opacity: 0.6;
-		background-color: $color-fill-dark;
-	}
+  &::before {
+    content: "";
+    transform: scaleX(0);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    transition: transform 0.3s ease-in-out;
+    opacity: 0.6;
+    background-color: $text-color;
+  }
 
-	&::after {
-		bottom: 0;
-		left: 0;
-	}
+  &::after {
+    bottom: 0;
+    left: 0;
+  }
 
-	&:hover {
-		&::before {
-			transform: scaleX(1);
-		}
+  &:hover {
+    &::before {
+      transform: scaleX(1);
+    }
 
-		a {
-			opacity: 1;
-		}
-	}
+    a {
+      opacity: 1;
+    }
+  }
 }
 
 .link_underline {
-	&::before,
-	&::after {
-		position: absolute;
-		width: 0;
-		height: 1px;
-		content: '';
-		transition: width 0.4s ease-in-out;
-		opacity: 0.6;
-		background-color: $color-fill-dark;
-	}
+  &::before,
+  &::after {
+    position: absolute;
+    width: 0;
+    height: 1px;
+    content: "";
+    transition: width 0.4s ease-in-out;
+    opacity: 0.6;
+    background-color: $text-color;
+  }
 
-	&::before {
-		right: 0;
-		bottom: 0;
-	}
+  &::before {
+    right: 0;
+    bottom: 0;
+  }
 
-	&::after {
-		bottom: 0;
-		left: 0;
-	}
+  &::after {
+    bottom: 0;
+    left: 0;
+  }
 
-	&._active {
-		&::before {
-			width: 45%;
-		}
+  &._active {
+    &::before {
+      width: 45%;
+    }
 
-		&::after {
-			width: 45%;
-		}
-	}
+    &::after {
+      width: 45%;
+    }
+  }
 
-	&:hover {
-		transition: color 0.4s ease-in-out;
-		color: $color-fill-dark;
+  &:hover {
+    transition: color 0.4s ease-in-out;
+    color: $text-color;
 
-		&::before {
-			width: 45%;
-		}
+    &::before {
+      width: 45%;
+    }
 
-		&::after {
-			width: 45%;
-		}
+    &::after {
+      width: 45%;
+    }
 
-		a {
-			opacity: 1;
-		}
-	}
+    a {
+      opacity: 1;
+    }
+  }
 }
 
 .is-open {
-	display: grid;
-	width: 100%;
-	transition: grid-template-rows 0.4s ease-in-out;
-	grid-template-columns: 1fr;
-	grid-template-rows: 0fr;
+  display: grid;
+  width: 100%;
+  transition: grid-template-rows 0.4s ease-in-out;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0fr;
 
-	&._is-open {
-		grid-template-rows: 1fr;
-	}
+  &._is-open {
+    grid-template-rows: 1fr;
+  }
 }
 
 //* ------------------------ Трансформация блока--------------------------------
 .transform-perspective {
-	// -- Cвойства родителя
-	transform-style: preserve-3d;
-	backface-visibility: hidden;
-	perspective: 100px;
+  // -- Cвойства родителя
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  perspective: 100px;
 
-	// -- Свойства дочернего элемента
-	.transform-box {
-		transition: all 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+  // -- Свойства дочернего элемента
+  .transform-box {
+    transition: all 0.8s cubic-bezier(0.77, 0, 0.175, 1);
 
-		&:hover {
-			opacity: 0.3 !important;
-			transform-origin: 50% -100%;
-			transform: rotateX(-16deg) translateZ(-22px);
-		}
-	}
+    &:hover {
+      opacity: 0.3 !important;
+      transform-origin: 50% -100%;
+      transform: rotateX(-16deg) translateZ(-22px);
+    }
+  }
 }
 //* ----------------------------------------------------------------------------
 .grad_underline {
-	/* Определяем фоновые изображения */
-	transition: background-size 400ms;
+  /* Определяем фоновые изображения */
+  transition: background-size 400ms;
 
-	/* Размер фона для каждого слоя */
-	background-image: linear-gradient(to left, transparent, transparent),
-		linear-gradient(
-			to left,
-			var(--background-selected),
-			var(--font-color-active)
-		);
+  /* Размер фона для каждого слоя */
+  background-image: linear-gradient(to left, transparent, transparent),
+    linear-gradient(
+      to left,
+      var(--background-selected),
+      var(--font-color-active)
+    );
 
-	/* Позиционирование фона */
-	background-repeat: no-repeat;
+  /* Позиционирование фона */
+  background-repeat: no-repeat;
 
-	/* Повторение фона */
-	background-position:
-		100% 100%,
-		/* Первое изображение */ 0 100%; /* Второе изображение */
+  /* Повторение фона */
+  background-position:
+    100% 100%,
+    /* Первое изображение */ 0 100%; /* Второе изображение */
 
-	/* Переход для изменения размера фона */
-	background-size:
-		100% 1px,
-		/* Первое изображение */ 0 1px; /* Второе изображение */
+  /* Переход для изменения размера фона */
+  background-size:
+    100% 1px,
+    /* Первое изображение */ 0 1px; /* Второе изображение */
 }
-//! ----------------------------------------------------------------------------
-// .border-present {
-// 	position: absolute;
-// 	display: block;
-// 	color: $color-fill-dark;
-// 	background-image: linear-gradient(
-// 			to right,
-// 			currentColor 0%,
-// 			$color-fill-dark 8%,
-// 			transparent 8%,
-// 			transparent 92%,
-// 			$color-fill-dark 92%,
-// 			currentColor 100%
-// 		),
-// 		linear-gradient(
-// 			to right,
-// 			currentColor 0%,
-// 			$color-fill-dark 8%,
-// 			transparent 8%,
-// 			transparent 92%,
-// 			$color-fill-dark 92%,
-// 			currentColor 100%
-// 		),
-// 		linear-gradient(
-// 			to bottom,
-// 			currentColor 0%,
-// 			$color-fill-dark 11%,
-// 			transparent 11%,
-// 			transparent 89%,
-// 			$color-fill-dark 89%,
-// 			currentColor 100%
-// 		),
-// 		linear-gradient(
-// 			to bottom,
-// 			currentColor 0%,
-// 			$color-fill-dark 11%,
-// 			transparent 11%,
-// 			transparent 89%,
-// 			$color-fill-dark 89%,
-// 			currentColor 100%
-// 		);
-// 	background-repeat: no-repeat;
-// 	background-position:
-// 		0 0,
-// 		0 100%,
-// 		0 0,
-// 		100% 0;
-// 	background-size:
-// 		100% 1px,
-// 		100% 1px,
-// 		1px 100%,
-// 		1px 100%;
-// 	inset: 0.7rem;
-// }
 //* ----------------------------------------------------------------------------
 .pagination {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 100%;
-	margin-top: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 6rem;
 
-	.swiper-pagination-bullet {
-		width: 15px;
-		height: 15px;
-		content: '';
-		border-radius: 50%;
-		background: #2a3514;
-		transition: background 0.5s ease-in-out;
+  .swiper-pagination-bullet {
+    width: 15px;
+    height: 15px;
+    content: "";
+    border-radius: 50%;
+    background: #2a3514;
+    transition: background 0.5s ease-in-out;
 
-		&:not(:last-child) {
-			margin-right: 2rem;
-		}
-	}
+    &:not(:last-child) {
+      margin-right: 2rem;
+    }
+  }
 
-	.swiper-pagination-bullet-active {
-		width: 15px;
-		height: 15px;
-		content: '';
-		border-radius: 50%;
-		background: #9acd32;
-		scale: 1.2;
-		transition: scale 0.5s ease-in-out;
-	}
+  .swiper-pagination-bullet-active {
+    width: 15px;
+    height: 15px;
+    content: "";
+    border-radius: 50%;
+    background: #9acd32;
+    scale: 1.2;
+    transition: scale 0.5s ease-in-out;
+  }
 
-	&.swiper-pagination-lock {
-		display: none;
-	}
+  &.swiper-pagination-lock {
+    display: none;
+  }
 }

@@ -1,128 +1,124 @@
-@use 'variables' as *;
-@use 'mixins' as *;
+@use "variables" as *;
+@use "mixins" as *;
 // todo ----------------------- [Default fonts] --------------------------------
 // &display=swap&subset=cyrillic-ext
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
 // #region\
 // todo ----------------------- [Reset codes] ----------------------------------
 html {
-	font: {
-		style: normal;
-		size: 62.5%;
-		weight: $font-weight-default;
-		family: $font-default;
-	}
-	color: $color-fill;
-	height: 100%;
-	counter-reset: heading;
+  font: {
+    style: normal;
+    size: 62.5%;
+    weight: $font-weight-default;
+    family: $font-default;
+  }
+  color: $text-color;
+  height: 100%;
+  counter-reset: heading;
 
-	@include screen-1024 {
-		font-size: 50%;
-	}
+  @include screen-1024 {
+    font-size: 50%;
+  }
 }
 
 body {
-	overscroll-behavior: none;
-	font: 1.6rem/1.6$font-default;
-	color: $color-fill;
-	background-color: $background-color;
+  overscroll-behavior: none;
+  font: 1.6rem/1.6$font-default;
+  color: $color-fill;
+  background-color: $primary-color;
 
-	&.no-scroll {
-		overflow: hidden;
-	}
+  &.no-scroll {
+    overflow: hidden;
+  }
 }
 
 * {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
-	border: none;
-	scrollbar-width: none;
-	-webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+  scrollbar-width: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 *,
 *::before,
 *::after {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 img,
 svg {
-	user-select: none;
-	// pointer-events: none;
-	width: 100%;
-	height: 100%;
-	max-width: 100%;
-	aspect-ratio: auto;
+  user-select: none;
+  // pointer-events: none;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  aspect-ratio: auto;
 }
 
 a {
-	cursor: pointer;
-	text-decoration: none;
-	color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
 }
 
 a:hover {
-	text-decoration: none;
-	vertical-align: baseline;
+  text-decoration: none;
+  vertical-align: baseline;
 }
 
 a:focus {
-	text-decoration: none;
+  text-decoration: none;
 }
 
 a:visited {
-	vertical-align: middle;
-	text-emphasis-style: none;
+  vertical-align: middle;
+  text-emphasis-style: none;
 }
 
 button,
-input[type='submit'] {
-	display: inline-block;
-	cursor: pointer;
-	background: transparent none;
-	box-shadow: none;
+input[type="submit"] {
+  display: inline-block;
+  cursor: pointer;
+  background: transparent none;
+  box-shadow: none;
 }
-
-// input::-ms-clear {
-// 	display: none;
-// }
 
 input,
 textarea,
 button,
 select {
-	font-family: inherit;
-	font-size: inherit;
-	color: inherit !important;
-	background-color: transparent;
-	border: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit !important;
+  background-color: transparent;
+  border: none;
 }
 
 input:focus,
 input:active,
 button:focus,
 button:active {
-	outline: none;
+  outline: none;
 }
 
 button::-moz-focus-inner {
-	padding: 0;
-	border: 0;
+  padding: 0;
+  border: 0;
 }
 
 a:focus,
 a:active,
 input:focus,
 textarea:focus {
-	outline: none;
+  outline: none;
 }
 
 ul,
 ol,
 li {
-	list-style: none;
+  list-style: none;
 }
 
 h1,
@@ -131,65 +127,65 @@ h3,
 h4,
 h5,
 h6 {
-	font: {
-		weight: inherit;
-		style: inherit;
-	}
+  font: {
+    weight: inherit;
+    style: inherit;
+  }
 }
 
 //  * Изменить стиль выделения текста
 ::selection {
-	color: $text-color-selection;
-	background-color: $text-selection;
-	text-shadow: 0 1px 0 #000;
+  color: $text-color-selection;
+  background-color: $text-selection;
+  text-shadow: 0 1px 0 #000;
 }
 
 ::-moz-selection {
-	color: $text-color-selection;
-	background-color: $text-selection;
-	text-shadow: 0 1px 0 #000;
+  color: $text-color-selection;
+  background-color: $text-selection;
+  text-shadow: 0 1px 0 #000;
 }
 
 // * Изменить стиль полосы прокрутки (scrollbar)
 ::-webkit-scrollbar {
-	width: 0.5rem;
-	padding: 0.031em;
+  width: 0.5rem;
+  padding: 0.031em;
 }
 
 ::-webkit-scrollbar-track {
-	background: var(--scrollbar-thumb-bgcolor);
+  background: var(--scrollbar-thumb-bgcolor);
 }
 
 ::-webkit-scrollbar-thumb {
-	border: 1px solid var(--border-color);
-	border-radius: 2px;
-	background-color: var(--themes-color);
-	background-image: -webkit-linear-gradient(
-		45deg,
-		var(--background-thumb) 25%,
-		transparent 25%,
-		transparent 50%,
-		var(--background-thumb) 50%,
-		var(--background-thumb) 75%,
-		transparent 75%,
-		transparent
-	);
+  border: 1px solid var(--border-color);
+  border-radius: 2px;
+  background-color: var(--themes-color);
+  background-image: -webkit-linear-gradient(
+    45deg,
+    var(--background-thumb) 25%,
+    transparent 25%,
+    transparent 50%,
+    var(--background-thumb) 50%,
+    var(--background-thumb) 75%,
+    transparent 75%,
+    transparent
+  );
 }
 
 ::-webkit-scrollbar-thumb:hover {
-	background-color: var(--background-thumb);
-	background-image: -webkit-linear-gradient(
-		45deg,
-		var(--themes-color) 25%,
-		transparent 25%,
-		transparent 50%,
-		var(--themes-color) 50%,
-		var(--themes-color) 75%,
-		transparent 75%,
-		transparent
-	);
+  background-color: var(--background-thumb);
+  background-image: -webkit-linear-gradient(
+    45deg,
+    var(--themes-color) 25%,
+    transparent 25%,
+    transparent 50%,
+    var(--themes-color) 50%,
+    var(--themes-color) 75%,
+    transparent 75%,
+    transparent
+  );
 }
 ::placeholder {
-	/* Most modern browsers support this now. */
-	color: $color-fill-light;
+  /* Most modern browsers support this now. */
+  color: $color-fill-light;
 }

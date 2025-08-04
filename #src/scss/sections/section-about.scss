@@ -2,12 +2,13 @@
 @use "../core/mixins" as *;
 
 .about {
-  background-color: $color;
-
   // .about__title
   &__title {
     h2 {
-      background-color: $color;
+      background-color: $primary-color;
+      span {
+        filter: drop-shadow(2px 2px 1px #707070);
+      }
     }
   }
 
@@ -17,6 +18,7 @@
     display: flex;
     justify-content: space-between;
     gap: 2rem;
+
     @include screen-960 {
       flex-direction: column-reverse;
       row-gap: 6rem;
@@ -73,7 +75,7 @@
   &__image {
     img {
       position: relative;
-      background-color: $background-color;
+      background-color: $primary-color;
       border-radius: 0.4rem;
       overflow: hidden;
       padding: 1rem;

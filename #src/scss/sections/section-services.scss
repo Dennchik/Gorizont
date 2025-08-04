@@ -31,7 +31,7 @@
 
     &:nth-child(6) {
       .card {
-        background: $color-Rouse;
+        background: rgba(232, 135, 190, 0.6);
 
         &__info {
           max-width: 100%;
@@ -57,7 +57,9 @@
   padding: 2rem 1.5rem 2.4rem;
   box-shadow: 3px 3px 10px 0px rgba(36, 18, 33, 0.3);
   background: $color-Rouse;
-  background: $color;
+  background: $secondary-color-light;
+
+  background-color: rgb(239, 232, 255);
   border-radius: 0.5rem;
   display: flex;
   flex-direction: column;
@@ -91,6 +93,7 @@
     }
   }
 
+  // .card__icon
   &__icon {
     max-width: 7rem;
     width: 100%;

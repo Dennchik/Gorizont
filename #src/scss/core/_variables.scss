@@ -13,24 +13,23 @@ $font-default: "Source Sans 3", sans-serif;
 $font-weight-default: 400;
 $font-size: 1.6rem;
 $font-size-default: 1.4rem;
-//* -------------------------------- [Color] -----------------------------------
-$color-warm: #ffefcd;
-$color-ivory: #fff4db;
-$color-fern: #8a9064;
-$color-fill-dark: #211041;
-$color-fill: #48386b;
-$color-fill-light: #7e6aa8;
-$color-fill-light-transparent: hsla(259, 26%, 54%, 0.3);
+//* ---------------------------- [ Themas Color ] ------------------------------
 $color-Rouse: #e887be;
-$color-Blue: #cbdff6;
-
+$accent-color: #87bee8;
+$primary-color: rgb(248, 245, 255);
+$secondary-color: #48386b;
+$secondary-color-light: #9775e059;
+$text-color: #211041;
+$border-color: rgba(72, 56, 107, 0.3);
 $background-color: rgb(248, 245, 255);
-$background-color-transparent: rgba(19, 19, 22, 0.9);
+$color-fill: #48386b;
+$color-fill-light-transparent: rgba(127, 107, 168, 0.3);
+$color-fill-light: #7e6aa8;
+//* -------------------------------- [Color] -----------------------------------
 
 $color: #d1c6dd;
 $color-secondary: rgb(51, 39, 100);
 $blue-color-transparent: rgba(73, 87, 123, 0.404);
-$border-color: rgb(30, 32, 46);
 
 //* ---------------------------- [Other colors] --------------------------------
 $boxShadow: 3px 3px 10px 0 rgba(36, 18, 33, 0.3);

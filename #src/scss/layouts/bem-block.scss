@@ -126,7 +126,8 @@
   text-transform: uppercase;
   overflow: hidden;
   border-radius: 4px;
-  background-color: #e887be;
+  background-color: $secondary-color;
+  color: $primary-color;
   transition: box-shadow 0.4s ease-in-out;
   cursor: pointer;
 
@@ -214,7 +215,7 @@
   &__text {
     p {
       font-size: 12px;
-      color: $color-fill-dark;
+      color: $text-color;
       filter: contrast(150%);
       line-height: 120%;
     }

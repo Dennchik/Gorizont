@@ -1,153 +1,152 @@
-@use '../core/variables' as *;
-@use '../core/extend' as *;
+@use "../core/variables" as *;
+@use "../core/extend" as *;
 
 .personal-data {
-	// background-color: $background-color;
-	backdrop-filter: blur(50px);
-	position: fixed;
-	width: 0; /* Изначальная ширина */
-	height: 0; /* Изначальная высота */
-	top: 50%; /* Центрирование по вертикали */
-	left: 50%; /* Центрирование по горизонтали */
-	overflow-x: hidden;
-	pointer-events: none;
-	transform: translate(-50%, -50%) scaleX(0);
-	transform-origin: top center;
-	transition:
-		transform 1.75s ease,
-		opacity 1.75s ease; /* Плавные переходы */
+  // background-color: $background-color;
+  backdrop-filter: blur(50px);
+  position: fixed;
+  width: 0; /* Изначальная ширина */
+  height: 0; /* Изначальная высота */
+  top: 50%; /* Центрирование по вертикали */
+  left: 50%; /* Центрирование по горизонтали */
+  overflow-x: hidden;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scaleX(0);
+  transform-origin: top center;
+  transition:
+    transform 1.75s ease,
+    opacity 1.75s ease; /* Плавные переходы */
 
-	display: flex;
-	align-items: flex-start;
-	justify-content: center;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
 
-	&__doc {
-		filter: contrast(130%);
-	}
+  &__doc {
+    filter: contrast(130%);
+  }
 
-	&._show {
-		animation: expand-height 2s ease forwards; /* Запуск анимации */
-		opacity: 1; /* Сделать видимой */
-		border-width: 1px;
-		scale: 1;
-		pointer-events: all;
-	}
+  &._show {
+    animation: expand-height 2s ease forwards; /* Запуск анимации */
+    opacity: 1; /* Сделать видимой */
+    border-width: 1px;
+    scale: 1;
+    pointer-events: all;
+  }
 
-	&._hide {
-		pointer-events: none;
-		animation: collapse-width 2s ease forwards; /* Обратная анимация */
-		opacity: 0; /* Исчезновение */
-	}
+  &._hide {
+    pointer-events: none;
+    animation: collapse-width 2s ease forwards; /* Обратная анимация */
+    opacity: 0; /* Исчезновение */
+  }
 
-	// .personal-data__icon-text
-	&__icon-text {
-		position: sticky;
-		z-index: 16;
-		display: flex;
-		justify-content: space-between;
-		gap: 2rem;
-		width: 100%;
-		margin-bottom: 1rem;
+  // .personal-data__icon-text
+  &__icon-text {
+    position: sticky;
+    z-index: 16;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    width: 100%;
+    margin-bottom: 1rem;
 
-		top: 0;
-		right: 0;
-		display: flex;
-		padding: 2rem 0;
-		background-color: $background-color;
+    top: 0;
+    right: 0;
+    display: flex;
+    padding: 2rem 0;
+    background-color: $primary-color;
 
-		&:hover {
-			.icon-plus {
-				transform: rotate(135deg);
-			}
-		}
-	}
+    &:hover {
+      .icon-plus {
+        transform: rotate(135deg);
+      }
+    }
+  }
 
-	// .personal-data__icon
-	&__icon {
-		.icon-plus {
-			cursor: pointer;
-			pointer-events: none;
-			transform: rotate(-45deg);
-			filter: contrast(150%);
-			font-size: 3.2rem;
-			transition: transform 0.5s ease 0s;
-		}
-	}
+  // .personal-data__icon
+  &__icon {
+    .icon-plus {
+      cursor: pointer;
+      pointer-events: none;
+      transform: rotate(-45deg);
+      filter: contrast(150%);
+      font-size: 3.2rem;
+      transition: transform 0.5s ease 0s;
+    }
+  }
 
-	&__body {
-		border: 1px solid $color-fill-dark;
-		border-style: solid none none;
-		height: auto;
-		padding-bottom: 4rem;
-		position: relative;
-		box-shadow: 0 0 15px $color-fill-light;
-		background-color: $background-color;
-	}
+  &__body {
+    border: 1px solid $text-color;
+    border-style: solid none none;
+    height: auto;
+    padding-bottom: 4rem;
+    position: relative;
+    box-shadow: 0 0 15px $color-fill-light;
+    background-color: $primary-color;
+  }
 
-	&__content {
-		height: auto;
-		padding-right: 13px;
+  &__content {
+    height: auto;
+    padding-right: 13px;
 
-		p {
-			filter: contrast(130%);
-		}
+    p {
+      filter: contrast(130%);
+    }
 
-		h3 {
-			margin-block: 2.6rem 1rem;
-			filter: contrast(150%);
-		}
+    h3 {
+      margin-block: 2.6rem 1rem;
+      filter: contrast(150%);
+    }
 
-		a {
-			font-variation-settings: 'wght' 600;
-			@extend .link_underline-center;
-			color: rgb(0, 162, 255);
-			// filter: contrast(150%);
-		}
-	}
+    a {
+      font-variation-settings: "wght" 600;
+      @extend .link_underline-center;
+      color: $accent-color;
+    }
+  }
 
-	&__title {
-		h2 {
-			transform: scale(1);
-		}
-		margin-bottom: 2rem;
-	}
+  &__title {
+    h2 {
+      transform: scale(1);
+    }
+    margin-bottom: 2rem;
+  }
 }
 
 //todo - [Анимация открытия / закрытия модального окна ] -
 /* Анимация открытия */
 @keyframes expand-height {
-	0% {
-		width: 0;
-		height: 2px; /* Тонкая полоска */
-		transform: translate(-50%, -50%) scaleX(0); /* Сжатие по ширине */
-	}
-	50% {
-		width: 100%; /* Полоса расширяется по ширине */
-		height: 2px; /* Пока остаётся тонкой */
-		transform: translate(-50%, -50%) scaleX(1); /* Расширение по ширине */
-	}
-	100% {
-		width: 100%; /* Полная ширина */
-		height: 100%; /* Полная высота */
-		transform: translate(-50%, -50%) scaleX(1); /* Завершение */
-	}
+  0% {
+    width: 0;
+    height: 2px; /* Тонкая полоска */
+    transform: translate(-50%, -50%) scaleX(0); /* Сжатие по ширине */
+  }
+  50% {
+    width: 100%; /* Полоса расширяется по ширине */
+    height: 2px; /* Пока остаётся тонкой */
+    transform: translate(-50%, -50%) scaleX(1); /* Расширение по ширине */
+  }
+  100% {
+    width: 100%; /* Полная ширина */
+    height: 100%; /* Полная высота */
+    transform: translate(-50%, -50%) scaleX(1); /* Завершение */
+  }
 }
 
 /* Анимация закрытия */
 @keyframes collapse-width {
-	0% {
-		width: 100%; /* Полная ширина */
-		height: 100%; /* Полная высота */
-		transform: translate(-50%, -50%) scaleX(1); /* Полное состояние */
-	}
-	50% {
-		width: 100%; /* Полоса остаётся широкой */
-		height: 2px; /* Высота уменьшается до тонкой линии */
-		transform: translate(-50%, -50%) scaleX(1); /* Ширина сохраняется */
-	}
-	100% {
-		width: 0; /* Полоса исчезает по ширине */
-		height: 2px; /* Тонкая полоска */
-		transform: translate(-50%, -50%) scaleX(0); /* Сжатие по ширине */
-	}
+  0% {
+    width: 100%; /* Полная ширина */
+    height: 100%; /* Полная высота */
+    transform: translate(-50%, -50%) scaleX(1); /* Полное состояние */
+  }
+  50% {
+    width: 100%; /* Полоса остаётся широкой */
+    height: 2px; /* Высота уменьшается до тонкой линии */
+    transform: translate(-50%, -50%) scaleX(1); /* Ширина сохраняется */
+  }
+  100% {
+    width: 0; /* Полоса исчезает по ширине */
+    height: 2px; /* Тонкая полоска */
+    transform: translate(-50%, -50%) scaleX(0); /* Сжатие по ширине */
+  }
 }
