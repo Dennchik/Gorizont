@@ -1,5 +1,5 @@
-@use "../core/variables" as *;
-@use "../core/mixins" as *;
+@use '../core/variables' as *;
+@use '../core/mixins' as *;
 
 .order-place {
   // .order-place__body
@@ -67,5 +67,9 @@
   // .order-form__select-tipe
   &__select-tipe {
     position: relative;
+  }
+
+  .button {
+    width: 100%;
   }
 }

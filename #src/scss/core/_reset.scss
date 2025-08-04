@@ -1,8 +1,8 @@
-@use "variables" as *;
-@use "mixins" as *;
+@use 'variables' as *;
+@use 'mixins' as *;
 // todo ----------------------- [Default fonts] --------------------------------
 // &display=swap&subset=cyrillic-ext
-@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
 // #region\
 // todo ----------------------- [Reset codes] ----------------------------------
 html {
@@ -78,8 +78,8 @@ a:visited {
 }
 
 button,
-input[type="submit"] {
-  display: inline-block;
+input[type='submit'] {
+  // display: inline-block;
   cursor: pointer;
   background: transparent none;
   box-shadow: none;
@@ -91,7 +91,7 @@ button,
 select {
   font-family: inherit;
   font-size: inherit;
-  color: inherit !important;
+  color: inherit;
   background-color: transparent;
   border: none;
 }

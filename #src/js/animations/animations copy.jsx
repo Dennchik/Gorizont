@@ -2,7 +2,7 @@ import { gsap } from 'gsap';
 import { ScrollSmoother } from 'gsap/ScrollSmoother';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SplitText } from 'gsap/SplitText';
-// import { Observer } from 'gsap/Observer'; 
+// import { Observer } from 'gsap/Observer';
 // import { CustomEase } from 'gsap/CustomEase';
 // import { CustomBounce } from 'gsap/CustomBounce';
 // import { CustomWiggle } from 'gsap/CustomWiggle';
@@ -17,17 +17,17 @@ ScrollTrigger.config({ ignoreMobileResize: true });
 //? speed	Скорость реагирования скролла	0.5(медленно) → 2(быстро)
 //? smooth	Плавность / инерция скролла	0.5 → 2
 //? effects	Включает поддержку.effects()	true / false
-//? smoothTouch	Плавность скролла на тач - устройствах	0 → 1; 
+//? smoothTouch	Плавность скролла на тач - устройствах	0 → 1;
 
 export function smoother() {
-	ScrollSmoother.create({
-		wrapper: '#wrapper',
-		content: '#content',
-		speed: 1,
-		smooth: 1,
-		effects: true,
-		smoothTouch: 0.1,
-	});
+  ScrollSmoother.create({
+    wrapper: '#wrapper',
+    content: '#content',
+    speed: 1,
+    smooth: 1,
+    effects: true,
+    smoothTouch: 0.1,
+  });
 }
 
 //* _______________________ Создание ScrollTrigger _____________________________
@@ -49,9 +49,9 @@ export function smoother() {
 //* ----------------------------------------------------------------------------
 // export function initSectionTriggerMove(trigger, targets) {
 // 	ScrollTrigger.create({
-// 		trigger: trigger, //* Начинаем событие, когда верхняя граница элемента-1 находится на 100px ниже верха окна браузера 
+// 		trigger: trigger, //* Начинаем событие, когда верхняя граница элемента-1 находится на 100px ниже верха окна браузера
 // 		start: 'top center',
-// 		endTrigger: trigger, //* Конец события - конец документа /*Конец событие когда верхняя граница элемента 1 достигнет верха окна браузера 
+// 		endTrigger: trigger, //* Конец события - конец документа /*Конец событие когда верхняя граница элемента 1 достигнет верха окна браузера
 // 		end: 'bottom center',
 // 		toggleClass: { targets: targets, className: '_active' },
 // 		// markers: true
@@ -60,10 +60,10 @@ export function smoother() {
 
 //* ___________________________ [applyParallax] ________________________________
 export function applyParallax(element) {
-	const smootherInstance = ScrollSmoother.get();
-	smootherInstance.effects(element, {
-		speed: () => 0.5
-	});
+  const smootherInstance = ScrollSmoother.get();
+  smootherInstance.effects(element, {
+    speed: () => 0.5,
+  });
 }
 //* __________________ Плавное исчезновение "performance" ______________________
 // export function tlVerticalOpacity() {
@@ -234,7 +234,7 @@ export function applyParallax(element) {
 // 		y: 300,
 // 		duration: 0.7, // Продолжительность смещения
 // 		ease: 'slow(0.1,2,true)',
-// 		// ease: 'expoScale(10,2.5,none)', 
+// 		// ease: 'expoScale(10,2.5,none)',
 // 	});
 // }
 
@@ -279,4 +279,3 @@ export function applyParallax(element) {
 // 		ease: 'Bounce',
 // 	});
 // }
-

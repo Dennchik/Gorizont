@@ -1,4 +1,4 @@
-@use "../core/variables" as *;
+@use '../core/variables' as *;
 
 .select > ._collapse:not(._show) {
   display: none;
@@ -15,6 +15,7 @@
     border-radius: 4px;
     border: 1px solid $color-Rouse;
     display: flex;
+    align-items: center;
     justify-content: space-between;
 
     ._icon {
@@ -23,7 +24,7 @@
       font-size: 2.8rem;
       transition: transform 0.3s ease-in-out;
       pointer-events: none;
-      padding: 10px;
+      padding: 0 10px;
     }
 
     input {
@@ -81,6 +82,7 @@
 
     &:hover {
       background-color: $color-fill-light;
+      color: $primary-color;
     }
   }
 

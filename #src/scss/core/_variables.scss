@@ -8,13 +8,13 @@ $sidebarWidth: 4rem;
 $titleHeight: 3rem;
 $min-height: calc(100% - ($headerHeight + $footerHeight));
 //* ---------------------------- [Font Variables] ------------------------------
-$font-path: "../fonts";
-$font-default: "Source Sans 3", sans-serif;
+$font-path: '../fonts';
+$font-default: 'Source Sans 3', sans-serif;
 $font-weight-default: 400;
 $font-size: 1.6rem;
 $font-size-default: 1.4rem;
 //* ---------------------------- [ Themas Color ] ------------------------------
-$color-Rouse: #e887be;
+$color-Rouse: rgb(232, 135, 190);
 $accent-color: #87bee8;
 $primary-color: rgb(248, 245, 255);
 $secondary-color: #48386b;
@@ -60,6 +60,7 @@ $text-shadow-color: 0 0 1px #b0b0f9;
   //* -------------------------- [Other colors] --------------------------------
   --border-color: rgba(60, 84, 141, 0.286);
   --color-active: rgb(4, 217, 255);
+  --alarm-color: rgba(232, 135, 190, 0.6);
   // ---------------------------------------------------------------------------
   --pos: center center;
   --size: 0;

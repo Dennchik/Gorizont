@@ -1,73 +1,59 @@
-// todo --------------------------- Assets -------------------------------------
-//* ----------------------------- [Slide] --------------------------------------
+// todo - [ Assets ] -
+//* - [Slide] -
 import { buildSwiper } from './layouts/build-swiper.js';
 buildSwiper();
-import { mainSlide } from './layouts/slide.js';
+import { mainSlide } from './assets/slide.js';
 mainSlide('.main-slide');
-import { slidePartners } from './layouts/slide.js';
+import { slidePartners } from './assets/slide.js';
 slidePartners('.slide-partners');
+import { falidateForm } from './assets/validate-form.js';
+falidateForm();
 
-//* ----------------------------------------------------------------------------
-import {
-	// timeLineTextItem,
-} from './animations/anime-js.jsx';
+//* - [ Animations ] -
+import { animationHeader } from './utils/animation-header.jsx';
 
-//* ------------------- [ResizeObserver shape-outside ] ------------------------
+import {} from // timeLineTextItem,
+'./animations/anime-js.jsx';
+
+//* - [ResizeObserver shape-outside ] -
 import { syncHeight } from './utils/syncHeight.jsx';
 
 syncHeight({
-	sourceSelector: '.perform__text',
-	targetSelector: '.perform__shape-block',
-	offset: 25, // немного больше, чтобы не врезалась последняя строка
-	autoResize: true,
+  sourceSelector: '.perform__text',
+  targetSelector: '.perform__shape-block',
+  offset: 25, // немного больше, чтобы не врезалась последняя строка
+  autoResize: true,
 });
-// todo ---------------------- [Animations] ------------------------------------
-import { animationHeader } from './utils/animation-header.jsx';
 import { cookiesAccept } from './layouts/layouts.js';
 document.addEventListener('DOMContentLoaded', () => {
-	animationHeader();
-	cookiesAccept('.cookies-accept', '.cookies-accept__button');
+  animationHeader();
+  cookiesAccept('.cookies-accept', '.cookies-accept__button');
 });
 // todo ----------------------- [Modules] --------------------------------------
 import { modalPage } from './layouts/layouts.js';
 
 modalPage();
 
-
-// const isMobile = /Mobi|Android/i.test(navigator.userAgent); 
+// const isMobile = /Mobi|Android/i.test(navigator.userAgent);
 document.addEventListener('DOMContentLoaded', function () {
-	//* --------------------------- Animation title -----------------------------
-	// const el2 = document.querySelector('.el-2');
-	// if (!isMobile) {
-	// 	timeLineTextItem();
-	// } else {
-	// 	el2.style.transform = 'scaleY(1.5)';
-	// }
+  //* --------------------------- Animation title -----------------------------
+  // const el2 = document.querySelector('.el-2');
+  // if (!isMobile) {
+  // 	timeLineTextItem();
+  // } else {
+  // 	el2.style.transform = 'scaleY(1.5)';
+  // }
 });
-
 
 //* ------------------------------ Burger Menu ---------------------------------
 const burgerButton = document.querySelector('.burger-button');
-// const accelerate = document.querySelector('.accelerate');
 const networkLinks = document.querySelector('.network-menu__links');
 const headerButton = document.querySelector('.header__button');
 
-// const itemButton = document.querySelector('.item-button');
-// const closeButton = document.querySelector('.project-list__close-button');
-// const projectList = document.querySelector('.project-list');
-// const anchorLinks = document.querySelectorAll('.anchor-link');
-
 burgerButton.addEventListener('click', () => {
-	networkLinks.classList.toggle('_rotate');
-	headerButton.classList.toggle('_active');
-	// accelerate.classList.toggle('hide');
-	burgerButton.classList.toggle('_open-menu');
-
-	// if (burgerButton.classList.contains('_open-menu')) {
-	// 	document.body.classList.add('no-scroll');
-	// } else {
-	// 	document.body.classList.remove('no-scroll');
-	// }
+  networkLinks.classList.toggle('_rotate');
+  headerButton.classList.toggle('_active');
+  burgerButton.classList.toggle('_open-menu');
 });
 //* ----------------------------- Burger Button --------------------------------
 // anchorLinks.forEach(anchorLink => {
@@ -79,11 +65,16 @@ burgerButton.addEventListener('click', () => {
 // 		burgerButton.classList.remove('_open-menu');
 // 	});
 // });
-
+// todo - Plugins -
+//* - [ Select ] -
+import { select } from './plugins/itsSelect.js';
+select();
 
 //* ----------------------------------------------------------------------------
-console.log('%c РОССИЯ ',
-	'background: blue; color: yellow; font-size: x-large; ' +
-	'border-left: 5px solid black; border-top: 30px solid white; ' +
-	'border-right: 2px solid black; border-bottom: 30px solid red;');
+console.log(
+  '%c РОССИЯ ',
+  'background: blue; color: yellow; font-size: x-large; ' +
+    'border-left: 5px solid black; border-top: 30px solid white; ' +
+    'border-right: 2px solid black; border-bottom: 30px solid red;'
+);
 //* ----------------------------------------------------------------------------

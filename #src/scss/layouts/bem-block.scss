@@ -1,4 +1,4 @@
-@use "../core/all" as *;
+@use '../core/all' as *;
 
 //* - [ Collapse ] -
 .swiper-wrapper > .swiper-slide:not(.swiper-slide-active) {
@@ -16,7 +16,7 @@
 .products,
 .partners {
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     width: 100%;
     height: 1px;
@@ -67,7 +67,7 @@
     z-index: 2;
 
     &:before {
-      content: "";
+      content: '';
       position: absolute;
       left: 0;
       top: 0;
@@ -181,6 +181,17 @@
       100% {
         transform: translate3d(calc(-50% + 1rem), 0, 0);
       }
+    }
+  }
+}
+.button-container {
+  button {
+    transition: opacity 0.4s ease-in-out;
+    &:disabled {
+      cursor: not-allowed;
+      pointer-events: none;
+      box-shadow: none;
+      opacity: 0.5;
     }
   }
 }

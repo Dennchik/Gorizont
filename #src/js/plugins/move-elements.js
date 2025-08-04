@@ -11,8 +11,8 @@ export function dinamicAdaptive() {
           el,
           parent: el.parentElement,
           position: [...el.parentElement.children].indexOf(el),
-          moves: JSON.parse(el.dataset.moveEl.replaceAll('\'', '"')),
-          state: -1
+          moves: JSON.parse(el.dataset.moveEl.replaceAll("'", '"')),
+          state: -1,
         };
       });
       const resizeObserver = new ResizeObserver((entries) => {
@@ -29,7 +29,11 @@ export function dinamicAdaptive() {
               newState = index;
               minWidth = bpMin;
               isChange = true;
-            } else if (bpMin === undefined && width < bpMax && (bpMax <= maxWidth || maxWidth === 0)) {
+            } else if (
+              bpMin === undefined &&
+              width < bpMax &&
+              (bpMax <= maxWidth || maxWidth === 0)
+            ) {
               newState = index;
               maxWidth = bpMax;
               isChange = true;
@@ -52,9 +56,15 @@ export function dinamicAdaptive() {
     _move(item) {
       const el = item['el'];
       const state = item['state'];
-      const position = state > -1 ? item['moves'][state]['index'] : item['position'];
-      const target = state > -1 ? document.querySelector(item['moves'][state]['target']) : item['parent'];
-      position >= target.children.length ? target.append(el) : target.children[position].before(el);
+      const position =
+        state > -1 ? item['moves'][state]['index'] : item['position'];
+      const target =
+        state > -1
+          ? document.querySelector(item['moves'][state]['target'])
+          : item['parent'];
+      position >= target.children.length
+        ? target.append(el)
+        : target.children[position].before(el);
     }
   }
   new ItcMoveEl();
