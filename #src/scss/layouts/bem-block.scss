@@ -1,4 +1,5 @@
-@use '../core/all' as *;
+@use '../core/variables' as *;
+@use '../core/mixins' as *;
 
 //* - [ Collapse ] -
 .swiper-wrapper > .swiper-slide:not(.swiper-slide-active) {
@@ -37,7 +38,6 @@
   }
 
   &__title {
-    text-align: right;
     margin-block: -2.1rem 6rem;
 
     @include screen-690 {
@@ -57,6 +57,11 @@
       }
     }
   }
+}
+
+.anchor-link {
+  scroll-behavior: smooth;
+  cursor: pointer;
 }
 
 //* - [ Clip-Circle ] -
@@ -192,54 +197,6 @@
       pointer-events: none;
       box-shadow: none;
       opacity: 0.5;
-    }
-  }
-}
-
-//* - [ Cookies - accept] -
-.cookies-accept {
-  width: 100%;
-  position: fixed;
-  z-index: 15;
-  bottom: 0;
-  transform: translateY(100%);
-
-  // .cookies-accept__content
-  &__content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
-    max-width: 86.8rem;
-    padding: 1.6rem;
-    margin: 0 auto;
-    background-color: #d2eaff46;
-    backdrop-filter: blur(40px);
-    border-radius: 4px;
-
-    @include screen-425 {
-      flex-direction: column;
-    }
-  }
-
-  // .cookies-accept__text
-  &__text {
-    p {
-      font-size: 12px;
-      color: $text-color;
-      filter: contrast(150%);
-      line-height: 120%;
-    }
-  }
-
-  // .cookies-accept_buttom
-  &__button {
-    max-height: 30px;
-    padding: 10px 24px;
-
-    span {
-      font-size: 14px;
-      text-transform: none;
     }
   }
 }

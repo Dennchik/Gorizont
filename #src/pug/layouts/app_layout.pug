@@ -32,7 +32,7 @@ html(lang="ru")
 				block page-content
 					main._main-content
 						.main-content#wrapper
-							._content#content
+							._content#content 
 								block main-content
 								footer._footer
 									block footer 
@@ -45,3 +45,5 @@ html(lang="ru")
 				//- block content-hidden
 				//- block burger-menu
 					include ../modules/burger-menu 
+			block grid-container
+				include ../layouts/page-grid-3

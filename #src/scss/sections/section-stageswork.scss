@@ -1,9 +1,9 @@
-@use "../core/variables" as *;
-@use "../core/mixins" as *;
+@use '../core/variables' as *;
+@use '../core/mixins' as *;
 
 .stage-swork {
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     width: 100%;
     height: 1px;
@@ -22,7 +22,11 @@
   // .stage-swork__content
   &__content {
     display: flex;
-    gap: 6rem;
+    gap: 2rem;
+
+    @include screen-690 {
+      flex-direction: column-reverse;
+    }
   }
 
   // .stage-swork__column

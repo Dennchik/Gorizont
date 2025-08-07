@@ -1,4 +1,4 @@
-@use "core/all.scss" as *;
+@use 'core/all.scss' as *;
 
 .slide {
   // .slide__body
@@ -89,7 +89,7 @@
     filter: contrast(190%);
 
     &::before {
-      content: "next";
+      content: 'next';
       position: relative;
       font-family: swiper-icons;
       font-size: 1.6rem;
@@ -117,7 +117,7 @@
     filter: contrast(190%);
 
     &::after {
-      content: "next";
+      content: 'next';
       position: relative;
       font-family: swiper-icons;
       font-size: 1.6rem;

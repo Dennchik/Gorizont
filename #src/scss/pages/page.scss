@@ -1,5 +1,5 @@
-@use "../core/variables" as *;
-@use "../core/extend" as *;
+@use '../core/variables' as *;
+@use '../core/extend' as *;
 
 .page {
   width: 100%;
@@ -30,7 +30,7 @@
     height: 100%;
   }
 
-  // . main-content__about
+  // .main-content__about
   &__about {
     position: relative;
     z-index: 1;

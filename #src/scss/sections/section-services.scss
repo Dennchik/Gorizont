@@ -1,5 +1,5 @@
-@use "../core/variables" as *;
-@use "../core/mixins" as *;
+@use '../core/variables' as *;
+@use '../core/mixins' as *;
 
 .services {
   // .services__title
@@ -56,10 +56,7 @@
 .card {
   padding: 2rem 1.5rem 2.4rem;
   box-shadow: 3px 3px 10px 0px rgba(36, 18, 33, 0.3);
-  background: $color-Rouse;
   background: $secondary-color-light;
-
-  background-color: rgb(239, 232, 255);
   border-radius: 0.5rem;
   display: flex;
   flex-direction: column;

@@ -1,4 +1,4 @@
-@use "core/all.scss" as *;
+@use 'core/all.scss' as *;
 
 .perform {
   position: relative;
@@ -26,6 +26,9 @@
     margin-bottom: 3rem;
 
     h1 {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
       font-weight: 700;
       font-size: clamp(3.4375rem, calc(2.227125rem + 4.051875vw), 8.489375rem);
       -webkit-text-stroke: 2px $color-fill-light;
@@ -34,7 +37,7 @@
       line-height: 120%;
 
       span {
-        display: block;
+        display: inline;
         &:nth-child(1) {
           color: transparent;
           -webkit-text-stroke: 1px $color-fill-light;
@@ -80,6 +83,10 @@
       .perform__items {
         &:not(:last-child) {
           padding-top: 3.5rem;
+
+          @include screen-768 {
+            padding-top: 1rem;
+          }
         }
       }
     }
@@ -101,16 +108,24 @@
     }
   }
 
+  // .perform__slide-perform
+  &__slide-perform {
+    width: 100%;
+  }
+
   // .perform__items
   &__items {
-    .t-h3 {
-      text-transform: uppercase;
-      margin-bottom: 3rem;
-    }
-
     &:nth-child(2) {
       display: flex;
       justify-content: center;
+    }
+  }
+
+  // .perform__title-text
+  &__title-text {
+    .t-h3 {
+      text-transform: uppercase;
+      margin-bottom: 3rem;
     }
   }
 
@@ -130,8 +145,8 @@
       white-space: nowrap;
       letter-spacing: 0;
       font-variation-settings:
-        "wght" 600,
-        "ital" 0;
+        'wght' 600,
+        'ital' 0;
       filter: contrast(150%);
     }
   }
@@ -155,7 +170,7 @@
     height: auto;
 
     p {
-      line-height: 130%;
+      line-height: 120%;
       filter: contrast(160%);
       transform: scaleY(1.2);
 

@@ -1,0 +1,54 @@
+@use '../core/variables' as *;
+@use '../core/mixins' as *;
+
+//* - [ Cookies - accept] -
+.cookies-accept {
+  width: 100%;
+  position: fixed;
+  z-index: 15;
+  bottom: 0;
+  transform: translateY(100%);
+
+  // .cookies-accept__body
+  &__body {
+    max-width: 86.8rem;
+    margin: 0 auto;
+  }
+
+  // .cookies-accept__content
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 1.6rem;
+    background-color: $color-fill-light-transparent;
+    backdrop-filter: blur(40px);
+    border-radius: 4px;
+
+    @include screen-425 {
+      flex-direction: column;
+    }
+  }
+
+  // .cookies-accept__text
+  &__text {
+    p {
+      font-size: 12px;
+      color: $text-color;
+      filter: contrast(150%);
+      line-height: 120%;
+    }
+  }
+
+  // .cookies-accept_buttom
+  &__button {
+    max-height: 30px;
+    padding: 10px 24px;
+
+    span {
+      font-size: 14px;
+      text-transform: none;
+    }
+  }
+}

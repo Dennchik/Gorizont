@@ -1,6 +1,6 @@
 export function falidateForm() {
   document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.order-form').forEach((form, index) => {
+    document.querySelectorAll('._order-form').forEach((form, index) => {
       const name = form.querySelector('.input.name');
       const phone = form.querySelector('.input.phone');
       const checkbox = form.querySelector('.check-box__input');
@@ -17,7 +17,7 @@ export function falidateForm() {
        * @param {Object} options
        * @param {number} options.maxSpread  — максимальный «размах» тени (px)
        * @param {number} options.duration   — общее время анимации (ms)
-       * @param {number} options.pulses     — количество «туда‑обратно» за это время
+       * @param {number} options.pulses     — количество «туда‑обратно» за это
        */
 
       function animateError(
@@ -25,7 +25,6 @@ export function falidateForm() {
         { maxSpread = 12, duration = 1000, pulses = 3 } = {}
       ) {
         const container = el.closest('.button-container') || el.parentElement;
-        console.log(container);
 
         if (!container) return;
 

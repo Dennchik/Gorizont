@@ -12,6 +12,7 @@ html {
     weight: $font-weight-default;
     family: $font-default;
   }
+
   color: $text-color;
   height: 100%;
   counter-reset: heading;
@@ -23,16 +24,19 @@ html {
 
 body {
   overscroll-behavior: none;
-  font: 1.6rem/1.6$font-default;
+  font: 1.6rem/1.6 $font-default;
   color: $color-fill;
-  background-color: $primary-color;
+  background-color: $background-color;
 
   &.no-scroll {
     overflow: hidden;
   }
 }
 
-* {
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -41,16 +45,9 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
 img,
 svg {
   user-select: none;
-  // pointer-events: none;
   width: 100%;
   height: 100%;
   max-width: 100%;

@@ -10,9 +10,8 @@ export function cookiesAccept(el, trigger) {
 
   if (button) {
     button.addEventListener('click', () => {
-      console.log('работает');
       cookiesAccept.style.transform = 'translateY(100%)';
-      cookiesAccept.style.transition = 'transform 0.5s ease';
+      cookiesAccept.style.transition = 'transform 0.4s ease';
     });
   } else {
     console.log('кнопка не найдена');
@@ -21,7 +20,7 @@ export function cookiesAccept(el, trigger) {
   setTimeout(() => {
     cookiesAccept.style.transform = 'translateY(0)';
     cookiesAccept.style.transition = 'transform 0.5s ease';
-  }, 3000);
+  }, 5000);
 }
 
 //* - [ Открыть/закрыть модальное окно ] -

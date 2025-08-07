@@ -4,12 +4,12 @@
 			h2.t-h2 
 				span Оставьте заявку и&nbsp;наш специалист перезвонит вам в&nbsp;ближайшее время
 		._content
-			form(action="#" metod="get" id="form").order-form._form
+			form(action="#" metod="get" id="form").order-form._form._order-form
 				._line 
 					._col-line
 						label(for="name")._lebel
-						._input
-							input(type="text" id="name" placeholder="*имя" autocomplete="off" name="name" error="Обязательное поле").input.name.p-text-20
+							._input
+								input(type="text" id="name" placeholder="*имя" autocomplete="off" name="name" error="Обязательное поле").input.name.p-text-20
 					._col-line
 						label(for="service")._lebel
 						include ../modules/itsSelect 
@@ -17,10 +17,10 @@
 					._col-line
 						label(for="phone")._lebel
 						._input
-							input(type="tel" id="phone" placeholder="+7 (___) ___-__-__" autocomplete="on" name="name" error="Обязательное поле").input.phone.p-text-20
+							input(type="tel" id="phone" placeholder="+7 (___) ___-__-__" autocomplete="on" name="phone" error="Обязательное поле").input.phone.p-text-20
 					._col-line.button-container
-						button(type="button" disabled).button.send-button
-							span.p-text-20 Оформить заказ 
+						button(type="submit" disabled).button.send-button
+							span.p-text-20 Оформить заказ
 				._line
 					include ../chunks/check-box
 

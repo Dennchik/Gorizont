@@ -1,27 +1,27 @@
 //todo ---------------------------- Core ---------------------------------------
-@use "core/variables" as *;
-@use "core/mixins" as *;
+@use 'core/variables' as *;
+@use 'core/mixins' as *;
 // todo --------------------------- Assets -------------------------------------
-@use "assets/swiper-11.2.8";
-@use "assets/preloader";
+@use 'assets/swiper-11.2.8';
+@use 'assets/preloader';
+@use 'assets/cookies-accept';
 // todo --------------------------- Modules ------------------------------------
-@use "modules/parallax";
-@use "modules/burger-button";
-@use "modules/return-button";
+@use 'modules/parallax';
+@use 'modules/burger-button';
+@use 'modules/return-button';
 // todo --------------------------- Chunks -------------------------------------
 
 // todo --------------------------- Fonts --------------------------------------
-@use "core/iconfonts";
-@use "core/fonts";
+@use 'core/iconfonts';
+@use 'core/fonts';
 // todo --------------------------- Plugins ------------------------------------
 
 // todo --------------------------- layout -------------------------------------
-@use "layouts/bem-block";
-@use "layouts/header";
-@use "layouts/footer";
-@use "layouts/page-grid"; //! delete
+@use 'layouts/bem-block';
+@use 'layouts/header';
+@use 'layouts/footer';
 // todo ---------------------------- Pages -------------------------------------
-@use "pages/page";
+@use 'pages/page';
 // todo -------------------------- Section -------------------------------------
 
 // todo ---------------------------- Style -------------------------------------
@@ -30,7 +30,7 @@
   height: 100%;
 }
 
-[class*="_container"] {
+[class*='_container'] {
   position: relative;
   max-width: $maxWidthContainer;
   box-sizing: content-box;
@@ -42,7 +42,7 @@
   }
 }
 
-[class*="icon-"] {
+[class*='icon-'] {
   cursor: pointer;
   color: inherit;
   display: inline-flex;
@@ -50,7 +50,7 @@
   justify-content: center;
 }
 
-[class*="_img"] {
+[class*='_img'] {
   pointer-events: none;
   height: 100%;
 
@@ -60,7 +60,7 @@
   }
 }
 
-[class*="_title"] {
+[class*='_title'] {
   h2,
   h3,
   h4,

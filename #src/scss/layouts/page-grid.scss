@@ -1,83 +1,83 @@
 @use '../core/mixins' as *;
 
 .page-grid-3 {
-	&__content {
-		grid-template-columns: repeat(3, 1fr);
+  &__content {
+    grid-template-columns: repeat(3, 1fr);
 
-		@include screen-1024 {
-			grid-template-columns: repeat(3, 1fr);
-		}
+    @include screen-1024 {
+      grid-template-columns: repeat(3, 1fr);
+    }
 
-		@include screen-768 {
-			grid-template-columns: repeat(2, 1fr);
-		}
+    @include screen-768 {
+      grid-template-columns: repeat(2, 1fr);
+    }
 
-		@include screen-490 {
-			grid-template-columns: repeat(1, 1fr) !important;
-			gap: 20px;
-		}
-	}
-	&__column {
-		background: #ff43431f;
-	}
+    @include screen-490 {
+      grid-template-columns: repeat(1, 1fr) !important;
+      gap: 20px;
+    }
+  }
+  &__column {
+    background: #ff43430e;
+  }
 }
 
 .page-grid-4 {
-	&__content {
-		grid-template-columns: repeat(4, 1fr);
+  &__content {
+    grid-template-columns: repeat(4, 1fr);
 
-		@include screen-1024 {
-			grid-template-columns: repeat(4, 1fr);
-		}
+    @include screen-1024 {
+      grid-template-columns: repeat(4, 1fr);
+    }
 
-		@include screen-768 {
-			grid-template-columns: repeat(3, 1fr);
-		}
+    @include screen-768 {
+      grid-template-columns: repeat(3, 1fr);
+    }
 
-		@include screen-490 {
-			grid-template-columns: repeat(2, 1fr) !important;
-			gap: 20px;
-		}
-	}
-	&__column {
-		background: #43f9ff1f;
-	}
+    @include screen-490 {
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 20px;
+    }
+  }
+  &__column {
+    background: #43f9ff1f;
+  }
 }
 
 .page-grid-3,
 .page-grid-4,
 .page-grid-5 {
-	pointer-events: none;
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 999;
-	width: 100%;
-	height: 100vh;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  height: 100vh;
 
-	&__content {
-		margin: 0 auto;
-		height: 100%;
-		display: grid;
+  &__content {
+    margin: 0 auto;
+    height: 100%;
+    display: grid;
 
-		gap: 30px;
-		box-sizing: border-box;
-	}
+    gap: 2rem;
+    box-sizing: content-box;
+  }
 
-	&__column {
-		width: 100%;
-		height: 100%;
+  &__column {
+    width: 100%;
+    height: 100%;
 
-		@include screen-768 {
-			&:nth-child(4) {
-				display: none;
-			}
-		}
+    @include screen-768 {
+      &:nth-child(4) {
+        display: none;
+      }
+    }
 
-		@include screen-490 {
-			&:nth-child(3) {
-				display: none;
-			}
-		}
-	}
+    @include screen-490 {
+      &:nth-child(3) {
+        display: none;
+      }
+    }
+  }
 }

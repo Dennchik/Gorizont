@@ -1,3 +1,9 @@
+const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+import { smoother } from './animations/animations.jsx';
+if (!isMobile) {
+  smoother();
+}
+
 // todo - [ Modules ] -
 //* - [ Прелоадер ] -
 import loaded from './assets/preloader.js';

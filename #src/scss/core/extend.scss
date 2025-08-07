@@ -1,5 +1,5 @@
-@use "variables" as *;
-@use "mixins.scss" as *;
+@use 'variables' as *;
+@use 'mixins.scss' as *;
 
 .top-box {
   // padding: 6rem 0 8rem;
@@ -10,87 +10,6 @@
     min-height: 100vh;
     // padding: 10rem 0;
   }
-}
-
-.bg-image {
-  position: absolute;
-  top: 0;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
-
-  // .bg-section__image
-  &__image {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-
-    img {
-      position: absolute;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      object-fit: cover;
-      object-position: top center;
-      will-change: transform;
-      filter: grayscale(50%);
-      // filter: drop-shadow(16px 16px 20px $color-warm) invert(25%);
-    }
-  }
-}
-
-.bg-bottom {
-  z-index: 0;
-  width: 100%;
-  height: 45%;
-  position: absolute;
-  bottom: 0;
-  background-image: linear-gradient(
-    $accent-color 30%,
-    $primary-color 100%,
-    transparent
-  );
-  pointer-events: none;
-}
-.bg-bottom-t {
-  z-index: 0;
-  width: 100%;
-  height: 30%;
-  position: absolute;
-  bottom: 0;
-  background-image: linear-gradient(
-    transparent,
-    $primary-color 20%,
-    $accent-color 100%
-  );
-  pointer-events: none;
-}
-.bg-bottom-r {
-  z-index: 0;
-  width: 100%;
-  height: 30%;
-  position: absolute;
-  bottom: 0;
-  background-image: linear-gradient(
-    $accent-color 20%,
-    $primary-color 100%,
-    transparent
-  );
-  pointer-events: none;
-}
-
-.text-shadow {
-  text-shadow:
-    0 0 15px #876b53b4,
-    0 0 1em #876b5362,
-    0 0 0.2em rgba(81, 79, 252, 0.589);
 }
 
 .link_split {
@@ -149,7 +68,7 @@
   transition: color 0.3s ease-in-out;
 
   &::before {
-    content: "";
+    content: '';
     transform: scaleX(0);
     position: absolute;
     bottom: 0;
@@ -182,7 +101,7 @@
     position: absolute;
     width: 0;
     height: 1px;
-    content: "";
+    content: '';
     transition: width 0.4s ease-in-out;
     opacity: 0.6;
     background-color: $text-color;
@@ -262,7 +181,8 @@
   transition: background-size 400ms;
 
   /* Размер фона для каждого слоя */
-  background-image: linear-gradient(to left, transparent, transparent),
+  background-image:
+    linear-gradient(to left, transparent, transparent),
     linear-gradient(
       to left,
       var(--background-selected),
@@ -293,7 +213,7 @@
   .swiper-pagination-bullet {
     width: 15px;
     height: 15px;
-    content: "";
+    content: '';
     border-radius: 50%;
     background: #2a3514;
     transition: background 0.5s ease-in-out;
@@ -306,7 +226,7 @@
   .swiper-pagination-bullet-active {
     width: 15px;
     height: 15px;
-    content: "";
+    content: '';
     border-radius: 50%;
     background: #9acd32;
     scale: 1.2;
