@@ -28,15 +28,31 @@
 
     &:nth-child(1) {
       .products__categories {
-        grid-template-columns: 39.13% 30.43% 30.43%;
+        grid-template-columns: 36.111% 31.555% 31.555%;
         grid-template-areas: 'men-1 men-2 men-3' 'men-1 men-4 men-5';
       }
     }
 
     &:nth-child(2) {
       .products__categories {
-        grid-template-columns: 30.43% 30.43% 39.13%;
+        grid-template-columns: 31.555% 31.555% 36.111%;
         grid-template-areas: 'men-1 men-2 men-3' 'men-4 men-5 men-3';
+      }
+    }
+
+    @include screen-580 {
+      &:nth-child(1) {
+        .products__categories {
+          grid-template-columns: 50% 50%;
+          grid-template-areas: 'men-2 men-3' 'men-4 men-5' ' men-1 men-1';
+        }
+      }
+
+      &:nth-child(2) {
+        .products__categories {
+          grid-template-columns: 50% 50%;
+          grid-template-areas: 'men-1 men-2' ' men-4 men-5' 'men-3 men-3';
+        }
       }
     }
   }
@@ -61,6 +77,7 @@
       height: auto;
       transition: transform 0.4s ease-in;
       transform: scale(1.01);
+      background-position: center;
     }
 
     &:hover {

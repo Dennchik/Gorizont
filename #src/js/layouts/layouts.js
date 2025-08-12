@@ -8,12 +8,12 @@ export function cookiesAccept(el, trigger) {
     return;
   }
 
-  if (button) {
+  if (button)
     button.addEventListener('click', () => {
       cookiesAccept.style.transform = 'translateY(100%)';
       cookiesAccept.style.transition = 'transform 0.4s ease';
     });
-  } else {
+  else {
     console.log('кнопка не найдена');
   }
 

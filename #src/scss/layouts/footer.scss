@@ -215,6 +215,11 @@
   // .footer__link-key
   &__link-key {
     font-size: 1.6rem;
+    &.link_underline-center {
+      &::before {
+        background-color: #fff;
+      }
+    }
   }
 
   // .footer__link

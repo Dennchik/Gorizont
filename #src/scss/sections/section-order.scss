@@ -41,6 +41,7 @@
 
   // .order-form__col-line
   &__col-line {
+    position: relative;
     flex: 0 1 50%;
   }
 
@@ -48,7 +49,6 @@
   &__input {
     border-radius: 4px;
     border: 1px solid $color-Rouse;
-    color: $text-color;
 
     input {
       padding: 10px;
@@ -59,14 +59,29 @@
       transition: box-shadow 0.3s ease-in-out;
 
       &:focus {
-        box-shadow: 3px 3px 5px 0 rgb(36, 18, 33, 0.2);
+        box-shadow: 0px 0px 5px 2px var(--alarm-color);
+      }
+
+      &:not(:placeholder-shown) + label,
+      &:focus + label {
+        transform: translateY(-83%);
       }
     }
   }
 
   // .order-form__lebel
   &__lebel {
-    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: auto;
+    height: auto;
+    font-weight: 500;
+    transition: transform 0.3s ease-in-out;
+    background-color: $background-color;
+    margin: 10px;
   }
 
   // .order-form__select-tipe

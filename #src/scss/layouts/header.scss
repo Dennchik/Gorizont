@@ -1,4 +1,4 @@
-@use "../core/all" as *;
+@use '../core/all' as *;
 
 .header {
   width: 100%;
@@ -15,7 +15,7 @@
   }
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     inset: 0;
     z-index: -1;
@@ -25,7 +25,7 @@
   }
 
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     bottom: 0;
     left: 0;
@@ -121,8 +121,8 @@
       line-height: 100%; /* 24/20 */
       letter-spacing: 0;
       font-variation-settings:
-        "wght" 500,
-        "ital" 0;
+        'wght' 500,
+        'ital' 0;
       filter: contrast(150%);
 
       @include screen-620 {
@@ -170,8 +170,8 @@
       transition: all 0.5s ease;
       letter-spacing: 0;
       font-variation-settings:
-        "wght" 500,
-        "ital" 0;
+        'wght' 500,
+        'ital' 0;
       filter: contrast(150%);
     }
 
@@ -216,10 +216,6 @@
 
   &__link-key {
     font-weight: 300;
-
-    &:not(:first-child) {
-      opacity: 1;
-    }
   }
 
   // .header__button
