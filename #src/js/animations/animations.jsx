@@ -22,6 +22,42 @@ export function smoother() {
     smoothTouch: 0.1,
   });
 }
+//* ________________________ [ Products Animetion ] ____________________________
+export function tlIntersectionObserver(animBlock, trigger) {
+  const blocks = document.querySelectorAll(animBlock);
+  if (!blocks.length) return;
+  const triggers = document.querySelectorAll(trigger);
+
+  blocks.forEach((block, i) => {
+    const triggerEl = triggers[i] || triggers[triggers.length - 1] || block;
+    const tlRotate = gsap.timeline({
+      scrollTrigger: {
+        trigger: triggerEl,
+        start: 'top-=250 bottom',
+        end: 'bottom-=250 bottom',
+        scrub: 2,
+        toggleActions: 'play reverse play reverse',
+        // markers: true,
+      },
+    });
+    tlRotate.fromTo(
+      block,
+      {
+        rotationX: 70,
+        transformOrigin: 'center bottom',
+        opacity: 0,
+        transformPerspective: 800,
+      },
+      {
+        rotationX: 5,
+        opacity: 1,
+        duration: 1,
+        ease: 'sine.inOut',
+      }
+    );
+  });
+}
+
 //* _________________________ [ Card Animetion ] _______________________________
 export function tlCardVertical() {
   const parentElements = document.querySelectorAll('.card-gs');

@@ -38,13 +38,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // todo - [ Animations ] -
 import { timeLineTextItem } from './animations/anime-js.jsx';
-import { tlTitleHorizontal, tlCardVertical } from './animations/animations.jsx';
+import {
+  tlTitleHorizontal,
+  tlCardVertical,
+  tlIntersectionObserver,
+} from './animations/animations.jsx';
+
 document.addEventListener('DOMContentLoaded', function () {
   if (!isMobile) {
     setTimeout(() => {
       timeLineTextItem();
     }, 1000);
-
+    tlIntersectionObserver('.anim-block', '.products__row');
     tlCardVertical();
     //* - [ Animation title ] -
     tlTitleHorizontal();
@@ -71,6 +76,7 @@ burgerButton.addEventListener('click', () => {
 // 		burgerButton.classList.remove('_open-menu');
 // 	});
 // });
+//* ----------------------------------------------------------------------------
 
 //* ----------------------------------------------------------------------------
 console.log(
