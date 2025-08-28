@@ -1,179 +1,179 @@
 @use "../core/variables" as *;
 
 .accelerate {
-  transform: translate3d(0, 0, 0);
-  transform-style: preserve-3d;
-  backface-visibility: hidden;
+	transform: translate3d(0, 0, 0);
+	transform-style: preserve-3d;
+	backface-visibility: hidden;
 }
 
 //* ----------------------------------------------------------------------------
 .burger-menu {
-  pointer-events: all;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  position: fixed;
-  width: 100%;
-  height: calc(100vh - 8rem);
-  left: 0;
-  top: 8rem;
-  z-index: 13;
-  perspective: 1000px;
+	pointer-events: all;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	position: fixed;
+	width: 100%;
+	height: calc(100vh - 8rem);
+	left: 0;
+	top: 8rem;
+	z-index: 13;
+	perspective: 1000px;
 
-  @include screen-375 {
-    top: 7.2rem;
-    height: calc(100vh - 7.2rem);
-  }
+	@include screen-375 {
+		top: 7.2rem;
+		height: calc(100vh - 7.2rem);
+	}
 
-  // .burger-menu__body
-  &__body {
-    height: 100%;
-    margin-right: 1.6rem;
-    min-width: 310px;
+	// .burger-menu__body
+	&__body {
+		height: 100%;
+		margin-right: 1.6rem;
+		min-width: 310px;
 
-    @include screen-375 {
-      margin: 0 1rem;
-    }
-  }
+		@include screen-375 {
+			margin: 0 1rem;
+		}
+	}
 
-  // .burger-menu__content
-  &__content {
-    height: 100%;
-    max-width: 400px;
-    transform-origin: 200% 100%;
-    box-shadow: -2px 0 7px #2b2b2b;
-    border-top: none;
-    border-bottom: none;
+	// .burger-menu__content
+	&__content {
+		height: 100%;
+		max-width: 400px;
+		transform-origin: 200% 100%;
+		box-shadow: -2px 0 7px #2b2b2b;
+		border-top: none;
+		border-bottom: none;
 
-    &::before {
-      top: 16%;
-      right: -94%;
-      background: transparent url("../img/rope.png") no-repeat left / cover;
-      position: absolute;
-      display: block;
-      height: 30px;
-      width: 100%;
-      content: "";
-      z-index: 1;
-    }
+		&::before {
+			top: 16%;
+			right: -94%;
+			background: transparent url("../img/rope.png") no-repeat left / cover;
+			position: absolute;
+			display: block;
+			height: 30px;
+			width: 100%;
+			content: "";
+			z-index: 1;
+		}
 
-    &::after {
-      bottom: 16%;
-      right: -94%;
-      background: transparent url("../img/rope.png") no-repeat left / cover;
-      position: absolute;
-      display: block;
-      height: 30px;
-      width: 100%;
-      content: "";
-      z-index: 1;
-    }
-  }
+		&::after {
+			bottom: 16%;
+			right: -94%;
+			background: transparent url("../img/rope.png") no-repeat left / cover;
+			position: absolute;
+			display: block;
+			height: 30px;
+			width: 100%;
+			content: "";
+			z-index: 1;
+		}
+	}
 
-  // .burger-menu__menu
-  &__menu {
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
-    border-radius: 3px;
-    background-clip: padding-box;
-    transform: translate3d(0, 0, 0);
-    position: relative;
-    height: 100%;
-    text-align: center;
+	// .burger-menu__menu
+	&__menu {
+		display: flex;
+		flex-direction: column;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+		border-radius: 3px;
+		background-clip: padding-box;
+		transform: translate3d(0, 0, 0);
+		position: relative;
+		height: 100%;
+		text-align: center;
 
-    transform-origin: 0 50%;
-    background: #a58e741e;
-    text-shadow: none;
-    color: $color-fern;
-    backdrop-filter: blur(40px);
+		transform-origin: 0 50%;
+		background: #a58e741e;
+		text-shadow: none;
+		color: $color-fern;
+		backdrop-filter: blur(40px);
 
-    p {
-      font-size: 2rem;
-      font-weight: 500;
-      line-height: 100%;
-    }
-    span {
-      width: 100%;
-      font-size: 2.4rem;
-    }
+		p {
+			font-size: 2rem;
+			font-weight: 500;
+			line-height: 100%;
+		}
+		span {
+			width: 100%;
+			font-size: 2.4rem;
+		}
 
-    .header__menu-items {
-      height: 100%;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 4rem;
-    }
-  }
+		.header__menu-items {
+			height: 100%;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			gap: 4rem;
+		}
+	}
 
-  // .burger-menu__menu-header
-  &__menu-header {
-    filter: contrast(190%);
-    padding: 10px;
-    line-height: 1;
-    border-bottom: 1px solid $color-natural;
-    display: flex;
-    flex-direction: column;
-    gap: 1.6rem;
-  }
+	// .burger-menu__menu-header
+	&__menu-header {
+		filter: contrast(190%);
+		padding: 10px;
+		line-height: 1;
+		border-bottom: 1px solid $color-natural;
+		display: flex;
+		flex-direction: column;
+		gap: 1.6rem;
+	}
 
-  // .burger-menu__menu-content
-  &__menu-content {
-    overflow-x: hidden;
-    height: 100%;
-    width: 100%;
+	// .burger-menu__menu-content
+	&__menu-content {
+		overflow-x: hidden;
+		height: 100%;
+		width: 100%;
 
-    padding: 16px 18px 16px 16px;
-    align-self: start;
-    font-size: 2.4rem;
-  }
+		padding: 16px 18px 16px 16px;
+		align-self: start;
+		font-size: 2.4rem;
+	}
 
-  &__content,
-  &__menu {
-    transition: all 0.8s cubic-bezier(0.77, 0, 0.175, 1);
-  }
+	&__content,
+	&__menu {
+		transition: all 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+	}
 
-  &.hide {
-    pointer-events: none;
+	&.hide {
+		pointer-events: none;
 
-    .burger-menu__menu {
-      transform: rotateY(20deg);
-    }
+		.burger-menu__menu {
+			transform: rotateY(20deg);
+		}
 
-    .burger-menu__content {
-      transform: translate3d(0, -10%, 0) rotateY(-125deg);
-    }
-  }
+		.burger-menu__content {
+			transform: translate3d(0, -10%, 0) rotateY(-125deg);
+		}
+	}
 
-  // .burger-menu__menu-footer
-  &__menu-footer {
-    width: 100%;
-    padding: 10px;
-    border-top: 1px solid $color-natural;
-  }
+	// .burger-menu__menu-footer
+	&__menu-footer {
+		width: 100%;
+		padding: 10px;
+		border-top: 1px solid $color-natural;
+	}
 }
 
 .network-icons {
-  // .network-icons__links
-  &__links {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-  }
+	// .network-icons__links
+	&__links {
+		display: flex;
+		align-items: center;
+		justify-content: space-evenly;
+	}
 
-  // .network-links__link
-  &__icon-link {
-    &:not(:last-child) {
-      margin-right: 1rem;
-    }
+	// .network-links__link
+	&__icon-link {
+		&:not(:last-child) {
+			margin-right: 1rem;
+		}
 
-    ._icon {
-      &::before {
-        font-size: 3.8rem;
-        font-weight: 400;
-        color: $color-fern;
-      }
-    }
-  }
+		._icon {
+			&::before {
+				font-size: 3.8rem;
+				font-weight: 400;
+				color: $color-fern;
+			}
+		}
+	}
 }

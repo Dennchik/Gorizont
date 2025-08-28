@@ -2,7 +2,6 @@
 
 .header {
   width: 100%;
-  background: transparent;
   display: flex;
   align-items: center;
   background-color: $primary-color;
@@ -66,7 +65,7 @@
   }
 
   // .header__logo-wrapper
-  &__logo-wrpper {
+  &__logo-wrapper {
     position: relative;
     z-index: 9;
     display: flex;

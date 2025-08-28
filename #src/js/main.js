@@ -1,4 +1,6 @@
 const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+
+
 // todo - [ Assets ] -
 //* - [Slide] -
 import { buildSwiper } from './layouts/build-swiper.js';

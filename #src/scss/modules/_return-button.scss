@@ -1,46 +1,46 @@
 @use "../core/variables" as *;
 
 .return-button {
-  position: fixed;
-  z-index: 14;
-  left: 0;
-  bottom: 0;
-  margin-top: -17px;
-  width: 45px;
-  height: 45px;
-  margin-left: 1vw;
+	position: fixed;
+	z-index: 14;
+	left: 0;
+	bottom: 0;
+	margin-top: -17px;
+	width: 45px;
+	height: 45px;
+	margin-left: 1vw;
 
-  i {
-    box-shadow: $boxShadow;
+	i {
+		box-shadow: $boxShadow;
 
-    &::before {
-      text-shadow: none;
-      font-weight: 400;
-      color: $background-color;
-    }
-  }
+		&::before {
+			text-shadow: none;
+			font-weight: 400;
+			color: $background-color;
+		}
+	}
 
-  ._button {
-    font-size: 3.8rem;
-    position: absolute;
-    z-index: 13;
-    left: 0;
-    width: 35px;
-    height: 35px;
-    margin-right: 1rem;
-    cursor: pointer;
-    transition: all 0.5s ease-in-out;
-    border-radius: 50%;
-    background: $color-fill;
+	._button {
+		font-size: 3.8rem;
+		position: absolute;
+		z-index: 13;
+		left: 0;
+		width: 35px;
+		height: 35px;
+		margin-right: 1rem;
+		cursor: pointer;
+		transition: all 0.5s ease-in-out;
+		border-radius: 50%;
+		background: $color-fill;
 
-    &:hover {
-      animation: fadeInBackground;
-    }
-  }
+		&:hover {
+			animation: fadeInBackground;
+		}
+	}
 
-  &._rotate {
-    i {
-      scale: -1;
-    }
-  }
+	&._rotate {
+		i {
+			scale: -1;
+		}
+	}
 }

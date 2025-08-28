@@ -2,123 +2,113 @@
 @use '../core/mixins' as *;
 
 .products {
-  // .products__title
-  &__title {
-    h2 {
-      background-color: $primary-color;
-    }
-  }
+	// .products__title
+	&__title {
+		h2 {
+			background-color: $primary-color;
+		}
+	}
 
-  // .products__content
-  &__content {
-    display: flex;
-    flex-direction: column;
-    gap: 8rem;
+	// .products__content
+	&__content {
+		display: flex;
+		flex-direction: column;
+		gap: 8rem;
 
-    .products__title-group {
-      text-align: center;
-    }
-  }
+		.products__title-group {
+			text-align: center;
+		}
+	}
 
-  // .products__row
-  &__row {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
+	// .products__row
+	&__row {
+		display: flex;
+		flex-direction: column;
+		gap: 3rem;
 
-    &:nth-child(1) {
-      .products__categories {
-        grid-template-columns: 36.111% 31.555% 31.555%;
-        grid-template-areas: 'men-1 men-2 men-3' 'men-1 men-4 men-5';
-      }
-    }
+		&:nth-child(1) {
+			.products__categories {
+				grid-template-columns: 36.111% 31.555% 31.555%;
+				grid-template-areas: 'men-1 men-2 men-3' 'men-1 men-4 men-5';
+			}
+		}
 
-    &:nth-child(2) {
-      .products__categories {
-        grid-template-columns: 31.555% 31.555% 36.111%;
-        grid-template-areas: 'men-1 men-2 men-3' 'men-4 men-5 men-3';
-      }
-    }
+		&:nth-child(2) {
+			.products__categories {
+				grid-template-columns: 31.555% 31.555% 36.111%;
+				grid-template-areas: 'men-1 men-2 men-3' 'men-4 men-5 men-3';
+			}
+		}
 
-    @include screen-580 {
-      &:nth-child(1) {
-        .products__categories {
-          grid-template-columns: 50% 50%;
-          grid-template-areas: 'men-2 men-3' 'men-4 men-5' ' men-1 men-1';
-        }
-      }
+		@include screen-580 {
+			&:nth-child(1) {
+				.products__categories {
+					grid-template-columns: 50% 50%;
+					grid-template-areas: 'men-2 men-3' 'men-4 men-5' ' men-1 men-1';
+				}
+			}
 
-      &:nth-child(2) {
-        .products__categories {
-          grid-template-columns: 50% 50%;
-          grid-template-areas: 'men-1 men-2' ' men-4 men-5' 'men-3 men-3';
-        }
-      }
-    }
-  }
+			&:nth-child(2) {
+				.products__categories {
+					grid-template-columns: 50% 50%;
+					grid-template-areas: 'men-1 men-2' ' men-4 men-5' 'men-3 men-3';
+				}
+			}
+		}
+	}
 
-  // .products__categories
-  &__categories {
-    display: grid;
-    grid-auto-flow: column dense;
-    grid-template-rows: 1fr 1fr;
-  }
+	// .products__categories
+	&__categories {
+		display: grid;
+		grid-auto-flow: column dense;
+		grid-template-rows: 1fr 1fr;
+	}
 }
 .categories {
-  // .categories__item
-  &__item {
-    display: block;
-    overflow: hidden;
-    height: 100%;
+	// .categories__item
+	&__item {
+		display: block;
+		overflow: hidden;
+		height: 100%;
 
-    img {
-      display: block;
-      max-width: 100%;
-      height: auto;
-      transition: transform 0.4s ease-in;
-      transform: scale(1.01);
-      background-position: center;
-    }
+		img {
+			display: block;
+			max-width: 100%;
+			height: auto;
+			transition: transform 0.4s ease-in;
+			transform: scale(1.01);
+			background-position: center;
+		}
 
-    &:hover {
-      img {
-        transform-origin: center;
-        transform: scale(1.1);
-      }
-    }
+		&:hover {
+			img {
+				transform-origin: center;
+				transform: scale(1.1);
+			}
+		}
 
-    &:nth-child(1) {
-      grid-area: men-1;
-    }
+		&:nth-child(1) {
+			grid-area: men-1;
+		}
 
-    &:nth-child(2) {
-      grid-area: men-2;
-    }
+		&:nth-child(2) {
+			grid-area: men-2;
+		}
 
-    &:nth-child(3) {
-      grid-area: men-3;
-    }
+		&:nth-child(3) {
+			grid-area: men-3;
+		}
 
-    &:nth-child(4) {
-      grid-area: men-4;
-    }
+		&:nth-child(4) {
+			grid-area: men-4;
+		}
 
-    &:nth-child(5) {
-      grid-area: men-5;
-    }
-  }
+		&:nth-child(5) {
+			grid-area: men-5;
+		}
+	}
 }
 //* ----------------------------------------------------------------------------
 .anim-block {
-  //   transform: perspective(800px) rotateX(60deg);
-  opacity: 1;
-  //   transition:
-  //     transform 600ms cubic-bezier(0.2, 0.9, 0.2, 1),
-  //     opacity 600ms;
-  //   transform-origin: center bottom;
-  //   will-change: transform, opacity;
-  // }
-  // .anim-block.visible {
-  //   transform: perspective(800px) rotateX(0deg);
-  //   opacity: 1;
+	opacity: 1;
 }

@@ -3,10 +3,10 @@
 
 //* - [ Collapse ] -
 .swiper-wrapper > .swiper-slide:not(.swiper-slide-active) {
-  .main-slide__title {
-    transition: opacity 0.9s ease-in-out;
-    opacity: 0 !important;
-  }
+	.main-slide__title {
+		transition: opacity 0.9s ease-in-out;
+		opacity: 0 !important;
+	}
 }
 
 //* - [ --- ] -
@@ -16,259 +16,259 @@
 .price,
 .products,
 .partners {
-  &::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 1px;
-    background: $color-fill;
-    opacity: 0.3;
-    top: 8rem;
-  }
+	&::before {
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 1px;
+		background: $color-fill;
+		opacity: 0.3;
+		top: 8rem;
+	}
 
-  &__body {
-    padding-block: 8rem !important;
+	&__body {
+		padding-block: 8rem !important;
 
-    @include screen-690 {
-      padding-block: 5rem !important;
-    }
-    @include screen-490 {
-      padding-block: 3rem !important;
-    }
-  }
+		@include screen-690 {
+			padding-block: 5rem !important;
+		}
+		@include screen-490 {
+			padding-block: 3rem !important;
+		}
+	}
 
-  &__title {
-    margin-block: -2.1rem 6rem;
+	&__title {
+		margin-block: -2.1rem 6rem;
 
-    @include screen-690 {
-      margin-top: 1.6rem;
-    }
+		@include screen-690 {
+			margin-top: 1.6rem;
+		}
 
-    @include screen-490 {
-      margin-top: 3.6rem;
-    }
+		@include screen-490 {
+			margin-top: 3.6rem;
+		}
 
-    h2 {
-      padding: 0.5rem 4rem;
-      display: inline-block;
+		h2 {
+			padding: 0.5rem 4rem;
+			display: inline-block;
 
-      span {
-        filter: contrast(150%);
-      }
-    }
-  }
+			span {
+				filter: contrast(150%);
+			}
+		}
+	}
 }
 
 .anchor-link {
-  scroll-behavior: smooth;
-  cursor: pointer;
+	scroll-behavior: smooth;
+	cursor: pointer;
 }
 
 //* - [ Clip-Circle ] -
 ._clip-circle {
-  @include min-960 {
-    cursor: pointer;
-    position: relative;
-    z-index: 2;
+	@include min-960 {
+		cursor: pointer;
+		position: relative;
+		z-index: 2;
 
-    &:before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      color: #fff;
-      background: linear-gradient(-45deg, #20193c, #020101 70%);
-      clip-path: circle(var(--size) at var(--pos));
-      transition: all 0.9s ease-in-out;
-      z-index: 1;
-    }
+		&:before {
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			color: #fff;
+			background: linear-gradient(-45deg, #20193c, #020101 70%);
+			clip-path: circle(var(--size) at var(--pos));
+			transition: all 0.9s ease-in-out;
+			z-index: 1;
+		}
 
-    &:hover {
-      &:before {
-        --size: 200%;
-      }
-    }
-  }
+		&:hover {
+			&:before {
+				--size: 200%;
+			}
+		}
+	}
 }
 
 //* - [ Class _ibg ] -
 ._ibg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 
-  img {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+	img {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
 
-  svg {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+	svg {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
 }
 
 //* - [ Button ] -
 .button {
-  padding: 10px 3rem;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-transform: uppercase;
-  overflow: hidden;
-  border-radius: 4px;
-  background-color: $secondary-color;
-  color: $primary-color;
-  transition: box-shadow 0.4s ease-in-out;
-  cursor: pointer;
+	padding: 10px 3rem;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-transform: uppercase;
+	overflow: hidden;
+	border-radius: 4px;
+	background-color: $secondary-color;
+	color: $primary-color;
+	transition: box-shadow 0.4s ease-in-out;
+	cursor: pointer;
 
-  &:hover {
-    box-shadow: 3px 3px 5px 0 #2412216e;
-  }
+	&:hover {
+		box-shadow: 3px 3px 5px 0 #2412216e;
+	}
 
-  span {
-    display: inline-block;
-    pointer-events: none;
-    font-weight: 600;
-    transition: opacity 0.4s ease-in-out;
-    filter: contrast(150%);
-  }
+	span {
+		display: inline-block;
+		pointer-events: none;
+		font-weight: 600;
+		transition: opacity 0.4s ease-in-out;
+		filter: contrast(150%);
+	}
 
-  .running-line {
-    padding: 0.5rem;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    pointer-events: none;
-    height: 100%;
-    display: flex;
-    align-items: center;
+	.running-line {
+		padding: 0.5rem;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		overflow: hidden;
+		pointer-events: none;
+		height: 100%;
+		display: flex;
+		align-items: center;
 
-    // .running-line__inner
-    &__inner {
-      transform: translate3d(calc(-25% + 1rem), 0, 0);
-      width: fit-content;
-      position: relative;
-      display: flex;
-      opacity: 0;
-      transition: opacity 0.9s ease-in-out;
+		// .running-line__inner
+		&__inner {
+			transform: translate3d(calc(-25% + 1rem), 0, 0);
+			width: fit-content;
+			position: relative;
+			display: flex;
+			opacity: 0;
+			transition: opacity 0.9s ease-in-out;
 
-      @include min-1024 {
-        animation: lineMarquee 3s linear infinite;
-      }
+			@include min-1024 {
+				animation: lineMarquee 3s linear infinite;
+			}
 
-      span {
-        white-space: nowrap;
-      }
-    }
+			span {
+				white-space: nowrap;
+			}
+		}
 
-    @keyframes lineMarquee {
-      0% {
-        transform: translate3d(calc(-25% + 1rem), 0, 0);
-      }
+		@keyframes lineMarquee {
+			0% {
+				transform: translate3d(calc(-25% + 1rem), 0, 0);
+			}
 
-      100% {
-        transform: translate3d(calc(-50% + 1rem), 0, 0);
-      }
-    }
-  }
+			100% {
+				transform: translate3d(calc(-50% + 1rem), 0, 0);
+			}
+		}
+	}
 }
 .button-container {
-  button {
-    transition: opacity 0.4s ease-in-out;
-    &:disabled {
-      cursor: not-allowed;
-      pointer-events: none;
-      box-shadow: none;
-      opacity: 0.5;
-    }
-  }
+	button {
+		transition: opacity 0.4s ease-in-out;
+		&:disabled {
+			cursor: not-allowed;
+			pointer-events: none;
+			box-shadow: none;
+			opacity: 0.5;
+		}
+	}
 }
 
 //* - [ Text Calc () ] -
 .t-h1 {
-  font-size: 12rem;
-  @include screen-490 {
-    // font-size: 20px;
-    text-align: center;
-  }
+	font-size: 12rem;
+	@include screen-490 {
+		// font-size: 20px;
+		text-align: center;
+	}
 }
 
 .t-h2 {
-  font-size: 3.4rem;
-  @include minmax-490-1920 {
-    font-size: calc(
-      18px + (34 - 16) * ((100vw - 490px) / (1920 - 490))
-    ) !important;
-  }
-  @include screen-490 {
-    font-size: 18px !important;
-    text-align: center;
-  }
+	font-size: 3.4rem;
+	@include minmax-490-1920 {
+		font-size: calc(
+						18px + (34 - 16) * ((100vw - 490px) / (1920 - 490))
+		) !important;
+	}
+	@include screen-490 {
+		font-size: 18px !important;
+		text-align: center;
+	}
 }
 
 .t-h3 {
-  font-size: 2.8rem;
+	font-size: 2.8rem;
 
-  @include minmax-490-1920 {
-    font-size: calc(
-      16px + (28 - 16) * ((100vw - 490px) / (1920 - 490))
-    ) !important;
-  }
-  @include screen-490 {
-    font-size: 16px !important;
-    text-align: center;
-  }
+	@include minmax-490-1920 {
+		font-size: calc(
+						16px + (28 - 16) * ((100vw - 490px) / (1920 - 490))
+		) !important;
+	}
+	@include screen-490 {
+		font-size: 16px !important;
+		text-align: center;
+	}
 }
 
 .t-h4 {
-  font-size: 2.2rem;
-  @include minmax-490-1920 {
-    font-size: calc(
-      14px + (22 - 14) * ((100vw - 490px) / (1920 - 490))
-    ) !important;
-  }
-  @include screen-490 {
-    font-size: 12px !important;
-    text-align: center;
-  }
+	font-size: 2.2rem;
+	@include minmax-490-1920 {
+		font-size: calc(
+						14px + (22 - 14) * ((100vw - 490px) / (1920 - 490))
+		) !important;
+	}
+	@include screen-490 {
+		font-size: 12px !important;
+		text-align: center;
+	}
 }
 
 .t-h5 {
-  font-size: 2rem;
-  @include minmax-490-1920 {
-    font-size: calc(
-      12px + (20 - 12) * ((100vw - 490px) / (1920 - 490))
-    ) !important;
-  }
-  @include screen-490 {
-    font-size: 12px !important;
-    text-align: center;
-  }
+	font-size: 2rem;
+	@include minmax-490-1920 {
+		font-size: calc(
+						12px + (20 - 12) * ((100vw - 490px) / (1920 - 490))
+		) !important;
+	}
+	@include screen-490 {
+		font-size: 12px !important;
+		text-align: center;
+	}
 }
 
 .p-text-20 {
-  font-size: 20px;
-  @include minmax-490-1920 {
-    font-size: calc(14px + (20 - 15) * ((100vw - 490px) / (1920 - 490)));
-  }
-  @include screen-490 {
-    font-size: 14px;
-  }
+	font-size: 20px;
+	@include minmax-490-1920 {
+		font-size: calc(14px + (20 - 15) * ((100vw - 490px) / (1920 - 490)));
+	}
+	@include screen-490 {
+		font-size: 14px;
+	}
 }

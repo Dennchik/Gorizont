@@ -1,28 +1,25 @@
 .order-place._container
 	._body 
 		._title
-			h2.t-h2 
+			h2.t-h2
 				span Оставьте заявку и&nbsp;наш специалист перезвонит вам в&nbsp;ближайшее время
 		._content
-			form(action="#" metod="get" id="form").order-form._form._order-form
+			form(action="#" id="form").order-form._form._order-form
 				._line 
 					._col-line
 						._input
-							input(type="text" id="name" placeholder=" " autocomplete="off" name="name" error="Обязательное поле").input.name.p-text-20
-							label(for="name")._lebel.p-text-20 *имя
+							input(type="text" id="name" placeholder=" " autocomplete="off" name="name").input.name.p-text-20
+							label(for="name")._label.p-text-20 *имя
 					._col-line
-						label(for="service")._lebel
+						label(for="service")._label
 						include ../modules/itsSelect 
 				._line 
 					._col-line
-						label(for="phone")._lebel
+						label(for="phone")._label
 						._input
-							input(type="tel" id="phone" placeholder="+7 (___) ___-__-__" autocomplete="on" name="phone" error="Обязательное поле").input.phone.p-text-20
+							input(type="tel" id="phone" placeholder="+7 (___) ___-__-__" autocomplete="on" name="phone").input.phone.p-text-20
 					._col-line.button-container
 						button(type="submit" disabled).button.send-button
 							span.p-text-20 Оформить заказ
 				._line
 					include ../chunks/check-box
-
-
-
