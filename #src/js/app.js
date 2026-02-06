@@ -5,7 +5,7 @@ if (!isMobile) {
 }
 
 // todo - [ Modules ] -
-//* - [ Прелоадер ] -
+//* - [ Preloader ] -
 import loaded from './assets/preloader.js';
 loaded('.preloader');
 

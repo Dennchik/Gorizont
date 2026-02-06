@@ -1,6 +1,5 @@
 const isMobile = /Mobi|Android/i.test(navigator.userAgent);
 
-
 // todo - [ Assets ] -
 //* - [Slide] -
 import { buildSwiper } from './layouts/build-swiper.js';
@@ -9,8 +8,8 @@ import { mainSlide } from './assets/slide.js';
 mainSlide('.main-slide');
 import { slidePartners } from './assets/slide.js';
 slidePartners('.slide-partners');
-import { falidateForm } from './assets/validate-form.js';
-falidateForm();
+import { validateForm } from './assets/validate-form.js';
+validateForm();
 
 // todo - [Modules] -
 import { modalPage } from './layouts/layouts.js';
