@@ -204,7 +204,14 @@
   // .footer__iten
   &__item {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    &:not(:last-child) {
+      margin-bottom: 0.5rem;
+    }
+
+    strong {
+      display: block;
+    }
 
     a {
       display: inline;

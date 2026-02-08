@@ -13,7 +13,11 @@ validateForm();
 
 // todo - [Modules] -
 import { modalPage } from './layouts/layouts.js';
-modalPage();
+
+const personalPage = document.querySelector('.personal-data');
+if (personalPage) {
+  modalPage();
+}
 
 // todo - [ Plugins ] -
 //* - [ Select ] -
@@ -68,22 +72,5 @@ burgerButton.addEventListener('click', () => {
   burgerButton.classList.toggle('_open-menu');
 });
 //* - [ Burger Button ] -
-// anchorLinks.forEach(anchorLink => {
-// 	anchorLink.addEventListener('click', () => {
-// 		if (!accelerate.classList.contains('hide')) {
-// 			accelerate.classList.add('hide');
-// 			document.body.classList.remove('no-scroll');
-// 		}
-// 		burgerButton.classList.remove('_open-menu');
-// 	});
-// });
-//* ----------------------------------------------------------------------------
 
-//* ----------------------------------------------------------------------------
-console.log(
-  '%c РОССИЯ ',
-  'background: blue; color: yellow; font-size: x-large; ' +
-    'border-left: 5px solid black; border-top: 30px solid white; ' +
-    'border-right: 2px solid black; border-bottom: 30px solid red;'
-);
 //* ----------------------------------------------------------------------------

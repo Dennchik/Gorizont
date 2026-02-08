@@ -25,13 +25,15 @@
 
   // .checkbox__label
   &__label {
+    width: 22px;
+    height: 22px;
+    min-width: 22px;
     position: relative;
     display: flex;
     align-items: center;
     position: relative;
     line-height: 120%;
     overflow: hidden;
-    background: #00000000;
     border-radius: 4px;
     border: 1px solid $color-Rouse;
 
@@ -39,12 +41,10 @@
       content: '';
       position: relative;
       z-index: 9;
-      flex: 0 0 22px;
+      flex: 1 0 22px;
       height: 22px;
       width: 22px;
       align-self: center;
-      // border: 1px solid $color-Rouse;
-      // border-radius: 4px;
       cursor: pointer;
     }
 

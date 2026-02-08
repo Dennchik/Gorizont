@@ -2,10 +2,7 @@ extends ../layouts/app_layout
 append link
 	link(rel="stylesheet" type="text/css" href="@@webRoot/css/index.min.css")
 prepend script
-	+script(`${webRoot}/js/vendors/runtime.min.js`)
-	//- script(defer src="@@webRoot/js/vendors/anime-vendors.min.js")
-	//- script(defer="defer" src="@@webRoot/js/vendors/swiper-bundle.min.js")
-	//- script(defer="defer" src="@@webRoot/js/vendors/react-vendors.min.js")
+	+script(`${webRoot}/js/vendors/runtime.min.js`) 
 block title
 	- var text='"Витебская швейная фабрика ГОРИЗОНТ"'
 

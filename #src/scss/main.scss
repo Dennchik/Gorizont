@@ -10,7 +10,7 @@
 @use 'modules/burger-button';
 @use 'modules/return-button';
 // todo --------------------------- Chunks -------------------------------------
-
+@use 'chunks/price-block.scss';
 // todo --------------------------- Fonts --------------------------------------
 @use 'core/iconfonts';
 @use 'core/fonts';
