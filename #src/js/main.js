@@ -10,7 +10,8 @@ import { slidePartners } from './assets/slide.js';
 slidePartners('.slide-partners');
 import { validateForm } from './assets/validate-form.js';
 validateForm();
-
+import { dynamicAdaptive } from './plugins/dynamic-adaptive.js';
+dynamicAdaptive();
 // todo - [Modules] -
 import { modalPage } from './layouts/layouts.js';
 

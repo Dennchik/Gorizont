@@ -1875,6 +1875,7 @@ h6 {
 }
 
 .header {
+  position: relative;
   width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1924,7 +1925,6 @@ h6 {
   margin-left: 1rem;
 }
 .header__content {
-  position: relative;
   width: 100%;
   z-index: 8;
   display: -webkit-box;
@@ -1942,8 +1942,6 @@ h6 {
   justify-content: space-between;
 }
 .header__logo-wrapper {
-  position: relative;
-  z-index: 9;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1952,6 +1950,14 @@ h6 {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
+}
+.header__logo {
+  height: 9rem;
+  overflow: visible;
+}
+.header__logo img {
+  -webkit-filter: drop-shadow(3px 3px 3px rgba(123, 123, 255, 0.836));
+  filter: drop-shadow(3px 3px 3px rgba(123, 123, 255, 0.836));
 }
 .header__column {
   height: 100%;
@@ -1975,7 +1981,6 @@ h6 {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  position: relative;
 }
 .header__column:nth-child(3) {
   display: -webkit-box;
@@ -2015,18 +2020,6 @@ h6 {
   -webkit-filter: contrast(150%);
   filter: contrast(150%);
 }
-.header__logo {
-  -webkit-transform: translateY(15.1%);
-  -ms-transform: translateY(15.1%);
-  -o-transform: translateY(15.1%);
-  transform: translateY(15.1%);
-}
-.header__logo img {
-  width: 18rem;
-  height: 8rem;
-  -webkit-filter: drop-shadow(3px 3px 3px rgba(123, 123, 255, 0.836));
-  filter: drop-shadow(3px 3px 3px rgba(123, 123, 255, 0.836));
-}
 .header__menu {
   text-transform: uppercase;
   -webkit-user-select: none;
@@ -2044,9 +2037,10 @@ h6 {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-}
-.header__item {
-  position: relative;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 .header__item a {
   white-space: nowrap;
@@ -2061,21 +2055,36 @@ h6 {
 .header__item:not(:last-child) {
   margin-right: 2rem;
 }
+.header__item:nth-child(5) {
+  margin-right: 0;
+}
+.header__item:nth-child(5) .icon-services {
+  display: none;
+  font-size: 28px;
+}
 .header__phone {
   position: absolute;
+  display: inline-block;
+  z-index: 99;
   text-align: center;
-  top: 110%;
-  width: 100%;
-  font-weight: 600;
-}
-.header__phone span {
+  top: 85%;
   border-radius: 1rem;
-  padding: 0 1.5rem;
-  white-space: nowrap;
-  width: 100%;
+  font-weight: 600;
+  padding: 0 2rem;
   background-color: rgb(241, 234, 255);
   -webkit-box-shadow: 0 2px 2px -2px #48386b;
   box-shadow: 0 2px 2px -2px #48386b;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.header__phone span {
+  white-space: nowrap;
 }
 .header__link-key {
   font-weight: 300;
@@ -2095,7 +2104,7 @@ h6 {
 .network-menu {
   pointer-events: none;
   position: absolute;
-  z-index: 11;
+  z-index: 111;
   top: 1.3rem;
   right: 0;
   -webkit-filter: contrast(150%);
@@ -2859,6 +2868,15 @@ h6 {
   .partners__title {
     margin-top: 1.6rem;
   }
+  .header__item:nth-child(5) span {
+    display: none;
+  }
+  .header__item:nth-child(5) .icon-services {
+    display: block;
+  }
+  .header__phone {
+    top: 85%;
+  }
 }
 @media screen and (max-width: 620px){
   .header__column:nth-child(3) {
@@ -2941,15 +2959,33 @@ h6 {
     font-size: 14px;
   }
   .header__logo img {
-    width: 7rem;
-    height: 4rem;
-    -webkit-transform: translateY(0);
-    -ms-transform: translateY(0);
-    -o-transform: translateY(0);
-    transform: translateY(0);
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: 9rem;
+    height: 3rem;
+  }
+  .header__logo {
+    -webkit-transform: translateY(-7px);
+    -ms-transform: translateY(-7px);
+    -o-transform: translateY(-7px);
+    transform: translateY(-7px);
+    width: 9rem;
+    height: 1rem;
+  }
+  .header__column:nth-child(1) {
+    display: none;
   }
   .header__phone {
-    top: 85%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    left: 0;
+    width: 100%;
   }
   .network-menu {
     top: -0.7rem;
@@ -3000,17 +3036,11 @@ h6 {
   .header__content {
     gap: 0;
   }
-  .header__logo img {
-    max-width: 100%;
-  }
   .header__item:not(:last-child) {
     margin-right: 1rem;
   }
   .header__item {
     font-size: 12px;
-  }
-  .header__phone {
-    font-size: 10px;
   }
   .footer__logo img {
     max-width: 100%;

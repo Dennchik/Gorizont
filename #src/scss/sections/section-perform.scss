@@ -11,7 +11,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-top: 10rem;
+    padding-top: 12rem;
     padding-bottom: 2rem;
 
     @include screen-768 {
@@ -30,7 +30,7 @@
       flex-direction: column;
       align-items: start;
       font-weight: 700;
-      // font-size: clamp(3.4375rem, calc(2.227125rem + 4.051875vw), 8.489375rem);
+
       font-size: clamp(3.4375rem, 5vw, 8.489375rem);
       -webkit-text-stroke: 2px $color-fill-light;
       filter: contrast(130%);

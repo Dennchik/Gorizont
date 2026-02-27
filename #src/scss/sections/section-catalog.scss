@@ -1,0 +1,109 @@
+// Переменные для удобства управления
+$catalog-gap: 20px;
+$catalog-item-padding: 15px; // Переименовал, чтобы не путать с padding родительского контейнера
+$item-border-color: #eee;
+$item-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+$item-border-radius: 8px;
+$image-height: 200px;
+$model-text-color: #333;
+$sizes-text-color: #666;
+$size-label-color: #444;
+
+/* Блок catalog */
+.catalog {
+  // Элемент catalog__body
+  &__body {
+    margin-bottom: 30px;
+    padding-top: 12rem;
+    padding-bottom: 2rem;
+    display: flex; // Предполагаем, что body может быть flex или grid контейнером
+    flex-direction: column;
+    align-items: center; // Центрирование содержимого
+  }
+
+  // Элемент catalog__title
+  &__title {
+    // Стили для заголовка, если нужны
+    h1 {
+      font-size: clamp(3.4375rem, 5vw, 8.489375rem);
+
+      margin-bottom: 20px;
+    }
+  }
+
+  // Элемент catalog__content - это будет контейнер для карточек товаров
+  &__content {
+    display: grid; // Сетка для размещения карточек товаров
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: $catalog-gap;
+    width: 100%; // Чтобы занимал всю доступную ширину
+    max-width: 100%; // Ограничиваем, если нужно
+    // padding: $catalog-padding; // Можно добавить внутренние отступы, если нужно
+  }
+}
+
+/* Блок catalog-item (отдельный блок, не элемент .catalog, чтобы не было слишком длинных имен) */
+.catalog-item {
+  border: 1px solid $item-border-color;
+  padding: $catalog-item-padding;
+  border-radius: $item-border-radius;
+  box-shadow: $item-shadow;
+  display: flex;
+  flex-direction: column; // Элементы внутри карточки располагаются вертикально
+  background-color: hsla(189, 100%, 88%, 0.86);
+  background: linear-gradient(90deg, #cce4f7, #ebd2fb);
+
+  // Элемент catalog-item__images
+  &__images {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 15px;
+    height: $image-height;
+    overflow: hidden;
+  }
+
+  // Элемент catalog-item__image
+  &__image {
+    max-width: 220px;
+    max-width: 48%; // Чтобы два изображения поместились в строку
+    height: 100%;
+    object-fit: contain; // Сохраняем пропорции изображения
+    border-radius: 5px;
+    overflow: hidden;
+    // Модификаторы catalog-item__image
+    &__image--front {
+      // Стили для изображения вида спереди
+    }
+
+    &__image--back {
+      // Стили для изображения вида сзади
+    }
+  }
+
+  // Элемент catalog-item__details
+  &__details {
+    flex-grow: 1; // Занимает всё доступное пространство
+    text-align: center;
+  }
+
+  // Элемент catalog-item__model
+  &__model {
+    font-size: 1.2em;
+    color: $model-text-color;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+
+  // Элемент catalog-item__sizes
+  &__sizes {
+    font-size: 0.9em;
+    color: $sizes-text-color;
+    line-height: 1.6;
+  }
+
+  // Элемент catalog-item__size-label
+  &__size-label {
+    font-weight: bold;
+    color: $size-label-color;
+  }
+}

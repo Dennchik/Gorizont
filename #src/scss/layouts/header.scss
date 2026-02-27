@@ -1,6 +1,7 @@
 @use '../core/all' as *;
 
 .header {
+  position: relative;
   width: 100%;
   display: flex;
   align-items: center;
@@ -51,7 +52,6 @@
 
   // .header__content
   &__content {
-    position: relative;
     width: 100%;
     z-index: 8;
     display: flex;
@@ -66,10 +66,30 @@
 
   // .header__logo-wrapper
   &__logo-wrapper {
-    position: relative;
-    z-index: 9;
     display: flex;
     align-items: center;
+  }
+
+  // .header__logo
+  &__logo {
+    height: 9rem;
+    overflow: visible;
+
+    img {
+      filter: drop-shadow(3px 3px 3px rgba(123, 123, 255, 0.836));
+
+      @include screen-490 {
+        object-fit: cover;
+        width: 9rem;
+        height: 3rem;
+      }
+    }
+
+    @include screen-490 {
+      transform: translateY(-7px);
+      width: 9rem;
+      height: 1rem;
+    }
   }
 
   // .header__column
@@ -78,11 +98,16 @@
     display: flex;
     align-items: center;
 
+    &:nth-child(1) {
+      @include screen-490 {
+        display: none;
+      }
+    }
+
     &:nth-child(2) {
       padding: 1.3rem 1rem;
       flex-direction: column;
       justify-content: center;
-      position: relative;
     }
 
     &:nth-child(3) {
@@ -106,6 +131,7 @@
     img {
       height: 2.4rem;
       margin-right: 1rem;
+
       @include screen-620 {
         padding-right: 0;
       }
@@ -130,27 +156,6 @@
     }
   }
 
-  // .header__logo
-  &__logo {
-    transform: translateY(15.1%);
-
-    img {
-      width: 18rem;
-      height: 8rem;
-      filter: drop-shadow(3px 3px 3px rgba(123, 123, 255, 0.836));
-
-      @include screen-490 {
-        width: 7rem;
-        height: 4rem;
-        transform: translateY(0);
-      }
-
-      @include screen-375 {
-        max-width: 100%;
-      }
-    }
-  }
-
   // .header__menu
   &__menu {
     text-transform: uppercase;
@@ -158,12 +163,11 @@
     display: flex;
     transition: all 0.4s ease 0s;
     align-items: center;
+    justify-content: center;
   }
 
   // .header__item
   &__item {
-    position: relative;
-
     a {
       white-space: nowrap;
       transition: all 0.5s ease;
@@ -182,6 +186,22 @@
       }
     }
 
+    &:nth-child(5) {
+      margin-right: 0;
+      @include screen-690 {
+        span {
+          display: none;
+        }
+      }
+      .icon-services {
+        display: none;
+        font-size: 28px;
+
+        @include screen-690 {
+          display: block;
+        }
+      }
+    }
     @include screen-375 {
       font-size: 12px;
     }
@@ -190,26 +210,30 @@
   // .header__phone
   &__phone {
     position: absolute;
+    display: inline-block;
+
+    z-index: 99;
     text-align: center;
-    top: 110%;
-    width: 100%;
+    top: 85%;
+    border-radius: 1rem;
     font-weight: 600;
+    padding: 0 2rem;
+    background-color: $background-color;
+    box-shadow: 0 2px 2px -2px $color-fill;
+    display: flex;
+    justify-content: center;
 
     span {
-      border-radius: 1rem;
-      padding: 0 1.5rem;
       white-space: nowrap;
-      width: 100%;
-      background-color: $background-color;
-      box-shadow: 0 2px 2px -2px $color-fill;
     }
-
-    @include screen-490 {
+    @include screen-690 {
       top: 85%;
     }
-
-    @include screen-375 {
-      font-size: 10px;
+    @include screen-490 {
+      display: flex;
+      justify-content: space-between;
+      left: 0;
+      width: 100%;
     }
   }
 
@@ -237,7 +261,7 @@
 .network-menu {
   pointer-events: none;
   position: absolute;
-  z-index: 11;
+  z-index: 111;
   top: 1.3rem;
   right: 0;
   filter: contrast(150%);

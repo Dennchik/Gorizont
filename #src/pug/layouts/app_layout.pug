@@ -40,6 +40,7 @@ html(lang="ru")
 						.return-button#scrollButton
 							+iconfont('angle-down', '_button')
 					block cookies
+						include ../modules/cookies-accept
 					block personal-data
-			//- block grid-container
-				include ../layouts/page-grid-3
+						include ../chunks/personal-data
+

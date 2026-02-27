@@ -1,6 +1,7 @@
 extends ../layouts/app_layout
 append link
 	link(rel="stylesheet" type="text/css" href="@@webRoot/css/index.min.css")
+	link(rel="stylesheet" type="text/css" href="@@webRoot/css/catalog.min.css")
 prepend script
 	+script(`${webRoot}/js/vendors/runtime.min.js`)
 	//- script(defer src="@@webRoot/js/vendors/anime-vendors.min.js")
@@ -10,19 +11,6 @@ block title
 	- var text='"Каталог"'
 
 block main-content
-	section.main-content__sections.top-box
-		//- include ../sections/section-perform
-	section.main-content__sections#about
-		//- include ../sections/section-about
-	section.main-content__sections#services
-		//- include ../sections/section-services
-	section.main-content__sections#price
-		//- include ../sections/section-price
-	section.main-content__sections#stage
-		//- include ../sections/section-stageswork
-	section.main-content__sections#products
-		//- include ../sections/section-products
-	section.main-content__sections#partners
-		//- include ../sections/section-partners 
-	section.main-content__order-place#order
-		//- include ../sections/section-order
+	section.main-content__sections 
+		include ../sections/section-catalog
+

@@ -1,4 +1,4 @@
-export function dinamicAdaptive() {
+export function dynamicAdaptive() {
   class ItcMoveEl {
     constructor() {
       this._els = document.querySelectorAll('[data-move-el]');
@@ -69,3 +69,6 @@ export function dinamicAdaptive() {
   }
   new ItcMoveEl();
 }
+/* 
+(data-move-el="[{'bp-max': 690, 'index': 2, 'target': '.move-content'}]") 
+*/

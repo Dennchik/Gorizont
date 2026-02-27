@@ -1,15 +1,18 @@
 .header
 	._container
 		._content
-			a(href="@@webRoot/index.html")._column.hd-1
+			._column.hd-1
 				._logo-wrapper
-					._logo
+					a(href="@@webRoot/index.html")._logo(data-da="bp-1" data-da-position="0" data-da-resolution="490") 
 						img(src="@@webRoot/img/icons/horizon.svg" alt="logo")
 			nav._column
 				ul._menu(data-da="bp-1" data-da-position="0" data-da-resolution="10" )
 					li._item
 						a(href="#about" data-letters="О нас")._link-key.anchor-link.link_underline-center
 							| О нас
+					li._item
+						a(href="@@webRoot/catalog.html" data-letters="О нас")._link-key.link_underline-center
+							| Каталог
 					li._item
 						a(href="#services" data-letters="Услуги")._link-key.anchor-link.link_underline-center
 							| Услуги
@@ -18,8 +21,9 @@
 							| Продукция
 					li._item
 						a(href="#contacts" data-letters="Контакты")._link-key.anchor-link.link_underline-center
-							| Контакты
-					._phone
+							span Контакты
+							+iconfont('services', 'icon')
+					li._phone.bp-1
 						span +375 33 317-67-40
 			._column
 				._country
