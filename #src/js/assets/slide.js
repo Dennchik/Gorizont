@@ -64,11 +64,11 @@ export function mainSlide(Slide) {
 export function slidePartners(Slide) {
   if (Slide) {
     new Swiper(Slide, {
-      // effect: 'slide',
-      // autoplay: {
-      // 	delay: 1500,
-      // 	disableOnInteraction: true,
-      // },
+      effect: 'slide',
+      autoplay: {
+        delay: 1500,
+        disableOnInteraction: true,
+      },
       speed: 800,
       spaceBetween: 40,
       loop: true,
