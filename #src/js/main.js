@@ -14,8 +14,8 @@ import { dynamicAdaptive } from './plugins/dynamic-adaptive.js';
 dynamicAdaptive();
 
 //* - [ Плавная прокрутка страницы до позиции ] -
-import { anchorManager } from './plugins/anchors-smooth-scrolling.js';
-anchorManager();
+import { anchorsSmoothScrolling } from './plugins/anchors-smooth-scrolling.js';
+anchorsSmoothScrolling();
 
 // todo - [Modules] -
 import { modalPage } from './layouts/layouts.js';

@@ -1,17 +1,23 @@
-export function anchorManager(options = {}) {
+export function anchorsSmoothScrolling(options = {}) {
   const {
     linkSelector = '.anchor-link',
     desktopOffset = 98,
     mobileOffset = 60,
     mobileBreakpoint = 768,
+    closeMenuSelector = '.burger-button',
+    sidebarSelector = '.sidebar-menu',
+    openMenuClass = '_open-menu',
+    noScrollClass = 'no-scroll',
   } = options;
 
-  // Получаем текущий offset
+  // Получаем актуальный offset
   const getOffset = () =>
     window.innerWidth <= mobileBreakpoint ? mobileOffset : desktopOffset;
 
   // Скролл к элементу
   const scrollToTarget = (target) => {
+    if (!target) return;
+
     const offset = getOffset();
     const targetPosition = target.getBoundingClientRect().top + window.scrollY;
 
@@ -21,42 +27,59 @@ export function anchorManager(options = {}) {
     });
   };
 
-  // Обработка клика по якорям
-  const handleClick = (e) => {
+  // Закрытие бокового меню
+  const closeSidebarIfOpen = (clickedElement) => {
+    const sidebarMenu = clickedElement.closest(sidebarSelector);
+    if (!sidebarMenu) return;
+
+    if (sidebarMenu.classList.contains(openMenuClass)) {
+      const burgerButton = document.querySelector(closeMenuSelector);
+
+      if (burgerButton) {
+        burgerButton.classList.remove(openMenuClass);
+      }
+
+      document.body.classList.remove(noScrollClass);
+    }
+  };
+
+  // Обработка кликов (делегирование)
+  document.addEventListener('click', (e) => {
     const link = e.target.closest(linkSelector);
     if (!link) return;
 
     const url = new URL(link.href);
 
-    const isSamePage = url.pathname === window.location.pathname;
+    const isSamePage =
+      url.pathname === window.location.pathname &&
+      url.origin === window.location.origin;
 
-    // Если это другая страница → не мешаем браузеру
+    // Если это переход на другую страницу — не мешаем браузеру
     if (!isSamePage) return;
 
-    const hash = url.hash;
+    const hash = url.hash; // "#about"
     if (!hash) return;
 
-    const target = document.querySelector(hash);
-    if (!target) return;
+    const targetElement = document.querySelector(hash);
+    if (!targetElement) return;
 
     e.preventDefault();
-    scrollToTarget(target);
-  };
 
-  // Если пришли с другой страницы с hash
-  const handleInitialHash = () => {
-    if (!window.location.hash) return;
+    closeSidebarIfOpen(link);
+    scrollToTarget(targetElement);
+  });
 
-    const target = document.querySelector(window.location.hash);
-    if (!target) return;
+  // Обработка перехода с другой страницы
+  window.addEventListener('load', () => {
+    const hash = window.location.hash;
+    if (!hash) return;
 
-    // Небольшая задержка — чтобы DOM точно прогрузился
+    const targetElement = document.querySelector(hash);
+    if (!targetElement) return;
+
+    // Небольшая задержка — на случай загрузки изображений/шрифтов
     setTimeout(() => {
-      scrollToTarget(target);
+      scrollToTarget(targetElement);
     }, 50);
-  };
-
-  // Слушатели
-  document.addEventListener('click', handleClick);
-  window.addEventListener('load', handleInitialHash);
+  });
 }
