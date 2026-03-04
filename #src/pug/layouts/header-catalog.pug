@@ -1,0 +1,48 @@
+.header
+	._container
+		._content
+			._column.hd-1
+				._logo-wrapper
+					a(href="@@webRoot/index.html")._logo(data-da="bp-1" data-da-position="0" data-da-resolution="490") 
+						img(src="@@webRoot/img/icons/horizon.svg" alt="logo")
+			nav._column
+				ul._menu(data-da="bp-1" data-da-position="0" data-da-resolution="10" )
+					li._item
+						a(href="@@webRoot/index.html#about" data-letters="О нас")._link-key.anchor-link.link_underline-center
+							| О нас
+					li._item
+						a(href="@@webRoot/catalog.html" data-letters="О нас")._link-key.link_underline-center
+							| Каталог
+					li._item
+						a(href="@@webRoot/index.html#services" data-letters="Услуги")._link-key.anchor-link.link_underline-center
+							| Услуги
+					li._item
+						a(href="@@webRoot/index.html#products" data-letters="Услуги")._link-key.anchor-link.link_underline-center
+							| Продукция
+					li._item
+						a(href="#contacts" data-letters="Контакты")._link-key.anchor-link.link_underline-center
+							span Контакты
+							+iconfont('services', 'icon')
+					li._phone.bp-1
+						span +375 33 317-67-40
+			._column
+				._country
+					img(src="@@webRoot/img/icons/flag-belarus.svg" alt="флаг")
+					p.p-text-20 Беларусь
+				._button
+					include ../modules/burger-button
+				.network-menu
+					._body
+						._links
+							svg._circle-svg(width="92" height="184")
+								g
+									g
+										a._social-link(href="#")
+											// Первый сектор (VK) в верхней левой части
+											path(d="M 92 42 L 92 10 A 82 82 0 0 0 10 92 L 42 92 A 50 50 0 0 1 92 42" fill="#b487b9" stroke="#b487b9" stroke-width="0.5px" data-index="3")
+											use(x="32.742893463904096" y="38.02395085425507" width="20px" height="18px" href="img/sprites/sprite.svg#vk-icon")
+									g
+										a._social-link(href="#")
+											// Третий сектор (Telegram) в нижней левой части
+											path(d="M 42 91 L 10 91 A 82 82 0 0 0 92 174 L 92 142 A 50 50 0 0 1 42 92" fill="#d7bad3" stroke="#d7bad3" stroke-width="0.5px" data-index="0" )
+											use(x="30.023950854255077" y="125.25710653609593" width="22px" height="22px" href="./img/sprites/sprite.svg#telegram")

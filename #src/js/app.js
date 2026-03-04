@@ -16,10 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
   maskPhone('.phone');
 });
 
-//* - [ Плавная прокрутка страницы до позиции ] -
-import { anchorsSmoothScrolling } from './plugins/anchors-smooth-scrolling.js';
-anchorsSmoothScrolling();
-
 //* - [ Возврат к предидущей позиции на страници ] -
 import returnToSavedPosition from './plugins/return-position.js';
 returnToSavedPosition();

@@ -12,6 +12,11 @@ import { validateForm } from './assets/validate-form.js';
 validateForm();
 import { dynamicAdaptive } from './plugins/dynamic-adaptive.js';
 dynamicAdaptive();
+
+//* - [ Плавная прокрутка страницы до позиции ] -
+import { anchorManager } from './plugins/anchors-smooth-scrolling.js';
+anchorManager();
+
 // todo - [Modules] -
 import { modalPage } from './layouts/layouts.js';
 
@@ -19,7 +24,6 @@ const personalPage = document.querySelector('.personal-data');
 if (personalPage) {
   modalPage();
 }
-
 // todo - [ Plugins ] -
 //* - [ Select ] -
 import { select } from './plugins/itsSelect.js';

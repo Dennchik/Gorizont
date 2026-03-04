@@ -1,40 +1,62 @@
-export function anchorsSmoothScrolling() {
-	document.addEventListener('DOMContentLoaded', function () {
-		const anchorLinks = document.querySelectorAll('.anchor-link');
-		anchorLinks.forEach(link => {
-			link.addEventListener('click', function (e) {
-				e.preventDefault();
-				const targetId = this.getAttribute('href').substring(1);
-				const targetElement = document.getElementById(targetId);
+export function anchorManager(options = {}) {
+  const {
+    linkSelector = '.anchor-link',
+    desktopOffset = 98,
+    mobileOffset = 60,
+    mobileBreakpoint = 768,
+  } = options;
 
-				// Определяем отступ в зависимости от ширины экрана
-				const screenWidth = window.innerWidth;
-				let offset = 98; // По умолчанию 150px
+  // Получаем текущий offset
+  const getOffset = () =>
+    window.innerWidth <= mobileBreakpoint ? mobileOffset : desktopOffset;
 
-				// Если ширина экрана 768px и меньше, используем отступ 50px
-				if (screenWidth <= 768) {
-					offset = 60;
-				}
+  // Скролл к элементу
+  const scrollToTarget = (target) => {
+    const offset = getOffset();
+    const targetPosition = target.getBoundingClientRect().top + window.scrollY;
 
-				const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY;
-				const offsetPosition = targetPosition - offset;
+    window.scrollTo({
+      top: targetPosition - offset,
+      behavior: 'smooth',
+    });
+  };
 
-				// Проверяем наличие открытого бокового меню
-				const sidebarMenu = e.target.closest('.sidebar-menu');
-				if (sidebarMenu && sidebarMenu.classList.contains('_open-menu')) {
-					const buttonItems = document.querySelector('.burger-button');
-					buttonItems.classList.remove('_open-menu');
-					document.body.classList.remove('no-scroll');
+  // Обработка клика по якорям
+  const handleClick = (e) => {
+    const link = e.target.closest(linkSelector);
+    if (!link) return;
 
-					// Используем вынесенную функцию для управления меню
-					// toggleSidebarMenu(sidebarMenu);
-				}
+    const url = new URL(link.href);
 
-				window.scrollTo({
-					top: offsetPosition,
-					behavior: 'smooth'
-				});
-			});
-		});
-	});
+    const isSamePage = url.pathname === window.location.pathname;
+
+    // Если это другая страница → не мешаем браузеру
+    if (!isSamePage) return;
+
+    const hash = url.hash;
+    if (!hash) return;
+
+    const target = document.querySelector(hash);
+    if (!target) return;
+
+    e.preventDefault();
+    scrollToTarget(target);
+  };
+
+  // Если пришли с другой страницы с hash
+  const handleInitialHash = () => {
+    if (!window.location.hash) return;
+
+    const target = document.querySelector(window.location.hash);
+    if (!target) return;
+
+    // Небольшая задержка — чтобы DOM точно прогрузился
+    setTimeout(() => {
+      scrollToTarget(target);
+    }, 50);
+  };
+
+  // Слушатели
+  document.addEventListener('click', handleClick);
+  window.addEventListener('load', handleInitialHash);
 }
